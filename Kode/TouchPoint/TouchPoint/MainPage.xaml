@@ -18,11 +18,30 @@
     
         <!--orientation bar-->
         <StackPanel Orientation="Horizontal" Margin="120 0 0 960">
-            
+            <!--sted 1-->
             <StackPanel>
                 <HyperlinkButton Width="120" Height="120">
                     <TextBlock Text="sted 1" FontSize="40"/>
                 </HyperlinkButton>
+            </StackPanel>
+            
+            <!--sted 2-->
+            <StackPanel>
+                <HyperlinkButton Width="120" Height="120">
+                    <TextBlock Text="sted 2" FontSize="40"/>
+                </HyperlinkButton>
+            </StackPanel>
+            
+            <!--sted 3-->
+            <StackPanel>
+                <HyperlinkButton Width="120" Height="120">
+                    <TextBlock Text="sted 3" FontSize="40"/>
+                </HyperlinkButton>
+            </StackPanel>
+            
+            <!--Bruger-->
+            <StackPanel Margin="1200 0 0 0">
+                <TextBlock Text="Bruger" FontSize="40"/>
             </StackPanel>
         </StackPanel>
         
