@@ -41,7 +41,13 @@
             
             <!--Bruger-->
             <StackPanel Margin="1200 0 0 0">
-                <TextBlock Text="Bruger" FontSize="40"/>
+                <ComboBox Width="100" Height="50">
+                    <ComboBoxItem Content="Bruger" IsSelected="True"/> 
+                    <ComboBoxItem>
+                        <Button Content="Log af"/>
+                    </ComboBoxItem>
+                </ComboBox>
+               
             </StackPanel>
         </StackPanel>
         
@@ -81,3 +87,4 @@
         </StackPanel>
     </Grid>
 </Page>
+
