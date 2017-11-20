@@ -6,73 +6,71 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
 
-    
-    
-    
+
+
+
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-     
-        
 
-    
+
+
+
         <!--orientation bar-->
         <StackPanel Orientation="Horizontal" Margin="120 0 0 960">
             <!--sted 1-->
             <StackPanel>
-                <HyperlinkButton Width="120" Height="120">
-                    <TextBlock Text="sted 1" FontSize="40"/>
-                </HyperlinkButton>
+                <HyperlinkButton Width="120" Height="120" Content="Sted 1" FontSize="40"/>
             </StackPanel>
-            
+
             <!--sted 2-->
             <StackPanel>
                 <HyperlinkButton Width="120" Height="120">
                     <TextBlock Text="sted 2" FontSize="40"/>
                 </HyperlinkButton>
             </StackPanel>
-            
+
             <!--sted 3-->
             <StackPanel>
                 <HyperlinkButton Width="120" Height="120">
                     <TextBlock Text="sted 3" FontSize="40"/>
                 </HyperlinkButton>
             </StackPanel>
-            
+
             <!--Bruger-->
             <StackPanel Margin="1200 0 0 0">
                 <ComboBox Width="100" Height="50">
-                    <ComboBoxItem Content="Bruger" IsSelected="True"/> 
+                    <ComboBoxItem Content="Bruger" IsSelected="True"/>
                     <ComboBoxItem>
                         <Button Content="Log af"/>
                     </ComboBoxItem>
                 </ComboBox>
-               
+
             </StackPanel>
         </StackPanel>
-        
+
         <!--menu bar-->
         <StackPanel Orientation="Vertical" Margin="0 0 1800 0">
-           
+
             <!--Icon-->
             <StackPanel>
                 <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
             </StackPanel>
             <!--kurser-->
             <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="Kurser" FontSize="30"/> 
+                <Button Background="AliceBlue" Width="120" Height="120" Content="Kurser" FontSize="30"/>
             </StackPanel>
 
             <!--kursister-->
             <StackPanel>
                 <Button Background="AliceBlue" Width="120" Height="120" Content="Kursister" FontSize="30"/>
             </StackPanel>
-            
+
             <!--underevisere-->
             <StackPanel>
                 <Button Background="AliceBlue" Width="120" Height="120" Content="underviser" FontSize="30"/>
             </StackPanel>
-            
+
             <!--Betalinger-->
             <StackPanel>
                 <Button Background="AliceBlue" Width="120" Height="120" Content="betalinger" FontSize="30"/>
@@ -80,10 +78,28 @@
 
 
         </StackPanel>
-        
+
         <!--Main body-->
         <StackPanel Margin="120,120,0,0">
             
+            <!--Login Panel-->
+            <StackPanel Background="Crimson" Height="300" Width="500" Margin="650,300" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Login" FontSize="40" Margin="200,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10">
+                    <TextBlock Text="Brugernavn" FontSize="40"/>
+                    <TextBox Padding="5" Margin="63,0,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10">
+                    <TextBlock Text="Password" FontSize="40"/>
+                    <TextBox Padding="5" Margin="100,0,0,0" Width="200"/>
+                </StackPanel>
+                <Button Background="AliceBlue" Content="Login" FontSize="40"  Width="200"/>
+                
+
+            </StackPanel>
+
         </StackPanel>
     </Grid>
 </Page>
