@@ -21,6 +21,11 @@ namespace TouchPoint
             
         }
 
+        public string PropertieFormat()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public string Navn
         {
             get => _navn;
