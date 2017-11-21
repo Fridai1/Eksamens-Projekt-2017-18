@@ -8,5 +8,8 @@ namespace TouchPoint
 {
     interface ISaveable
     {
+        void Save();
+        string PropertieFormat();
+
     }
 }

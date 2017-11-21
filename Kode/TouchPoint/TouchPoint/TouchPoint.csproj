@@ -95,13 +95,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Bruger.cs" />
     <Compile Include="IRediger.cs" />
     <Compile Include="ISaveable.cs" />
+    <Compile Include="Model\Lokale.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testclass.cs" />
+    <Compile Include="Model\Undervisningssted.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
