@@ -26,5 +26,11 @@ namespace TouchPoint
         {
             this.InitializeComponent();
         }
+
+        private void ButtonBase_OnClick(Object sender, RoutedEventArgs e)
+        {
+            
+            Frame.Navigate(typeof(BrugerOverView));
+        }
     }
 }

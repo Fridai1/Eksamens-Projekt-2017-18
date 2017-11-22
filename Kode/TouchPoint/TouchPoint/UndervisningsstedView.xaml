@@ -1,0 +1,140 @@
+﻿<Page
+    x:Class="TouchPoint.UndervisningsstedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TouchPoint"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <!--orientation bar-->
+        <StackPanel Orientation="Horizontal" Margin="120 0 0 960">
+            <!--sted 1-->
+            <StackPanel>
+                <HyperlinkButton Width="120" Height="120" Content="Sted 1" FontSize="40"/>
+            </StackPanel>
+
+            <!--sted 2-->
+            <StackPanel>
+                <HyperlinkButton Width="120" Height="120">
+                    <TextBlock Text="sted 2" FontSize="40"/>
+                </HyperlinkButton>
+            </StackPanel>
+
+            <!--sted 3-->
+            <StackPanel>
+                <HyperlinkButton Width="120" Height="120">
+                    <TextBlock Text="sted 3" FontSize="40"/>
+                </HyperlinkButton>
+            </StackPanel>
+
+            <!--Bruger-->
+            <StackPanel Margin="1200 0 0 0">
+                <ComboBox Width="100" Height="50">
+                    <ComboBoxItem Content="Bruger" IsSelected="True"/>
+                    <ComboBoxItem>
+                        <Button Content="Log af"/>
+                    </ComboBoxItem>
+                </ComboBox>
+
+            </StackPanel>
+        </StackPanel>
+
+        <!--menu bar-->
+        <StackPanel Orientation="Vertical" Margin="0 0 1800 0">
+
+            <!--Icon-->
+            <StackPanel>
+                <Button Background="White" Click="ButtonBase_OnClick">
+                    <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
+                </Button>
+
+            </StackPanel>
+            <!--kurser-->
+            <StackPanel>
+                <Button Background="AliceBlue" Width="120" Height="120" Content="Kurser" FontSize="20"/>
+            </StackPanel>
+
+            <!--kursister-->
+            <StackPanel>
+                <Button Click="KnapTilKursister" Background="AliceBlue" Width="120" Height="120" Content="Kursister" FontSize="20"/>
+            </StackPanel>
+
+            <!--Undervisningssted-->
+            <StackPanel>
+                <Button Background="AliceBlue" Width="120" Height="120" >
+                    <StackPanel>
+                        <TextBlock Text="Undervisnings"/>
+                        <TextBlock Text="sted"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <!--Betalinger-->
+            <StackPanel>
+                <Button Background="AliceBlue" Width="120" Height="120" Content="betalinger" FontSize="20"/>
+            </StackPanel>
+
+
+        </StackPanel>
+
+        <!--Main body-->
+        <Grid Margin="120,120,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--ListView-->
+            <StackPanel>
+                <ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}"/>
+                                <TextBlock Text="{Binding Email}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+
+            <!--Detailview-->
+            <StackPanel Grid.Column="1">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Navn" FontSize="40"/>
+                    <TextBox Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="Addresse" FontSize="40"/>
+                    <TextBox Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Telefon" FontSize="40"/>
+                    <TextBox Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="Email" FontSize="40"/>
+                    <TextBox Width="200" Padding="5" FontSize="40" Margin="400 0 0 0"/>
+                </StackPanel>
+
+                
+                <StackPanel >
+                    <Button Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
+                </StackPanel>
+            </StackPanel>
+
+
+
+
+        </Grid>
+
+    </Grid>
+</Page>

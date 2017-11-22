@@ -95,13 +95,34 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+
+    <Compile Include="BrugerOverView.xaml.cs">
+      <DependentUpon>BrugerOverView.xaml</DependentUpon>
+    </Compile>
+
+    <Compile Include="Model\Bruger.cs" />
     <Compile Include="IRediger.cs" />
     <Compile Include="ISaveable.cs" />
+    <Compile Include="Model\Lokale.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testclass.cs" />
+    <Compile Include="Model\Undervisningssted.cs" />
+
+    <Compile Include="ViewModel\Base\FactoryVMBase.cs" />
+    <Compile Include="ViewModel\Base\ItemVMBase.cs" />
+    <Compile Include="ViewModel\Base\DetailsVMBase.cs" />
+    <Compile Include="ViewModel\Base\MasterVMBase.cs" />
+    <Compile Include="ViewModel\Domain\BrugerDetailsVM.cs" />
+    <Compile Include="ViewModel\Domain\BrugerItemVM.cs" />
+    <Compile Include="ViewModel\Base\MasterDetailsVMBase.cs" />
+
+    <Compile Include="UndervisningsstedView.xaml.cs">
+      <DependentUpon>UndervisningsstedView.xaml</DependentUpon>
+    </Compile>
+
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -125,15 +146,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BrugerOverView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UndervisningsstedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CatalogInterfaces">
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTransformationImplementation">
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTransformationInterfaces">
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryStorageInterfaces">
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModelImplementation">
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModelInterfaces">
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
