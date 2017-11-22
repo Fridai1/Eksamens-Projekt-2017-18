@@ -11,6 +11,5 @@ namespace TouchPoint
         int Id { get; set; }
         void Save();
         string PropertyFormat();
-
     }
 }

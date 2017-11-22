@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F029EF8-63FA-43B0-96EB-98E17E8FCD56}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExtensionsViewModel</RootNamespace>
+    <AssemblyName>ExtensionsViewModel</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="ClassDiagram1.cd" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementation\CRUDControlStateService.cs" />
+    <Compile Include="Implementation\CRUDViewStateService.cs" />
+    <Compile Include="Implementation\DetailsViewModelWithSelectableImage.cs" />
+    <Compile Include="Implementation\ItemViewModelWithImage.cs" />
+    <Compile Include="Implementation\MasterDetailsViewModelCRUD.cs" />
+    <Compile Include="Implementation\MasterDetailsViewModelCRUDMediator.cs" />
+    <Compile Include="Implementation\MasterDetailsViewModelWithState.cs" />
+    <Compile Include="Interfaces\ICRUDControlStateService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\CRUDControls.cs" />
+    <Compile Include="Types\CRUDStateControls.cs" />
+    <EmbeddedResource Include="Properties\ExtensionsViewModel.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlState\ControlState.csproj">
+      <Project>{730EA5FC-918C-4D85-B5AC-96F92BBA174C}</Project>
+      <Name>ControlState</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataCommandImplementation\DataCommandImplementation.csproj">
+      <Project>{AA7779A0-33D8-45C0-B0FF-6A24E054CC3A}</Project>
+      <Name>DataCommandImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExtensionsCommands\ExtensionsCommands.csproj">
+      <Project>{C7A83E53-4AB6-4F81-9B77-C1C6AC6F9E5A}</Project>
+      <Name>ExtensionsCommands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExtensionsModel\ExtensionsModel.csproj">
+      <Project>{DD362B5A-7603-4480-8D5E-8A003DAFB614}</Project>
+      <Name>ExtensionsModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExtensionsServices\ExtensionsServices.csproj">
+      <Project>{C3F9989C-B690-47B5-8671-CB232AB62C97}</Project>
+      <Name>ExtensionsServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Images\Images.csproj">
+      <Project>{7deac086-8971-4bb8-96cb-f9fd45eb8adf}</Project>
+      <Name>Images</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersistencyInterfaces\PersistencyInterfaces.csproj">
+      <Project>{09DA2731-E192-4315-A99A-C3673578C5F1}</Project>
+      <Name>PersistencyInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModelImplementation\ViewModelImplementation.csproj">
+      <Project>{96bfa0bf-65be-4c2f-a149-81132daf483a}</Project>
+      <Name>ViewModelImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModelInterfaces\ViewModelInterfaces.csproj">
+      <Project>{BEF15C7F-6222-453C-B233-8B12921E3C6A}</Project>
+      <Name>ViewModelInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewState\ViewState.csproj">
+      <Project>{943F1C5A-9189-40AF-AAC4-3C3E0B45DA11}</Project>
+      <Name>ViewState</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CatalogImplementation">
+      <HintPath>..\CatalogImplementation\bin\Debug\CatalogImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="CatalogInterfaces">
+      <HintPath>..\CatalogInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandInterfaces">
+      <HintPath>..\CommandInterfaces\bin\Debug\CommandInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTransformationImplementation">
+      <HintPath>..\DataTransformationImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="DataTransformationInterfaces">
+      <HintPath>..\DataTransformationInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryStorageInterfaces">
+      <HintPath>..\InMemoryStorage\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
