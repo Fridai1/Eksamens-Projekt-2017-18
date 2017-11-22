@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TouchPoint.Database {
-    class SaveToDB<T> where T : ISaveable {
+    public class SaveToDB<T> where T : ISaveable {
         public void Save(T item) {
             string query = "";
 
@@ -16,7 +16,7 @@ namespace TouchPoint.Database {
             }
             query += FormatObjToStringPlural(item);
             query += " VALUES ";
-            query += item.PropertyString();
+            query += item.PropertyFormat();
 
             //put into db
 
@@ -33,7 +33,7 @@ namespace TouchPoint.Database {
         //    return query;
         //}
 
-        public string FormatObjToStringPlural(T item) {
+        private string FormatObjToStringPlural(T item) {
             string tableName = item.GetType().ToString();
             tableName += "s";
             return tableName;
