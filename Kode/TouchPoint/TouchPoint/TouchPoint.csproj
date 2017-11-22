@@ -95,7 +95,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\Base\DetailsVMBase.cs" />
+
+    <Compile Include="BrugerOverView.xaml.cs">
+      <DependentUpon>BrugerOverView.xaml</DependentUpon>
+    </Compile>
+
     <Compile Include="Model\Bruger.cs" />
     <Compile Include="IRediger.cs" />
     <Compile Include="ISaveable.cs" />
@@ -106,12 +110,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testclass.cs" />
     <Compile Include="Model\Undervisningssted.cs" />
+
     <Compile Include="ViewModel\Base\FactoryVMBase.cs" />
     <Compile Include="ViewModel\Base\ItemVMBase.cs" />
+    <Compile Include="ViewModel\Base\DetailsVMBase.cs" />
     <Compile Include="ViewModel\Base\MasterVMBase.cs" />
     <Compile Include="ViewModel\Domain\BrugerDetailsVM.cs" />
     <Compile Include="ViewModel\Domain\BrugerItemVM.cs" />
     <Compile Include="ViewModel\Base\MasterDetailsVMBase.cs" />
+
+    <Compile Include="UndervisningsstedView.xaml.cs">
+      <DependentUpon>UndervisningsstedView.xaml</DependentUpon>
+    </Compile>
+
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -135,9 +146,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BrugerOverView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UndervisningsstedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 
 namespace TouchPoint
 {
-    public class Undervisningssted : ISaveable
+    public class Undervisningssted
     {
         public Undervisningssted()
         {

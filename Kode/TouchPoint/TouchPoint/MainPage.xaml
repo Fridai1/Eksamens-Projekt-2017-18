@@ -95,7 +95,7 @@
                     <TextBlock Text="Password" FontSize="40"/>
                     <TextBox Padding="5" Margin="100,0,0,0" Width="200"/>
                 </StackPanel>
-                <Button Background="AliceBlue" Content="Login" FontSize="40"  Width="200"/>
+                <Button Background="AliceBlue" Click="ButtonBase_OnClick" Content="Login" FontSize="40"  Width="200"/>
                 
 
             </StackPanel>

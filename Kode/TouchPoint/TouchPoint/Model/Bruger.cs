@@ -1,6 +1,6 @@
 ﻿namespace TouchPoint
 {
-    public class Bruger : ISaveable
+    public class Bruger
     {
         public Bruger()
         {
