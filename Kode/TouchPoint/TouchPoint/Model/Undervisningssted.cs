@@ -18,7 +18,7 @@ namespace TouchPoint
 
         public void Save()
         {
-            
+            _lokaler = new List<Lokale>();
         }
 
         public string PropertieFormat()

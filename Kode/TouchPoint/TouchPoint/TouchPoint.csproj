@@ -98,6 +98,7 @@
     <Compile Include="BrugerOverView.xaml.cs">
       <DependentUpon>BrugerOverView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controller\CreateController.cs" />
     <Compile Include="Controller\RelayCommand.cs" />
     <Compile Include="Model\Bruger.cs" />
     <Compile Include="IRediger.cs" />
@@ -120,6 +121,8 @@
     <Compile Include="UndervisningsstedView.xaml.cs">
       <DependentUpon>UndervisningsstedView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Domain\BrugerMasterDetails.cs" />
+    <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

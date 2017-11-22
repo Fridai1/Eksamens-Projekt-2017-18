@@ -26,7 +26,7 @@
         public string Navn
         {
             get => _navn;
-            set => _addresse = value;
+            set => _navn = value;
         }
 
         public string Addresse
