@@ -123,6 +123,9 @@
     </Compile>
     <Compile Include="ViewModel\Domain\BrugerMasterDetails.cs" />
     <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
+    <Compile Include="Database\DatabaseFacade.cs" />
+    <Compile Include="Database\FetchFromDB.cs" />
+    <Compile Include="Database\SaveToDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
