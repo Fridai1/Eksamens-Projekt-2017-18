@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TouchPoint
 {
-    interface ISaveable
+    public interface ISaveable
     {
+        int Id { get; set; }
         void Save();
-        string PropertieFormat();
-
+        string PropertyFormat();
     }
 }
