@@ -16,7 +16,7 @@ namespace TouchPoint.ViewModel
         private FactoryVMBase<T> _vMFactory;
         private ItemVMBase<T> _itemVMSelected;
         private MasterVMBase<T> _masterVM;
-        private List<T> _Catalog;
+        protected List<T> _Catalog;
         private DetailsVMBase<T> _detailsVM;
 
         private RelayCommand _createCommand;
@@ -25,7 +25,7 @@ namespace TouchPoint.ViewModel
 
         public MasterDetailsVMBase()
         {
-            _createCommand = new RelayCommand(Create, ()=>true);
+            _createCommand = new RelayCommand(Create,()=>true);
         }
 
         public ObservableCollection<ItemVMBase<T>> ItemVMCollection
@@ -83,11 +83,16 @@ namespace TouchPoint.ViewModel
             get => _deleteCommand;
         }
 
-        public void Create()
+        public virtual void Create()
         {
-            T obj = new T();
-            _Catalog.Add(obj);
+            T ob = new T();
+            ItemVMBase<T> obj = new ItemVMBase<T>(ob);
+
+            _Catalog.Add(obj.DomainObject);
             ItemVMSelected = obj;
+
+
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

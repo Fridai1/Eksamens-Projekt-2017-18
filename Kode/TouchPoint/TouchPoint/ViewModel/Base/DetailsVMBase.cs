@@ -9,15 +9,20 @@ namespace TouchPoint
     public abstract class DetailsVMBase<T>
         where T : class
     {
-        public T DomainObject;
+        public T domainObject;
         public DetailsVMBase(T obj)
         {
-            DomainObject = obj;
+            domainObject = obj;
         }
 
         public virtual string Description
         {
             get { return "Der mangler en discription, overrride plz"; }
+        }
+
+        public T DomainObject
+        {
+            get => domainObject;
         }
         
     }

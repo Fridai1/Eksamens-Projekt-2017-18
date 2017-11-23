@@ -5,7 +5,12 @@
     xmlns:local="using:TouchPoint"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:TouchPoint.ViewModel"
     mc:Ignorable="d">
+    
+    <Page.DataContext>
+        <viewModel:BrugerMasterDetails/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -90,7 +95,8 @@
             
             <!--ListView-->
             <StackPanel>
-                <ListView>
+                <ListView ItemsSource="{Binding ItemVMCollection}"
+                          SelectedItem="{Binding ItemVMSelected}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -104,35 +110,36 @@
             
             <!--Detailview-->
             <StackPanel Grid.Column="1">
-                
+                <!--Navn-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Navn" FontSize="40"/>
-                    <TextBox Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Navn}" Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
                 </StackPanel>
-
+                <!--Adresse-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
-                    <TextBlock Text="Addresse" FontSize="40"/>
-                    <TextBox Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
+                    <TextBlock Text="Adresse" FontSize="40"/>
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Addresse}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
                 </StackPanel>
-
+                <!--Telefon-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Telefon" FontSize="40"/>
                     <TextBox Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
                 </StackPanel>
-
+                <!--Email-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Email" FontSize="40"/>
                     <TextBox Width="200" Padding="5" FontSize="40" Margin="400 0 0 0"/>
                 </StackPanel>
-
+                <!--BrugerNavn-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Brugernavn" FontSize="40"/>
                     <TextBox Width="200" Padding="5" FontSize="40" Margin="292 0 0 0"/>
                 </StackPanel>
-
+                <!--Password-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Password" FontSize="40"/>
-                    <TextBox Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>
+                    <!--<TextBox Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>-->
+                    <PasswordBox Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
@@ -146,6 +153,10 @@
                 
                 <StackPanel >
                     <Button Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
+                </StackPanel>
+               
+                <StackPanel >
+                    <Button Command="{Binding CreateCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Opret" Margin="300 0 0 0" />
                 </StackPanel>
             </StackPanel>
             
