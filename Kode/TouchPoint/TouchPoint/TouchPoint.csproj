@@ -116,6 +116,7 @@
     <Compile Include="ViewModel\Base\DetailsVMBase.cs" />
     <Compile Include="ViewModel\Base\MasterVMBase.cs" />
     <Compile Include="ViewModel\Domain\BrugerDetailsVM.cs" />
+    <Compile Include="ViewModel\Domain\BrugerFactory.cs" />
     <Compile Include="ViewModel\Domain\BrugerItemVM.cs" />
     <Compile Include="ViewModel\Base\MasterDetailsVMBase.cs" />
     <Compile Include="UndervisningsstedView.xaml.cs">

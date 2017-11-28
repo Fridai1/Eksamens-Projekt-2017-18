@@ -10,7 +10,7 @@ namespace TouchPoint
     {
         public abstract DetailsVMBase<T> CreateDetailsViewModel(T obj);
 
-        public abstract MasterVMBase<T> CreateMasterViewModel(T obj);
+        public abstract MasterVMBase<T> CreateMasterViewModel();
 
         public abstract ItemVMBase<T> ItemViewModel(T obj);
     }

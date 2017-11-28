@@ -4,7 +4,7 @@ namespace TouchPoint.ViewModel
 {
     public class BrugerMasterDetails : MasterDetailsVMBase<Bruger>
     {
-        public BrugerMasterDetails() : base()
+        public BrugerMasterDetails() : base(new BrugerFactory())
         {
             
         }

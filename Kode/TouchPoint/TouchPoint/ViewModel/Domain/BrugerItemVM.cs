@@ -22,5 +22,9 @@
         }
 
 
+        public override string Description
+        {
+            get => $"Navn: {Name} Brugernavn: {Brugernavn} Fagområde: {Fagområde}";
+        }
     }
 }

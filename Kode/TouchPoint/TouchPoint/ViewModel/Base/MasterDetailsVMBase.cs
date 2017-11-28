@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -18,15 +19,26 @@ namespace TouchPoint.ViewModel
         private MasterVMBase<T> _masterVM;
         protected List<T> _Catalog;
         private DetailsVMBase<T> _detailsVM;
+        private bool _viewEnabled = false;
 
         private RelayCommand _createCommand;
         private RelayCommand _updateCommand;
         private RelayCommand _deleteCommand;
-
-        public MasterDetailsVMBase()
+        private RelayCommand _saveCommand;
+        public MasterDetailsVMBase(FactoryVMBase<T> FactoryVM)
         {
             _createCommand = new RelayCommand(Create,()=>true);
+            _saveCommand = new RelayCommand(Save, () => true);
+            _updateCommand = new RelayCommand(update,()=>true);
+            _Catalog = new List<T>();
+            T lars = new T();
+            _Catalog.Add(lars);
+            _vMFactory = FactoryVM;
+            _masterVM = _vMFactory.CreateMasterViewModel();
+
         }
+
+        
 
         public ObservableCollection<ItemVMBase<T>> ItemVMCollection
         {
@@ -41,6 +53,7 @@ namespace TouchPoint.ViewModel
                 _itemVMSelected = value;
                 DetailsVM = CreateDetailsVM();
                 OnPropertyChanged(nameof(DetailsVM));
+                OnPropertyChanged(nameof(TrueIfSelected));
                 OnPropertyChanged();
             } 
 
@@ -83,17 +96,64 @@ namespace TouchPoint.ViewModel
             get => _deleteCommand;
         }
 
+        public ICommand SaveCommand
+        {
+            get => _saveCommand;
+        }
+
         public virtual void Create()
         {
             T ob = new T();
-            ItemVMBase<T> obj = new ItemVMBase<T>(ob);
+            ItemVMBase<T> obj = _vMFactory.ItemViewModel(ob);
 
-            _Catalog.Add(obj.DomainObject);
+            //_Catalog.Add(obj.DomainObject);
             ItemVMSelected = obj;
+        }
 
+        public virtual void update()
+        {
+            FieldsEnabled = true;
+        }
+
+
+        public virtual void Save()
+        {
+            if (DetailsVM.DomainObject != null)
+            {
+                _Catalog.Add(DetailsVM.DomainObject);
+                ItemVMSelected = null;
+                FieldsEnabled = false;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(ItemVMCollection));
+            }
+            else
+            {
+                throw new NullReferenceException("der skal værer en bruger at gemme");
+            }
 
 
         }
+
+        public bool TrueIfSelected
+        {
+            get
+            {
+                if (ItemVMSelected != null)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        public bool FieldsEnabled
+        {
+            get => _viewEnabled;
+            set => _viewEnabled = value;
+        }
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 
