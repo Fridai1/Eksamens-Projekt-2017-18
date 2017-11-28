@@ -112,12 +112,12 @@
                 <!--Navn-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Navn" FontSize="40"/>
-                    <TextBox Text="{Binding DetailsVM.DomainObject.Navn, Mode=TwoWay}" Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Navn, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
                 </StackPanel>
                 <!--Adresse-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Adresse" FontSize="40"/>
-                    <TextBox Text="{Binding DetailsVM.DomainObject.Addresse, Mode=TwoWay}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Addresse, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
                 </StackPanel>
                 <!--Telefon-->
                 <StackPanel Orientation="Horizontal">
