@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TouchPoint.Database {
-    public class FetchFromDB<T> where T : ISaveable {
-        public T FetchSingle(string table, int id) {
+    public static class FetchFromDB<T> where T : ISaveable {
+        public static T FetchSingle(string table, int id) {
             throw new NotImplementedException();
         }
 
-        public List<T> FetchMultiple() {
+        public static List<T> FetchMultiple(string table) {
             throw new NotImplementedException();
         }
     }
