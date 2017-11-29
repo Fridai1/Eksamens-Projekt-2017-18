@@ -115,6 +115,7 @@
     <Compile Include="Testclass.cs" />
     <Compile Include="Model\Undervisningssted.cs" />
     <Compile Include="ViewModel\Base\FactoryVMBase.cs" />
+    <Compile Include="ViewModel\Base\GodBase.cs" />
     <Compile Include="ViewModel\Base\ItemVMBase.cs" />
     <Compile Include="ViewModel\Base\DetailsVMBase.cs" />
     <Compile Include="ViewModel\Base\MasterVMBase.cs" />
@@ -127,6 +128,7 @@
     </Compile>
     <Compile Include="ViewModel\Domain\BrugerMasterDetails.cs" />
     <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
+    <Compile Include="ViewModel\Domain\LoginVm.cs" />
     <Compile Include="ViewModel\Domain\RegistrerMasterDetailsVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\USDetailsVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\USFactoryVm.cs" />
@@ -183,28 +185,28 @@
       <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="CommandImplementation">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
     </Reference>
     <Reference Include="CommandInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="DataTransformationImplementation">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\DataTransformationImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
     </Reference>
     <Reference Include="DataTransformationInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryStorageImplementation">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\InMemoryStorageImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryStorageInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="ViewModelImplementation">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
     </Reference>
     <Reference Include="ViewModelInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

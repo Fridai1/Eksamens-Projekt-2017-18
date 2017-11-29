@@ -121,7 +121,7 @@ namespace TouchPoint.ViewModel
             OnPropertyChanged(nameof(FieldsEnabled));
         }
 
-
+        // metode til at gemme et object
         public virtual void Save()
         {
             if (DetailsVM.DomainObject != null)
