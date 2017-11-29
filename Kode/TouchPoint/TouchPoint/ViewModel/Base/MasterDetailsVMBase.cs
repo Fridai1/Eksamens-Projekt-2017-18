@@ -47,7 +47,12 @@ namespace TouchPoint.ViewModel
 
         public ItemVMBase<T> ItemVMSelected
         {
-            get => _itemVMSelected;
+            get
+            {
+                FieldsEnabled = false;
+                OnPropertyChanged(nameof(FieldsEnabled));
+                return _itemVMSelected;
+            }
             set
             {
                 _itemVMSelected = value;
@@ -108,11 +113,14 @@ namespace TouchPoint.ViewModel
 
             //_Catalog.Add(obj.DomainObject);
             ItemVMSelected = obj;
+            FieldsEnabled = true;
+            OnPropertyChanged(nameof(FieldsEnabled));
         }
 
         public virtual void update()
         {
             FieldsEnabled = true;
+            OnPropertyChanged(nameof(FieldsEnabled));
         }
 
 
@@ -124,6 +132,7 @@ namespace TouchPoint.ViewModel
                 ItemVMSelected = null;
                 FieldsEnabled = false;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(FieldsEnabled));
                 OnPropertyChanged(nameof(ItemVMCollection));
             }
             else

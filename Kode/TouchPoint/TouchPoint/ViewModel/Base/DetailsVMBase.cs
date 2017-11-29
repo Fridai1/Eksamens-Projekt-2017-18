@@ -15,11 +15,6 @@ namespace TouchPoint
             domainObject = obj;
         }
 
-        public virtual string Description
-        {
-            get { return "Der mangler en discription, overrride plz"; }
-        }
-
         public T DomainObject
         {
             get => domainObject;
