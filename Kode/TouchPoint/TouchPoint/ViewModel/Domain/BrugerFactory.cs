@@ -9,7 +9,7 @@
 
         public override MasterVMBase<Bruger> CreateMasterViewModel()
         {
-            return new MasterVMBase<Bruger>();
+            return new BrugerMasterVM();
         }
 
         public override ItemVMBase<Bruger> ItemViewModel(Bruger obj)

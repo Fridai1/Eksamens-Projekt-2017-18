@@ -12,7 +12,7 @@
         }
 
         public string Fagområde
-        {
+        {       
             get => DomainObject.Fagområde;
         }
 

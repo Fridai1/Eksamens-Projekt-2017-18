@@ -98,6 +98,9 @@
     <Compile Include="BrugerOverView.xaml.cs">
       <DependentUpon>BrugerOverView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BrugerRegistrer.xaml.cs">
+      <DependentUpon>BrugerRegistrer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controller\CreateController.cs" />
     <Compile Include="Controller\RelayCommand.cs" />
     <Compile Include="Model\Bruger.cs" />
@@ -124,6 +127,12 @@
     </Compile>
     <Compile Include="ViewModel\Domain\BrugerMasterDetails.cs" />
     <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
+    <Compile Include="ViewModel\Domain\RegistrerMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USFactoryVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\UsItemVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USMasterVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -148,6 +157,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="BrugerOverView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BrugerRegistrer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

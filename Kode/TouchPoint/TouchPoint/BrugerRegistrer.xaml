@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="TouchPoint.BrugerOverView"
+    x:Class="TouchPoint.BrugerRegistrer"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TouchPoint"
@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:TouchPoint.ViewModel"
     mc:Ignorable="d">
-    
+
     <Page.DataContext>
         <viewModel:BrugerMasterDetails/>
     </Page.DataContext>
@@ -55,7 +55,7 @@
                 <Button Background="White" Click="ButtonBase_OnClick">
                     <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
                 </Button>
-               
+
             </StackPanel>
             <!--kurser-->
             <StackPanel>
@@ -87,95 +87,75 @@
 
         <!--Main body-->
         <Grid Margin="120,120,0,0">
+
             
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+
             
-            <!--ListView-->
-            <StackPanel>
-                <ListView ItemsSource="{Binding ItemVMCollection}"
-                          SelectedItem="{Binding ItemVMSelected, Mode=TwoWay}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Description}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
-            
+
             <!--Detailview-->
-            <StackPanel Grid.Column="1">
-              
+            <StackPanel>
+
                 <!--Navn-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Navn" FontSize="40"/>
                     <TextBox Text="{Binding DetailsVM.DomainObject.Navn, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
                 </StackPanel>
-               
+
                 <!--Adresse-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Adresse" FontSize="40"/>
                     <TextBox Text="{Binding DetailsVM.DomainObject.Addresse, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
                 </StackPanel>
-               
+
                 <!--Telefon-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Telefon" FontSize="40"/>
                     <TextBox Text="{Binding DetailsVM.DomainObject.Telefon, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
                 </StackPanel>
-               
+
                 <!--Email-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Email" FontSize="40"/>
                     <TextBox Text="{Binding DetailsVM.DomainObject.Email, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="400 0 0 0"/>
                 </StackPanel>
-               
+
                 <!--BrugerNavn-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Brugernavn" FontSize="40"/>
                     <TextBox Text="{Binding DetailsVM.DomainObject.Brugernavn, Mode=TwoWay}" Width="200" IsEnabled="{Binding FieldsEnabled}" Padding="5" FontSize="40" Margin="292 0 0 0"/>
                 </StackPanel>
-               
+
                 <!--Password-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Password" FontSize="40"/>
                     <!--<TextBox Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>-->
                     <PasswordBox IsEnabled="{Binding FieldsEnabled}" IsPasswordRevealButtonEnabled="true" Password="{Binding DetailsVM.DomainObject.Password, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>
                 </StackPanel>
-                
+
                 <!--FagOmråde-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Fagområde" FontSize="40"/>
                     <TextBox Text="{Binding DetailsVM.DomainObject.Fagområde, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="400" Padding="5" FontSize="40" Margin="298 0 0 0"/>
                 </StackPanel>
-                 
-                <!--Underviser-->
-                <StackPanel Visibility="Visible" Margin="0 10">
-                    <ToggleSwitch IsOn="{Binding DetailsVM.DomainObject.Underviser, Mode=TwoWay}" Header="Er Underviser" OffContent="Nej" OnContent="Ja" />
-                </StackPanel>
-                
-                <!--Gem knap-->
-                <StackPanel >
-                    <Button Command="{Binding SaveCommand}" IsEnabled="{Binding TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
+
+               <!--Knapper-->
+                <StackPanel Orientation="Horizontal" Margin="0 50">
+                    <!--Gem knap-->
+                    <StackPanel >
+                        <Button Click="ButtonBase_OnClick" Command="{Binding SaveCommand}" IsEnabled="{Binding TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
+                    </StackPanel>
+
+                    <!--opret knap-->
+                    <StackPanel >
+                        <Button Command="{Binding CreateCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Opret" Margin="300 0 0 0" />
+                    </StackPanel>
                 </StackPanel>
                
-                <!--opret knap-->
-                <StackPanel >
-                    <Button Command="{Binding CreateCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Opret" Margin="300 0 0 0" />
-                </StackPanel>
 
-                <!--update knap-->
-                <StackPanel >
-                    <Button Command="{Binding UpdateCommand}" IsEnabled="{Binding TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Rediger" Margin="300 0 0 0" />
-                </StackPanel>
             </StackPanel>
-            
 
-           
+
+
 
         </Grid>
 

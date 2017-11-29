@@ -31,8 +31,6 @@ namespace TouchPoint.ViewModel
             _saveCommand = new RelayCommand(Save, () => true);
             _updateCommand = new RelayCommand(update,()=>true);
             _Catalog = new List<T>();
-            T lars = new T();
-            _Catalog.Add(lars);
             _vMFactory = FactoryVM;
             _masterVM = _vMFactory.CreateMasterViewModel();
 
@@ -139,8 +137,6 @@ namespace TouchPoint.ViewModel
             {
                 throw new NullReferenceException("der skal værer en bruger at gemme");
             }
-
-
         }
 
         public bool TrueIfSelected
