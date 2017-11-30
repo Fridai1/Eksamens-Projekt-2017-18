@@ -12,7 +12,7 @@
         }
 
         public string Fagområde
-        {
+        {       
             get => DomainObject.Fagområde;
         }
 
@@ -22,5 +22,9 @@
         }
 
 
+        public override string Description
+        {
+            get => $"Navn: {Name}        Brugernavn: {Brugernavn}         Fagområde: {Fagområde}";
+        }
     }
 }

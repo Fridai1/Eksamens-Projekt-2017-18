@@ -1,4 +1,6 @@
-﻿namespace TouchPoint.ViewModel
+﻿using Windows.UI.Xaml.Controls;
+
+namespace TouchPoint.ViewModel
 {
     public class BrugerDetailsVM : DetailsVMBase<Bruger>
 
@@ -43,7 +45,7 @@
             set => DomainObject.Telefon = value;
         }
 
-        public string Password
+        public PasswordBox Password
         {
             get => DomainObject.Password;
             set => DomainObject.Password = value;

@@ -1,4 +1,6 @@
-﻿namespace TouchPoint
+﻿using Windows.UI.Xaml.Controls;
+
+namespace TouchPoint
 {
     public class Bruger
     {
@@ -12,7 +14,7 @@
         private string _email;
         private int _telefon;
         private string _brugernavn;
-        private string _password;
+        private PasswordBox _password;
         private bool _Underviser;
         private string _fagområde;
         private bool _admin;
@@ -53,7 +55,7 @@
             set => _brugernavn = value;
         }
 
-        public string Password
+        public PasswordBox Password
         {
             get => _password;
             set => _password = value;
