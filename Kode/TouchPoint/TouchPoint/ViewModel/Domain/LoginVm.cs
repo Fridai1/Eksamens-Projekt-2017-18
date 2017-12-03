@@ -1,30 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
+using Windows.UI.Xaml.Controls;
 using Command.Implementation;
 
 namespace TouchPoint.ViewModel
 {
-    public static class LoginVm
+    public class LoginVm
     {
-        private static RelayCommand _loginCommand;
-        private static string _brugernavn;
-        private static string _password;
-        private static Dictionary<string, Bruger> _users;
-        private static bool _authorize = false;
+        private RelayCommand _loginCommand;
+        private string _brugernavn;
+        private string _password;
+        private Dictionary<string, Bruger> _users;
+        
         private static Bruger _loggedinUser;
 
-        static LoginVm()
+        public LoginVm()
         {
             _loginCommand = new RelayCommand(Login,()=>true);
+            _users = new Dictionary<string, Bruger>();
+            // test bruger
+            _users.Add("hans", new Bruger("hans", "skolevej","mail@mail.dk", 121212, "hans", "1234", true, "reflex", false));
             
         }
 
-        public static ICommand LoginCommand
+        public  ICommand LoginCommand
         {
             get => _loginCommand;
         }
 
-        private static Bruger RequestUser()
+        private  Bruger RequestUser()
         {
 
             // hent brugere fra database ind i en dict.
@@ -37,14 +42,20 @@ namespace TouchPoint.ViewModel
 
         
 
-        public static Bruger GetLoggedInUser
+        public static Bruger LoggedInUser
         {
             get => _loggedinUser;
         }
 
-        public static bool UserFound()
+        public bool FindUser()
         {
             // check dict om user findes.
+            if (_brugernavn == null)
+            {
+                // mangler exception
+                throw new NotImplementedException();
+            }
+            
             bool userfound = _users.ContainsKey(_brugernavn);
 
             Bruger FoundUser = new Bruger();
@@ -58,34 +69,46 @@ namespace TouchPoint.ViewModel
             // givet en user findes og password stemmer overens. skal der ske noget - enten return true eller return bruger - ubestemt
             if (userfound && FoundUser.Password == _password)
             {
-                return true;
+                _loggedinUser = FoundUser;
                 
+                return true;
+
+
             }
             else
             {
+                // throw exception
                 return false;
             }
         }
 
-        private static void login()
+        public void Login()
         {
-            
+            FindUser();
         }
-        public static void Logoff()
+
+       
+        public void Logoff()
         {
-            if (!_loggedinUser == null)
+            if (_loggedinUser != null)
+            {
+                _loggedinUser = null;
+            }
+            else
             {
                 
             }
         }
 
-        public static string Brugernavn
+        public string Brugernavn
         {
+            get => _brugernavn;
             set => _brugernavn = value;
         }
 
-        public static string Password
+        public string Password
         {
+            get => _password;
             set => _password = value;
         }
     }

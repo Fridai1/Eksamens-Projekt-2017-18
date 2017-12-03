@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using TouchPoint.ViewModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -27,10 +28,15 @@ namespace TouchPoint
             this.InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(Object sender, RoutedEventArgs e)
+        private void Login(Object sender, RoutedEventArgs e)
         {
             
-            Frame.Navigate(typeof(BrugerOverView));
+           
+                Frame.Navigate(typeof(BrugerOverView));
+           
+                
+            
+           
         }
 
         private void Registrer(object sender, RoutedEventArgs e)

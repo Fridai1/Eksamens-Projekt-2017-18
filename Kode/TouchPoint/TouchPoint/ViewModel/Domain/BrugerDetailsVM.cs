@@ -45,7 +45,7 @@ namespace TouchPoint.ViewModel
             set => DomainObject.Telefon = value;
         }
 
-        public PasswordBox Password
+        public string Password
         {
             get => DomainObject.Password;
             set => DomainObject.Password = value;
