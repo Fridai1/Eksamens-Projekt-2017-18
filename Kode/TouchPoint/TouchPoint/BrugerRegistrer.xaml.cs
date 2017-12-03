@@ -25,6 +25,7 @@ namespace TouchPoint
         public BrugerRegistrer()
         {
             this.InitializeComponent();
+            
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)

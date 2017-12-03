@@ -4,50 +4,89 @@ using Command.Implementation;
 
 namespace TouchPoint.ViewModel
 {
-    public class LoginVm
+    public static class LoginVm
     {
-        private RelayCommand _loginCommand;
-        private string _brugernavn;
-        private string _password;
-        private Dictionary<string, string> _users;
-        private bool _authorize = false;
-        public LoginVm()
+        private static RelayCommand _loginCommand;
+        private static string _brugernavn;
+        private static string _password;
+        private static Dictionary<string, Bruger> _users;
+        private static bool _authorize = false;
+        private static Bruger _loggedinUser;
+
+        static LoginVm()
         {
             _loginCommand = new RelayCommand(Login,()=>true);
             
         }
 
-        public ICommand LoginCommand
+        public static ICommand LoginCommand
         {
             get => _loginCommand;
         }
 
-        private Bruger RequestUser()
+        private static Bruger RequestUser()
         {
-            // request user from database
+
+            // hent brugere fra database ind i en dict.
+
+            //var users = (from database
+            //             select new )
 
             return new Bruger();
         }
 
-        public void Login()
+        
+
+        public static Bruger GetLoggedInUser
         {
+            get => _loggedinUser;
+        }
+
+        public static bool UserFound()
+        {
+            // check dict om user findes.
             bool userfound = _users.ContainsKey(_brugernavn);
 
-            if (userfound && _users.ContainsValue(_password))
+            Bruger FoundUser = new Bruger();
+
+            // hvis der findes en user med det brugernavn
+            if (userfound)
             {
-                _authorize = true;
+                // findes user gør vi Founduser li med den fundne user
+                FoundUser = _users[_brugernavn];
+            }
+            // givet en user findes og password stemmer overens. skal der ske noget - enten return true eller return bruger - ubestemt
+            if (userfound && FoundUser.Password == _password)
+            {
+                return true;
+                
+            }
+            else
+            {
+                return false;
             }
         }
 
-        public string Brugernavn
+        private static void login()
+        {
+            
+        }
+        public static void Logoff()
+        {
+            if (!_loggedinUser == null)
+            {
+                
+            }
+        }
+
+        public static string Brugernavn
         {
             set => _brugernavn = value;
         }
 
-        public string Password
+        public static string Password
         {
             set => _password = value;
         }
-
     }
 }

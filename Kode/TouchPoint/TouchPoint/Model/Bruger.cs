@@ -14,7 +14,7 @@ namespace TouchPoint
         private string _email;
         private int _telefon;
         private string _brugernavn;
-        private PasswordBox _password;
+        private string _password;
         private bool _Underviser;
         private string _fagområde;
         private bool _admin;
@@ -55,7 +55,7 @@ namespace TouchPoint
             set => _brugernavn = value;
         }
 
-        public PasswordBox Password
+        public string Password
         {
             get => _password;
             set => _password = value;

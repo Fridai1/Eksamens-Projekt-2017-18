@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="using:TouchPoint.ViewModel.Undervisningssted"
     mc:Ignorable="d">
-    
+
+
     <Page.DataContext>
         <viewModel:USMasterDetailsVm/>
     </Page.DataContext>
