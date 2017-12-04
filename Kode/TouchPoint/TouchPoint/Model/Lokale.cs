@@ -7,6 +7,11 @@
             _navn = navn;
         }
 
+        public Lokale()
+        {
+            
+        }
+
         private string _navn;
 
         public string Navn

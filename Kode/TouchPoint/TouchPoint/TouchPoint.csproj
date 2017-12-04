@@ -128,6 +128,11 @@
     <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
     <Compile Include="ViewModel\Domain\LoginVm.cs" />
     <Compile Include="ViewModel\Domain\RegistrerMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleFactory.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleItemVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleMasterVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\USDetailsVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\USFactoryVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\UsItemVm.cs" />
@@ -139,6 +144,7 @@
     <Compile Include="Database\DatabaseFacade.cs" />
     <Compile Include="Database\FetchFromDB.cs" />
     <Compile Include="Database\SaveToDB.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USOverviewVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

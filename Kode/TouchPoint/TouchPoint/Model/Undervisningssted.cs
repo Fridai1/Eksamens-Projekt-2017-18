@@ -50,6 +50,11 @@ namespace TouchPoint
             set => _telefon = value;
         }
 
+        public List<Lokale> Lokaler
+        {
+            get => _lokaler;
+        }
+
         public void OpretLokale(string LokaleNavn)
         {
             _lokaler.Add(new Lokale(LokaleNavn));
