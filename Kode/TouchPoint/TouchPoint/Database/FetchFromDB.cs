@@ -10,7 +10,7 @@ namespace TouchPoint.Database {
             throw new NotImplementedException();
         }
 
-        public static List<Task<T>> FetchMultiple(string table) {
+        public static Task<T> FetchMultiple(string table) {
             throw new NotImplementedException();
         }
     }

@@ -37,7 +37,7 @@ namespace TouchPoint.Database {
         }
 
         //LoadMultiple
-        public async Task<List<T>> LoadMultiple(string table) {
+        public async Task<T> LoadMultiple(string table) {
             return await FetchFromDB<T>.FetchMultiple(table);
         }
         //Delete
