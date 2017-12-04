@@ -19,7 +19,7 @@ namespace TouchPoint.Database {
             query += item.PropertyFormat();
 
             /*put into db*/
-            //
+            //connect to entity framework/web service/whatever i don't fucking know anymore
         }
 
 
