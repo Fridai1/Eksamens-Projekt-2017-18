@@ -113,6 +113,7 @@
       <DependentUpon>KursusView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Bruger.cs" />
+    <Compile Include="Model\EkstraMateriale.cs" />
     <Compile Include="Model\Kursus.cs" />
     <Compile Include="Model\Lokale.cs" />
     <Compile Include="Model\Undervisningssted.cs" />
@@ -133,6 +134,12 @@
     <Compile Include="ViewModel\Domain\BrugerItemVM.cs" />
     <Compile Include="ViewModel\Domain\BrugerMasterDetails.cs" />
     <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
+    <Compile Include="ViewModel\Domain\EkstraMateriale\EMDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\EkstraMateriale\EMFactoryVm.cs" />
+    <Compile Include="ViewModel\Domain\EkstraMateriale\EMItemVm.cs" />
+    <Compile Include="ViewModel\Domain\EkstraMateriale\EMMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\EkstraMateriale\EMMasterVm.cs" />
+    <Compile Include="ViewModel\Domain\EkstraMateriale\EMOverviewVm.cs" />
     <Compile Include="ViewModel\Domain\LoginVm.cs" />
     <Compile Include="ViewModel\Domain\RegistrerMasterDetailsVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleDetailsVm.cs" />
@@ -207,32 +214,35 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CatalogInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\CatalogInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="CommandImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\CommandImplementation.dll</HintPath>
     </Reference>
     <Reference Include="CommandInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\CommandInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="DataTransformationImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\DataTransformationImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\DataTransformationImplementation.dll</HintPath>
     </Reference>
     <Reference Include="DataTransformationInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\DataTransformationInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryStorageImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\InMemoryStorageImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\InMemoryStorageImplementation.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryStorageInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\InMemoryStorageInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="ViewModelImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\ViewModelImplementation.dll</HintPath>
     </Reference>
     <Reference Include="ViewModelInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\References\ViewModelInterfaces.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

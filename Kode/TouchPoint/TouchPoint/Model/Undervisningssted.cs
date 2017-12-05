@@ -21,11 +21,6 @@ namespace TouchPoint
             _lokaler = new List<Lokale>();
         }
 
-        public string PropertieFormat()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public string Navn
         {
             get => _navn;

@@ -1,4 +1,6 @@
-﻿namespace TouchPoint.ViewModel.Undervisningssted
+﻿using TouchPoint.Model;
+
+namespace TouchPoint.ViewModel.Undervisningssted
 {
     public class USMasterVm : MasterVMBase<TouchPoint.Undervisningssted>
     {

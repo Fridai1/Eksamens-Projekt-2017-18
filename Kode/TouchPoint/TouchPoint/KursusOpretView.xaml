@@ -47,7 +47,7 @@
 
             <!--Icon-->
             <StackPanel>
-                <Button Background="White" Click="ButtonBase_OnClick">
+                <Button Background="White" Click="MainpageKnap">
                     <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
                 </Button>
 
@@ -59,7 +59,7 @@
 
             <!--kursister-->
             <StackPanel>
-                <Button Click="KnapTilKursister" Background="AliceBlue" Width="120" Height="120" Content="Kursister" FontSize="20"/>
+                <Button Click="Brugerknap" Background="AliceBlue" Width="120" Height="120" Content="Kursister" FontSize="20"/>
             </StackPanel>
 
             <!--Undervisningssted-->
