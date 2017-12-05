@@ -20,7 +20,7 @@ namespace TouchPoint.ViewModel
         protected List<T> _Catalog;
         private DetailsVMBase<T> _detailsVM;
         private bool _viewEnabled = false;
-        private Bruger _loggedIn;
+        
         
         
 
@@ -39,7 +39,7 @@ namespace TouchPoint.ViewModel
             _masterVM = _vMFactory.CreateMasterViewModel();
 
 
-            _loggedIn = LoginVm.LoggedInUser;
+           
         }
 
         

@@ -106,7 +106,14 @@
     <Compile Include="KopieretObjektCollection.cs" />
     <Compile Include="Controller\CreateController.cs" />
     <Compile Include="Controller\RelayCommand.cs" />
+    <Compile Include="KursusOpretView.xaml.cs">
+      <DependentUpon>KursusOpretView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KursusView.xaml.cs">
+      <DependentUpon>KursusView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Bruger.cs" />
+    <Compile Include="Model\Kursus.cs" />
     <Compile Include="Model\Lokale.cs" />
     <Compile Include="Model\Undervisningssted.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -173,6 +180,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BrugerRegistrer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KursusOpretView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KursusView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
