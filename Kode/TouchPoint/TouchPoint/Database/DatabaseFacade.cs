@@ -22,7 +22,6 @@ namespace TouchPoint.Database {
         }
 
         //SaveSingle
-        database-method-implementation
         public async Task SaveSingle(int id, T item) {
             await save.Save(item);
         }
@@ -34,7 +33,7 @@ namespace TouchPoint.Database {
         }
 
         //LoadMultiple
-        public async Task<T> LoadMultiple(string table) {
+        public async Task<List<T>> LoadMultiple(string table) {
             return await fetch.FetchMultiple(table);
         }
 
