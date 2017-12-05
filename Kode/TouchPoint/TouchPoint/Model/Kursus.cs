@@ -9,10 +9,9 @@ namespace TouchPoint
         private string _courseDate;
         private ulong _timeStart;
         private ulong _timeEnd;
-        private int _length;
-        private string _priceDescription;
+        private int   _length;
         private double _deposit;
-        private int _spots;
+        private int    _spots;
         private string _targetAudience;
         private string _seminarDescription;
         private string _extraMaterial;
@@ -27,6 +26,28 @@ namespace TouchPoint
 
 
         public Kursus()
+        {
+            _navn = Navn;
+            _courseDate = CourseDate;
+            _timeStart = TimeStart;
+            _timeEnd = TimeEnd;
+            _length = Length;
+            _deposit = Deposit;
+            _spots = Spots;
+            _targetAudience = Targetaudience;
+            _seminarDescription = SeminarDescription;
+            _extraMaterial = ExtraMaterial;
+            _location = Location;
+            _tutor = Tutor;
+            _courseDescription = CourseDescription;
+            _prereg = Prereg;
+            _coursePicture = CoursePicture;
+            _extHose = ExtHost;
+            _price = Price;
+        }
+
+        public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd, int spots, string targetAudience, string seminarDescription, string extramateriale
+            , Undervisningssted location, List<Bruger> Tutors, string courseDescription, string prereg, Image coursepircture, string extHost, double price)
         {
             
         }
@@ -56,11 +77,6 @@ namespace TouchPoint
         {
             get => _length;
             set => _length = value;
-        }
-        public string PriceDescription
-        {
-            get => _priceDescription;
-            set => _priceDescription = value;
         }
         public double Deposit
         {

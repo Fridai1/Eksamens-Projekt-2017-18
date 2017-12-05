@@ -47,7 +47,7 @@
 
             <!--Icon-->
             <StackPanel>
-                <Button Background="White" Click="ButtonBase_OnClick">
+                <Button Background="White" Click="MainpageKnap">
                     <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
                 </Button>
 

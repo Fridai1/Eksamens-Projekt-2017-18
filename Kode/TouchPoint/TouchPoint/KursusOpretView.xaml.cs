@@ -26,5 +26,15 @@ namespace TouchPoint
         {
             this.InitializeComponent();
         }
+
+        private void MainpageKnap(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void KnapTilKursister(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BrugerOverView));
+        }
     }
 }

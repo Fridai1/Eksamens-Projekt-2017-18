@@ -78,6 +78,7 @@ namespace TouchPoint.ViewModel
             else
             {
                 // throw exception
+                _brugernavn = null;
                 return false;
             }
         }

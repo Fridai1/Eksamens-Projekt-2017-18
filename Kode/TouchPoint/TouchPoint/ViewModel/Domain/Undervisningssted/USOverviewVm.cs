@@ -6,10 +6,12 @@ namespace TouchPoint.ViewModel.Undervisningssted
     {
         private USMasterDetailsVm _masterDetails;
         private LokaleMasterDetailsVm _lokalerMasterDetails;
+        private Bruger _loggedInUser;
         public USOverviewVm()
         {
             _masterDetails = new USMasterDetailsVm();
             _lokalerMasterDetails = new LokaleMasterDetailsVm();
+            _loggedInUser = LoginVm.LoggedInUser;
 
         }
 
@@ -21,6 +23,11 @@ namespace TouchPoint.ViewModel.Undervisningssted
         public LokaleMasterDetailsVm LokaleMasterDetails
         {
             get => _lokalerMasterDetails;
+        }
+
+        public Bruger GetLoggedInUSer
+        {
+            get => _loggedInUser;
         }
     }
 }

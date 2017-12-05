@@ -30,13 +30,16 @@ namespace TouchPoint
 
         private void Login(Object sender, RoutedEventArgs e)
         {
-            
-           
+            ((LoginVm)this.DataContext).LoginCommand.Execute(null);
+
+            if (((LoginVm)this.DataContext).Brugernavn != null)
+            {
                 Frame.Navigate(typeof(BrugerOverView));
-           
-                
-            
-           
+            }
+
+
+
+
         }
 
         private void Registrer(object sender, RoutedEventArgs e)
