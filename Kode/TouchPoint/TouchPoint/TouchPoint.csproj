@@ -98,35 +98,61 @@
     <Compile Include="BrugerOverView.xaml.cs">
       <DependentUpon>BrugerOverView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controller\CreateController.cs" />
-    <Compile Include="Controller\RelayCommand.cs" />
-    <Compile Include="Model\Bruger.cs" />
+    <Compile Include="BrugerRegistrer.xaml.cs">
+      <DependentUpon>BrugerRegistrer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IRediger.cs" />
     <Compile Include="ISaveable.cs" />
+    <Compile Include="KopieretObjektCollection.cs" />
+    <Compile Include="Controller\CreateController.cs" />
+    <Compile Include="Controller\RelayCommand.cs" />
+    <Compile Include="KursusOpretView.xaml.cs">
+      <DependentUpon>KursusOpretView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KursusView.xaml.cs">
+      <DependentUpon>KursusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Bruger.cs" />
+    <Compile Include="Model\Kursus.cs" />
     <Compile Include="Model\Lokale.cs" />
+    <Compile Include="Model\Undervisningssted.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testclass.cs" />
-    <Compile Include="Model\Undervisningssted.cs" />
     <Compile Include="ViewModel\Base\FactoryVMBase.cs" />
+    <Compile Include="ViewModel\Base\GodBase.cs" />
     <Compile Include="ViewModel\Base\ItemVMBase.cs" />
     <Compile Include="ViewModel\Base\DetailsVMBase.cs" />
     <Compile Include="ViewModel\Base\MasterVMBase.cs" />
-    <Compile Include="ViewModel\Domain\BrugerDetailsVM.cs" />
-    <Compile Include="ViewModel\Domain\BrugerItemVM.cs" />
     <Compile Include="ViewModel\Base\MasterDetailsVMBase.cs" />
+    <Compile Include="ViewModel\Domain\BrugerDetailsVM.cs" />
+    <Compile Include="ViewModel\Domain\BrugerFactory.cs" />
+    <Compile Include="ViewModel\Domain\BrugerItemVM.cs" />
+    <Compile Include="ViewModel\Domain\BrugerMasterDetails.cs" />
+    <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
+    <Compile Include="ViewModel\Domain\LoginVm.cs" />
+    <Compile Include="ViewModel\Domain\RegistrerMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleFactory.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleItemVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleMasterVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USFactoryVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\UsItemVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USMasterVm.cs" />
     <Compile Include="UndervisningsstedView.xaml.cs">
       <DependentUpon>UndervisningsstedView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\Domain\BrugerMasterDetails.cs" />
-    <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
     <Compile Include="Database\DatabaseFacade.cs" />
     <Compile Include="Database\FetchFromDB.cs" />
     <Compile Include="Database\SaveToDB.cs" />
     <Compile Include="_GLOBALS.cs" />
+    <Compile Include="ViewModel\Domain\Undervisningssted\USOverviewVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -154,6 +180,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BrugerRegistrer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KursusOpretView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KursusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -173,28 +211,28 @@
       <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="CommandImplementation">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
     </Reference>
     <Reference Include="CommandInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="DataTransformationImplementation">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\DataTransformationImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
     </Reference>
     <Reference Include="DataTransformationInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryStorageImplementation">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\InMemoryStorageImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryStorageInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="ViewModelImplementation">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
     </Reference>
     <Reference Include="ViewModelInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

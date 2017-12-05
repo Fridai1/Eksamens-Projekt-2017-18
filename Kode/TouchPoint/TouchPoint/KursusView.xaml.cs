@@ -12,36 +12,19 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using TouchPoint.ViewModel;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace TouchPoint
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class KursusView : Page
     {
-        public MainPage()
+        public KursusView()
         {
             this.InitializeComponent();
-        }
-
-        private void Login(Object sender, RoutedEventArgs e)
-        {
-            
-           
-                Frame.Navigate(typeof(BrugerOverView));
-           
-                
-            
-           
-        }
-
-        private void Registrer(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(BrugerRegistrer));
         }
     }
 }

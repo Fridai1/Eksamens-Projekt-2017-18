@@ -1,18 +1,11 @@
 ﻿<Page
-    x:Class="TouchPoint.UndervisningsstedView"
+    x:Class="TouchPoint.KursusView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TouchPoint"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModel="using:TouchPoint.ViewModel.Undervisningssted"
     mc:Ignorable="d">
-
-
-    <Page.DataContext>
-        <viewModel:USOverviewVm/>
-    </Page.DataContext>
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <!--orientation bar-->
@@ -51,7 +44,7 @@
         <!--menu bar-->
         <StackPanel Orientation="Vertical" Margin="0 0 1800 0">
 
-            <!--Icon-->
+            <!--Icon-->     
             <StackPanel>
                 <Button Background="White" Click="ButtonBase_OnClick">
                     <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
@@ -111,60 +104,17 @@
 
             <!--Detailview-->
             <StackPanel Grid.Column="1">
+
                 
-                <!--Navn-->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Navn" FontSize="40"/>
-                    <TextBox IsEnabled="{Binding MasterDetails.FieldsEnabled}" Text="{Binding MasterDetails.DetailsVM.DomainObject.Navn, Mode=TwoWay}" Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
-                </StackPanel>
-                <!--Adresse-->
-                <StackPanel Orientation="Horizontal" Margin="0 10">
-                    <TextBlock Text="Addresse" FontSize="40"/>
-                    <TextBox  Text="{Binding MasterDetails.DetailsVM.DomainObject.Addresse, Mode=TwoWay}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
-                </StackPanel>
-                <!--Telefon-->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Telefon" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Telefon, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
-                </StackPanel>
-                <!--Email-->
-                <StackPanel Orientation="Horizontal" Margin="0 10">
-                    <TextBlock Text="Email" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Email, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="400 0 0 0"/>
-                </StackPanel>
-                <!--Lokaler-->
-                <StackPanel Orientation="Horizontal" Margin="0 10">
-                    <TextBlock Text="Lokaler" FontSize="40"/>
-                    <TextBox Margin="100 0"/>
-                    <Button Content="Tilføj" Command="{Binding LokaleMasterDetails.CreateCommand}"/>
-                    
-                </StackPanel>
-                <StackPanel>
-                    <ListView
-                        ItemsSource="{Binding MasterDetails.DetailsVM.DomainObject.Lokaler}"
-                        SelectedItem="{Binding LokaleMasterDetails.ItemVMSelected}">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Navn}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
 
-                    </ListView>
-                </StackPanel>
-
-                <!--Gem knap-->
-                <StackPanel >
-                    <Button Command="{Binding MasterDetails.SaveCommand}" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
-                </StackPanel>
+               
 
                 <!--opret knap-->
                 <StackPanel >
-                    <Button Command="{Binding MasterDetails.CreateCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Opret" Margin="300 0 0 0" />
+                    <Button Command="{Binding MasterDetails.CreateCommand}" Width="150" Height="50" Background="BlanchedAlmond" Content="Opret Nyt Kursus" Margin="300 0 0 0" />
                 </StackPanel>
 
-                
+
             </StackPanel>
 
 

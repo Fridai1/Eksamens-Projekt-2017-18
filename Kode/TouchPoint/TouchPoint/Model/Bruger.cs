@@ -1,4 +1,6 @@
-﻿namespace TouchPoint
+﻿using Windows.UI.Xaml.Controls;
+
+namespace TouchPoint
 {
     public class Bruger
     {
@@ -6,16 +8,30 @@
         {
             
         }
+        // #2 constructer til vi kan oprette brugere uden om UI.
+        public Bruger(string navn, string adresse, string email, int telefon, string brugernavn, string password, bool underviser, string fagområde, bool admin)
+        {
+            _navn = navn;
+            _addresse = adresse;
+            _email = email;
+            _telefon = telefon;
+            _brugernavn = brugernavn;
+            _password = password;
+            _Underviser = underviser;
+            _fagområde = fagområde;
+            _admin = admin;
+
+        }
 
         private string _navn;
         private string _addresse;
         private string _email;
-        private int _telefon;
+        private int    _telefon;
         private string _brugernavn;
         private string _password;
-        private bool _Underviser;
+        private bool   _Underviser;
         private string _fagområde;
-        private bool _admin;
+        private bool   _admin;
 
 
         public void Save()

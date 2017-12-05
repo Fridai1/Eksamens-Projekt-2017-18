@@ -1,4 +1,6 @@
-﻿namespace TouchPoint.ViewModel
+﻿using Windows.UI.Xaml.Controls;
+
+namespace TouchPoint.ViewModel
 {
     public class BrugerDetailsVM : DetailsVMBase<Bruger>
 
