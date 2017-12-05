@@ -151,6 +151,7 @@
     <Compile Include="Database\DatabaseFacade.cs" />
     <Compile Include="Database\FetchFromDB.cs" />
     <Compile Include="Database\SaveToDB.cs" />
+    <Compile Include="_GLOBALS.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\USOverviewVm.cs" />
   </ItemGroup>
   <ItemGroup>
