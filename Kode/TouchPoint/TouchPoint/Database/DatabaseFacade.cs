@@ -26,19 +26,19 @@ namespace TouchPoint.Database {
         }
 
         //SaveSingle
-        public async Task SaveSingle(int id, T item) {
-            await SaveToDB.Save(item);
-        }
+        //public async Task SaveSingle(int id, T item) {
+        //    await SaveToDB.Save(item);
+        //}
 
-        //LoadSingle
-        public async Task<T> LoadSingle(string table, int id) {
-            return await FetchFromDB.FetchSingle(table, id);
-        }
+        ////LoadSingle
+        //public async Task<T> LoadSingle(string table, int id) {
+        //    return await FetchFromDB.FetchSingle(table, id);
+        //}
 
-        //LoadMultiple
-        public async Task<List<T>> LoadMultiple(string table) {
-            return await FetchFromDB.FetchMultiple(table);
-        }
+        ////LoadMultiple
+        //public async Task<List<T>> LoadMultiple(string table) {
+        //    return await FetchFromDB.FetchMultiple(table);
+        //}
         //Delete
         //not implemented
     }

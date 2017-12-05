@@ -6,14 +6,6 @@
         {
         }
 
-        public override void Save()
-        {
-            base.Save();
-        }
-
-        public override void Create()
-        {
-            base.Create();
-        }
+        
     }
 }

@@ -20,11 +20,15 @@ namespace TouchPoint.ViewModel
         protected List<T> _Catalog;
         private DetailsVMBase<T> _detailsVM;
         private bool _viewEnabled = false;
+        
+        
+        
 
         private RelayCommand _createCommand;
         private RelayCommand _updateCommand;
         private RelayCommand _deleteCommand;
         private RelayCommand _saveCommand;
+
         public MasterDetailsVMBase(FactoryVMBase<T> FactoryVM)
         {
             _createCommand = new RelayCommand(Create,()=>true);
@@ -34,6 +38,8 @@ namespace TouchPoint.ViewModel
             _vMFactory = FactoryVM;
             _masterVM = _vMFactory.CreateMasterViewModel();
 
+
+           
         }
 
         

@@ -16,6 +16,11 @@
             get => DomainObject.Addresse;
             set => DomainObject.Addresse = value;
         }
+        public int Telefon
+        {
+            get => DomainObject.Telefon;
+            set => DomainObject.Telefon = value;
+        }
         public string Email
         {
             get => DomainObject.Email;

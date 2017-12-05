@@ -18,6 +18,7 @@ namespace TouchPoint
         public T DomainObject
         {
             get => _domainObject;
+            set => _domainObject = value;
         }
         
     }

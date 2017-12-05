@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
+using Windows.UI.Xaml.Controls;
 using Command.Implementation;
 
 namespace TouchPoint.ViewModel
@@ -9,45 +11,105 @@ namespace TouchPoint.ViewModel
         private RelayCommand _loginCommand;
         private string _brugernavn;
         private string _password;
-        private Dictionary<string, string> _users;
-        private bool _authorize = false;
+        private Dictionary<string, Bruger> _users;
+        
+        private static Bruger _loggedinUser;
+
         public LoginVm()
         {
             _loginCommand = new RelayCommand(Login,()=>true);
+            _users = new Dictionary<string, Bruger>();
+            // test bruger
+            _users.Add("hans", new Bruger("hans", "skolevej","mail@mail.dk", 121212, "hans", "1234", true, "reflex", false));
             
         }
 
-        public ICommand LoginCommand
+        public  ICommand LoginCommand
         {
             get => _loginCommand;
         }
 
-        private Bruger RequestUser()
+        private  Bruger RequestUser()
         {
-            // request user from database
+
+            // hent brugere fra database ind i en dict.
+
+            //var users = (from database
+            //             select new )
 
             return new Bruger();
         }
 
-        public void Login()
+        
+
+        public static Bruger LoggedInUser
         {
+            get => _loggedinUser;
+        }
+
+        public bool FindUser()
+        {
+            // check dict om user findes.
+            if (_brugernavn == null)
+            {
+                // mangler exception
+                throw new NotImplementedException();
+            }
+            
             bool userfound = _users.ContainsKey(_brugernavn);
 
-            if (userfound && _users.ContainsValue(_password))
+            Bruger FoundUser = new Bruger();
+
+            // hvis der findes en user med det brugernavn
+            if (userfound)
             {
-                _authorize = true;
+                // findes user gør vi Founduser li med den fundne user
+                FoundUser = _users[_brugernavn];
+            }
+            // givet en user findes og password stemmer overens. skal der ske noget - enten return true eller return bruger - ubestemt
+            if (userfound && FoundUser.Password == _password)
+            {
+                _loggedinUser = FoundUser;
+                
+                return true;
+
+
+            }
+            else
+            {
+                // throw exception
+                return false;
+            }
+        }
+
+        public void Login()
+        {
+            FindUser();
+        }
+
+       
+        public void Logoff()
+        {
+            if (_loggedinUser != null)
+            {
+                _loggedinUser = null;
+            }
+            else
+            {
+                
             }
         }
 
         public string Brugernavn
         {
+            get => _brugernavn;
             set => _brugernavn = value;
         }
 
         public string Password
         {
+            get => _password;
             set => _password = value;
         }
-
     }
 }
