@@ -13,32 +13,28 @@ namespace TouchPoint.Database {
         public static string _apiPrefix;
         public static HttpClientHandler _httpClientHandler;
         public static HttpClient _httpClient;
+        SaveToDB<T> save = new SaveToDB<T>();
+        FetchFromDB<T> fetch = new FetchFromDB<T>();
 
         //constructor
         public DatabaseFacade(string serverUrl, string apiId, string apiPrefix) {
-            _serverUrl = serverUrl;
-            _apiId = apiId;
-            _apiPrefix = apiPrefix;
-            _httpClientHandler = new HttpClientHandler();
-            _httpClientHandler.UseDefaultCredentials = true;
-            _httpClient = new HttpClient(_httpClientHandler);
-            _httpClient.BaseAddress = new Uri(_serverUrl);
+            
         }
 
         //SaveSingle
         public async Task SaveSingle(int id, T item) {
-            await SaveToDB<T>.Save(item);
+            await save.Save(item);
         }
 
         //LoadSingle
         public async Task<T> LoadSingle(string table, int id) {
 
-            return await FetchFromDB<T>.FetchSingle(table, id);
+            return await fetch.FetchSingle(table, id);
         }
 
         //LoadMultiple
         public async Task<T> LoadMultiple(string table) {
-            return await FetchFromDB<T>.FetchMultiple(table);
+            return await fetch.FetchMultiple(table);
         }
         //Delete
         //not implemented
