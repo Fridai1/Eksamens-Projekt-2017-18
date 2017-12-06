@@ -39,7 +39,7 @@
             <!--Bruger-->
             <StackPanel Margin="1200 0 0 0">
                 <ComboBox Width="100" Height="50">
-                    <ComboBoxItem Content="Bruger" IsSelected="True"/>
+                    <ComboBoxItem Content="{Binding GetLoggedInUSer}" IsSelected="True"/>
                     <ComboBoxItem>
                         <Button Content="Log af"/>
                     </ComboBoxItem>
@@ -135,14 +135,14 @@
                 <!--Lokaler-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Lokaler" FontSize="40"/>
-                    <TextBox Margin="100 0"/>
-                    <Button Content="Tilføj" Command="{Binding LokaleMasterDetails.CreateCommand}"/>
+                    <TextBox Text="{Binding LokaleMasterDetails.DetailsVM.DomainObject.Navn, Mode=TwoWay}" Margin="100 0"/>
+                    <Button Content="Tilføj" Command="{Binding TilføjLokale}"/>
                     
                 </StackPanel>
                 <StackPanel>
                     <ListView
                         ItemsSource="{Binding MasterDetails.DetailsVM.DomainObject.Lokaler}"
-                        SelectedItem="{Binding LokaleMasterDetails.ItemVMSelected}">
+                        SelectedItem="">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
