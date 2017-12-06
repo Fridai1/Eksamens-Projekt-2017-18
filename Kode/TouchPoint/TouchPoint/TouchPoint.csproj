@@ -133,6 +133,12 @@
     <Compile Include="ViewModel\Domain\BrugerItemVM.cs" />
     <Compile Include="ViewModel\Domain\BrugerMasterDetails.cs" />
     <Compile Include="ViewModel\Domain\BrugerMasterVM.cs" />
+    <Compile Include="ViewModel\Domain\Kursus\KursusDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Kursus\KursusFactory.cs" />
+    <Compile Include="ViewModel\Domain\Kursus\KursusItemVm.cs" />
+    <Compile Include="ViewModel\Domain\Kursus\KursusMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\Kursus\KursusMasterVm.cs" />
+    <Compile Include="ViewModel\Domain\Kursus\KursusOverview.cs" />
     <Compile Include="ViewModel\Domain\LoginVm.cs" />
     <Compile Include="ViewModel\Domain\RegistrerMasterDetailsVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleDetailsVm.cs" />

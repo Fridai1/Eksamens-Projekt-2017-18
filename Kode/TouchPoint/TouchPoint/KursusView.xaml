@@ -5,9 +5,15 @@
     xmlns:local="using:TouchPoint"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:TouchPoint.ViewModel.Kursus"
     mc:Ignorable="d">
+    
+    <Page.DataContext>
+        <vm:KursusOverview/>
+    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        
         <!--orientation bar-->
         <StackPanel Orientation="Horizontal" Margin="120 0 0 960">
             <!--sted 1-->
@@ -32,7 +38,7 @@
             <!--Bruger-->
             <StackPanel Margin="1200 0 0 0">
                 <ComboBox Width="100" Height="50">
-                    <ComboBoxItem Content="Bruger" IsSelected="True"/>
+                    <ComboBoxItem Content="{Binding GetLoggedInUSer}" IsSelected="True"/>
                     <ComboBoxItem>
                         <Button Content="Log af"/>
                     </ComboBoxItem>
