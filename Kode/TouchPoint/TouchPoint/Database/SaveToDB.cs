@@ -25,45 +25,14 @@ namespace TouchPoint.Database {
 
                 string serialised = JsonConvert.SerializeObject(item);
                 StringContent content = new StringContent(serialised, Encoding.UTF8, " ");
+                string pluralised = typeof(T).Name + "s";
 
                 if (item.Id == -1) {
-                    await client.PostAsync(client.BaseAddress, content);
+                    await client.PostAsync($"{client.BaseAddress}/{pluralised}", content);
                 } else {
-                    await client.PutAsync(client.BaseAddress, content);
+                    await client.PutAsync($"{client.BaseAddress}/{pluralised}/{item.Id}", content);
                 }
             }
-
-
-            string query = "";
-
-            if(item.Id == -1) {
-                query += "INSERT INTO ";
-            } else {
-                query += "UPDATE ";
-            }
-            query += FormatObjToStringPlural(item);
-            query += " VALUES ";
-            query += item.PropertyFormat();
-
-            /*put into db*/
-            //connect to entity framework/web service/whatever i don't fucking know anymore
-        }
-
-
-        //public string FormatPropertiesToSQLInsert(T item) {
-        //    string query = "INSERT INTO ";
-        //    return query;
-        //}
-
-        //public string FormatPropertiesToSQLUpdate() {
-        //    string query = "UPDATE ";
-        //    return query;
-        //}
-
-        private static string FormatObjToStringPlural(T item) {
-            string tableName = item.GetType().ToString();
-            tableName += "s";
-            return tableName;
         }
     }
 }
