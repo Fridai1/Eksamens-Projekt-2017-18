@@ -120,33 +120,35 @@
                 <!--Adresse-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Addresse" FontSize="40"/>
-                    <TextBox  Text="{Binding MasterDetails.DetailsVM.DomainObject.Addresse, Mode=TwoWay}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
+                    <TextBox IsEnabled="{Binding MasterDetails.FieldsEnabled}" Text="{Binding MasterDetails.DetailsVM.DomainObject.Addresse, Mode=TwoWay}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
                 </StackPanel>
                 <!--Telefon-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Telefon" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Telefon, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
+                    <TextBox IsEnabled="{Binding MasterDetails.FieldsEnabled}" Text="{Binding MasterDetails.DetailsVM.DomainObject.Telefon, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
                 </StackPanel>
                 <!--Email-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Email" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Email, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="400 0 0 0"/>
+                    <TextBox IsEnabled="{Binding MasterDetails.FieldsEnabled}" Text="{Binding MasterDetails.DetailsVM.DomainObject.Email, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="400 0 0 0"/>
                 </StackPanel>
                 <!--Lokaler-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Lokaler" FontSize="40"/>
-                    <TextBox Text="{Binding LokaleMasterDetails.DetailsVM.DomainObject.Navn, Mode=TwoWay}" Margin="100 0"/>
-                    <Button Content="Tilføj" Command="{Binding TilføjLokale}"/>
+                    <TextBox IsEnabled="{Binding MasterDetails.FieldsEnabled}" Text="{Binding MasterDetails.Lokale, Mode=TwoWay}" Margin="100 0"/>
+                    <Button IsEnabled="{Binding MasterDetails.FieldsEnabled}" Background="Bisque" Content="Tilføj" Command="{Binding MasterDetails.TilføjLokale}"/>
                     
                 </StackPanel>
+                
+                <!--Lokale ListView-->
                 <StackPanel>
                     <ListView
-                        ItemsSource="{Binding MasterDetails.DetailsVM.DomainObject.Lokaler}"
-                        SelectedItem="">
+                        ItemsSource="{Binding MasterDetails.LokaleCollection}"
+                        >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <TextBlock Text="{Binding Navn}"/>
+                                    <TextBlock Text="{Binding Description}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>

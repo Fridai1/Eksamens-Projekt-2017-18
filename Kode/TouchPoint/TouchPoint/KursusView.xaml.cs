@@ -41,5 +41,10 @@ namespace TouchPoint
         {
             Frame.Navigate(typeof(KursusOpretView));
         }
+
+        private void KnapUndervisningssted(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(UndervisningsstedView));
+        }
     }
 }

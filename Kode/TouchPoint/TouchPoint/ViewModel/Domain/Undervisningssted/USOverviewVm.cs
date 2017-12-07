@@ -12,17 +12,16 @@ namespace TouchPoint.ViewModel.Undervisningssted
         private USMasterDetailsVm _masterDetails;
         private LokaleMasterDetailsVm _lokalerMasterDetails;
         private Bruger _loggedInUser;
-        private RelayCommand _tilføjLokaleCommand;
+        
+        
         public USOverviewVm()
         {
             _masterDetails = new USMasterDetailsVm();
             _lokalerMasterDetails = new LokaleMasterDetailsVm();
             _loggedInUser = LoginVm.LoggedInUser;
-            _tilføjLokaleCommand = new RelayCommand(Opretlokale, ()=>true);
-            
-            
-
         }
+
+        
 
         public USMasterDetailsVm MasterDetails
         {
@@ -39,17 +38,11 @@ namespace TouchPoint.ViewModel.Undervisningssted
             get => _loggedInUser.Navn;
         }
 
-        private void Opretlokale()
-        {
-            LokaleMasterDetails.Create();
-            MasterDetails.DetailsVM.DomainObject.OpretLokale(LokaleMasterDetails.DetailsVM.DomainObject.Navn);
-        }
+        
 
-        public ICommand TilføjLokale
-        {
-            get => _tilføjLokaleCommand;
-            
-        }
+        
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 

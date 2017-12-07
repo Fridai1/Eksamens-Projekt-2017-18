@@ -62,7 +62,7 @@
             </StackPanel>
             <!--kurser-->
             <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="Kurser" FontSize="20"/>
+                <Button Background="AliceBlue" Click="KnapKurser"  Width="120" Height="120" Content="Kurser" FontSize="20"/>
             </StackPanel>
 
             <!--kursister-->

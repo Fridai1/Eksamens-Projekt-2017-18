@@ -69,7 +69,7 @@
 
             <!--Undervisningssted-->
             <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" >
+                <Button Click="KnapUndervisningssted" Background="AliceBlue" Width="120" Height="120" >
                     <StackPanel>
                         <TextBlock Text="Undervisnings"/>
                         <TextBlock Text="sted"/>

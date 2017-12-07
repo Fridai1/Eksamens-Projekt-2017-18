@@ -11,5 +11,10 @@
             get => DomainObject.Navn;
             set => DomainObject.Navn = value;
         }
+
+        public override string Description
+        {
+            get => $"{Name}";
+        }
     }
 }

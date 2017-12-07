@@ -6,7 +6,7 @@ namespace TouchPoint
     {
         public Undervisningssted()
         {
-            
+            _lokaler = new List<Lokale>();
         }
 
         private string _navn;
@@ -16,15 +16,9 @@ namespace TouchPoint
         private List<Lokale> _lokaler;
 
 
-        public void Save()
-        {
-            _lokaler = new List<Lokale>();
-        }
+        
 
-        public string PropertieFormat()
-        {
-            throw new System.NotImplementedException();
-        }
+       
 
         public string Navn
         {
