@@ -162,6 +162,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Touchpoint icon.png" />
+    <Content Include="CatalogInterfaces.dll" />
+    <Content Include="CommandImplementation.dll" />
+    <Content Include="CommandInterfaces.dll" />
+    <Content Include="DataTransformationImplementation.dll" />
+    <Content Include="DataTransformationInterfaces.dll" />
+    <Content Include="InMemoryStorageImplementation.dll" />
+    <Content Include="InMemoryStorageInterfaces.dll" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -170,6 +177,8 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="ViewModelImplementation.dll" />
+    <Content Include="ViewModelInterfaces.dll" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -202,37 +211,46 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
+      <Version>5.2.3</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CatalogInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\CatalogInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="CommandImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\CommandImplementation.dll</HintPath>
     </Reference>
     <Reference Include="CommandInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\CommandInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="DataTransformationImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\DataTransformationImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\DataTransformationImplementation.dll</HintPath>
     </Reference>
     <Reference Include="DataTransformationInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\DataTransformationInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryStorageImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\InMemoryStorageImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\InMemoryStorageImplementation.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryStorageInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\InMemoryStorageInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="ViewModelImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\ViewModelImplementation.dll</HintPath>
     </Reference>
     <Reference Include="ViewModelInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\References\ViewModelInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="WebAPI">
+      <HintPath>..\..\..\MVVMStarterLibrary-master\WebAPI\bin\Debug\WebAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

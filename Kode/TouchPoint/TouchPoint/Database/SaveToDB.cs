@@ -28,9 +28,9 @@ namespace TouchPoint.Database {
                 string pluralised = typeof(T).Name + "s";
 
                 if (item.Id == -1) {
-                    await client.PostAsync($"{client.BaseAddress}/{pluralised}", content);
+                    await client.PostAsync($"api/{pluralised}", content);
                 } else {
-                    await client.PutAsync($"{client.BaseAddress}/{pluralised}/{item.Id}", content);
+                    await client.PutAsync($"api/{pluralised}/{item.Id}", content);
                 }
             }
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TouchPoint {
     public static class _GLOBALS {
         public static string ServerUrl {
-            get { return "http://localhost:2475"; }
+            get { return "http://localhost:10078"; }
         }
 
     }
