@@ -22,9 +22,9 @@ namespace TouchPoint.ViewModel.Base
             _isSomeOneLoggedIn = LoginVm.IsSomeOneLoggedIn();
         }
 
-        public string GetLoggedInUSer
+        public Bruger GetLoggedInUSer
         {
-            get => _loggedInBruger.Navn;
+            get => _loggedInBruger;
         }
 
         public bool IsSomeOneLoggedIn

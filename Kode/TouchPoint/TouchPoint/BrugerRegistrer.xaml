@@ -55,7 +55,7 @@
 
             <!--Icon-->
             <StackPanel>
-                <Button Background="White" Click="ButtonBase_OnClick">
+                <Button Background="White" Click="MainPageKnap">
                     <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
                 </Button>
 
@@ -145,7 +145,7 @@
                 <StackPanel Orientation="Horizontal" Margin="0 50">
                     <!--Gem knap-->
                     <StackPanel >
-                        <Button Click="ButtonBase_OnClick" Command="{Binding SaveCommand}" IsEnabled="{Binding TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
+                        <Button Click="MainPageKnap" Command="{Binding SaveCommand}" IsEnabled="{Binding TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
                     </StackPanel>
 
                     <!--opret knap-->

@@ -50,6 +50,7 @@ namespace TouchPoint.ViewModel
 
         
 
+
         public ObservableCollection<ItemVMBase<T>> ItemVMCollection
         {
             get => _masterVM.CreateItemVMCollection(_vMFactory, _Catalog);
