@@ -38,9 +38,12 @@
             <!--Bruger-->
             <StackPanel Margin="1200 0 0 0">
                 <ComboBox Width="100" Height="50">
-                    <ComboBoxItem Content="Bruger" IsSelected="True"/>
+                    <ComboBoxItem Content="Menu" IsSelected="True"/>
                     <ComboBoxItem>
                         <Button Content="Log af"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <Button Content="{Binding }"/>
                     </ComboBoxItem>
                 </ComboBox>
 

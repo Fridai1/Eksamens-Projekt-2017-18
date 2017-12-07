@@ -4,6 +4,7 @@
     {
         public KursusMasterDetailsVm() : base(new KursusFactory())
         {
+
         }
     }
 }

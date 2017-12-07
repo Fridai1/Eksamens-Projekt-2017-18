@@ -171,12 +171,15 @@
                 <!--Lokation-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Lokation" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Location, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>
+                    <ComboBox ItemsSource="{Binding UsMasterDetails.ItemVMCollection}" SelectedItem="{Binding MasterDetails.DetailsVM.DomainObject.Location, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>                       
+                    
+                    <!--<TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Location, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>-->
+                
                 </StackPanel>
                 <!--Undervisere-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Underviser" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Tutor, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="295 0 0 0"/>
+                    <ComboBox ItemsSource="{Binding BrugerMasterDetails.ItemVMCollection}" SelectedItem="{Binding MasterDetails.DetailsVM.DomainObject.Tutor, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="300 0 0 0"/>
                 </StackPanel>
                 <!--Kursus beskrivelse-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
