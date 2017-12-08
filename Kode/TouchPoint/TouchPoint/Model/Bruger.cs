@@ -2,7 +2,7 @@
 
 namespace TouchPoint
 {
-    public class Bruger
+    public class Bruger : ISaveable
     {
         public Bruger()
         {
@@ -23,6 +23,7 @@ namespace TouchPoint
 
         }
 
+        private int _id;
         private string _navn;
         private string _addresse;
         private string _email;
@@ -33,10 +34,9 @@ namespace TouchPoint
         private string _fagområde;
         private bool   _admin;
 
-
-        public void Save()
-        {
-            
+        public int Id {
+            get => _id;
+            set => _id = value;
         }
 
         public string Navn

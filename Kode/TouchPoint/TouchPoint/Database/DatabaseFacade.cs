@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 namespace TouchPoint.Database {
     public class DatabaseFacade<T> where T : ISaveable {
         //instance fields
-        public static string _serverUrl;
-        public static string _apiId;
-        public static string _apiPrefix;
-        public static HttpClientHandler _httpClientHandler;
-        public static HttpClient _httpClient;
+        //public static string _serverUrl;
+        //public static string _apiId;
+        //public static string _apiPrefix;
+        //public static HttpClientHandler _httpClientHandler;
+        //public static HttpClient _httpClient;
         SaveToDB<T> save = new SaveToDB<T>();
         FetchFromDB<T> fetch = new FetchFromDB<T>();
 
         //constructor
-        public DatabaseFacade(string serverUrl, string apiId, string apiPrefix) {
+        public DatabaseFacade() {
             
         }
 

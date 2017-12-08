@@ -1,4 +1,5 @@
 ﻿using Windows.UI.Xaml.Controls;
+using TouchPoint.Database;
 
 namespace TouchPoint.ViewModel
 {
@@ -63,7 +64,10 @@ namespace TouchPoint.ViewModel
             set => DomainObject.Admin = value;
         }
 
-        
+        DatabaseFacade<Bruger> facade = new DatabaseFacade<Bruger>();
+        public Bruger TestDBRetrival {
+            get => facade.LoadSingle("User", 1).Result;
+        }
 
 
     }

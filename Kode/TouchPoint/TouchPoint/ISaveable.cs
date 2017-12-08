@@ -9,7 +9,5 @@ namespace TouchPoint
     public interface ISaveable
     {
         int Id { get; set; }
-        void Save();
-        string PropertyFormat();
     }
 }
