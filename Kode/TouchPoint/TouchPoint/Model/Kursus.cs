@@ -16,6 +16,7 @@ namespace TouchPoint
         private string _seminarDescription;
         private string _extraMaterial;
         private Undervisningssted _location;
+        private Lokale _lokale;
         private List<Bruger> _tutor;
         private string _courseDescription;
         private string _prereg;
@@ -133,12 +134,29 @@ namespace TouchPoint
             get => _extHose;
             set => _extHose = value;
         }
+
+        public Lokale Lokale
+        {
+            get => _lokale;
+            set => _lokale = value;
+        }
         public double Price
         {
             get => _price;
             set => _price = value;
         }
 
+        public void AddTutor(Bruger b)
+        {
+            _tutor.Add(b);
+        }
+
+        public void DeleteTutor(Bruger b)
+        {
+            _tutor.Remove(b);
+        }
+
+        
 
         public int Id { get; set; }
     }
