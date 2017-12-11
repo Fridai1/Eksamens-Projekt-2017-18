@@ -1,4 +1,6 @@
-﻿namespace TouchPoint.ViewModel.Kursus
+﻿using System.Windows.Input;
+
+namespace TouchPoint.ViewModel.Kursus
 {
     public class KursusMasterDetailsVm : MasterDetailsVMBase<TouchPoint.Kursus>
     {
@@ -6,5 +8,11 @@
         {
 
         }
+
+        
+
+
+
+        
     }
 }

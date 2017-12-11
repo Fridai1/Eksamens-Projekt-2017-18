@@ -46,11 +46,12 @@ namespace TouchPoint
             _coursePicture = CoursePicture;
             _extHose = ExtHost;
             _price = Price;
+            _tutor = new List<Bruger>();
         }
 
         public Kursus()
         {
-            
+            _tutor = new List<Bruger>();
         }
 
         public string Navn

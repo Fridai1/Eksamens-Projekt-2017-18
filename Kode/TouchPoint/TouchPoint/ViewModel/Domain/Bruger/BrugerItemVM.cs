@@ -26,5 +26,7 @@
         {
             get => $"Navn: {Name}        Brugernavn: {Brugernavn}         Fagområde: {Fagområde}";
         }
+
+        
     }
 }

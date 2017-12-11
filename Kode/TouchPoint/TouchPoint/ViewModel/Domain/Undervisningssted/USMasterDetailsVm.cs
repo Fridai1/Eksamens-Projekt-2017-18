@@ -35,14 +35,8 @@ namespace TouchPoint.ViewModel.Undervisningssted
 
         public virtual LokaleItemVm LokaleSelected
         {
-            get { return _selectedLokale; }
-            set
-            {
-                _selectedLokale = value;
-                
-
-            }
-
+            get => _selectedLokale;
+            set => _selectedLokale = value;
         }
 
         private void DeleteLokale()
