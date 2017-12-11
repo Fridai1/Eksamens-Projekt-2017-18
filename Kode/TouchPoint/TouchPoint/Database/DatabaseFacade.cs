@@ -17,7 +17,7 @@ namespace TouchPoint.Database {
         FetchFromDB<T> fetch = new FetchFromDB<T>();
 
         //constructor
-        public DatabaseFacade(string serverUrl, string apiId, string apiPrefix) {
+        public DatabaseFacade() {
             
         }
 

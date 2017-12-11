@@ -2,7 +2,7 @@
 {
     public class KursusMasterDetailsVm : MasterDetailsVMBase<TouchPoint.Kursus>
     {
-        public KursusMasterDetailsVm() : base(new KursusFactory())
+        public KursusMasterDetailsVm() : base("Course",new KursusFactory())
         {
 
         }

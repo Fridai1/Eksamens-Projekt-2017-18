@@ -1,6 +1,6 @@
 ﻿namespace TouchPoint
 {
-    public class Lokale
+    public class Lokale : ISaveable
     {
         public Lokale(string navn)
         {
@@ -19,5 +19,7 @@
             get => _navn;
             set => _navn = value;
         }
+
+        public int Id { get; set; }
     }
 }

@@ -169,13 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Touchpoint icon.png" />
-    <Content Include="CatalogInterfaces.dll" />
-    <Content Include="CommandImplementation.dll" />
-    <Content Include="CommandInterfaces.dll" />
-    <Content Include="DataTransformationImplementation.dll" />
-    <Content Include="DataTransformationInterfaces.dll" />
-    <Content Include="InMemoryStorageImplementation.dll" />
-    <Content Include="InMemoryStorageInterfaces.dll" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -184,8 +177,6 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
-    <Content Include="ViewModelImplementation.dll" />
-    <Content Include="ViewModelInterfaces.dll" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -229,32 +220,49 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CatalogInterfaces">
-      <HintPath>..\..\..\..\..\..\Downloads\References\CatalogInterfaces.dll</HintPath>
+    <Reference Include="CatalogInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\CatalogInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="CommandImplementation">
-      <HintPath>..\..\..\..\..\..\Downloads\References\CommandImplementation.dll</HintPath>
+    <Reference Include="CommandImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="CommandInterfaces">
-      <HintPath>..\..\..\..\..\..\Downloads\References\CommandInterfaces.dll</HintPath>
+    <Reference Include="CommandInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="DataTransformationImplementation">
-      <HintPath>..\..\..\..\..\..\Downloads\References\DataTransformationImplementation.dll</HintPath>
+    <Reference Include="DataTransformationImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="DataTransformationInterfaces">
-      <HintPath>..\..\..\..\..\..\Downloads\References\DataTransformationInterfaces.dll</HintPath>
+    <Reference Include="DataTransformationInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\DataTransformationInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryStorageImplementation">
-      <HintPath>..\..\..\..\..\..\Downloads\References\InMemoryStorageImplementation.dll</HintPath>
+    <Reference Include="InMemoryStorageImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryStorageInterfaces">
-      <HintPath>..\..\..\..\..\..\Downloads\References\InMemoryStorageInterfaces.dll</HintPath>
+    <Reference Include="InMemoryStorageInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="ViewModelImplementation">
-      <HintPath>..\..\..\..\..\..\Downloads\References\ViewModelImplementation.dll</HintPath>
+    <Reference Include="PersistencyImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\PersistencyImplementation\bin\Debug\PersistencyImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="ViewModelInterfaces">
-      <HintPath>..\..\..\..\..\..\Downloads\References\ViewModelInterfaces.dll</HintPath>
+    <Reference Include="PersistencyInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\PersistencyImplementation\bin\Debug\PersistencyInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModelImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModelInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="WebAPI">
       <HintPath>..\..\..\MVVMStarterLibrary-master\WebAPI\bin\Debug\WebAPI.dll</HintPath>

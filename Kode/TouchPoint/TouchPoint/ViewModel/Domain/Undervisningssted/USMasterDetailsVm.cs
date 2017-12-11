@@ -14,7 +14,7 @@ namespace TouchPoint.ViewModel.Undervisningssted
         private LokaleFactory _lokaleFactory;
 
 
-        public USMasterDetailsVm() : base(new USFactoryVm())
+        public USMasterDetailsVm() : base("EducationSite",new USFactoryVm())
         {
             _tilføjLokaleCommand = new RelayCommand(Opretlokale, () => true);
             

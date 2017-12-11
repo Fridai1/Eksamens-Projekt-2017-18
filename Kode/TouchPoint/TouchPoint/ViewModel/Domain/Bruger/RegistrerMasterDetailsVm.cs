@@ -2,7 +2,7 @@
 {
     public class RegistrerMasterDetailsVm : MasterDetailsVMBase<Bruger>
     {
-        public RegistrerMasterDetailsVm() : base(new BrugerFactory())
+        public RegistrerMasterDetailsVm() : base("User",new BrugerFactory())
         {
         }
 
