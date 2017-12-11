@@ -136,14 +136,15 @@
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Lokaler" FontSize="40"/>
                     <TextBox IsEnabled="{Binding MasterDetails.FieldsEnabled}" Text="{Binding MasterDetails.Lokale, Mode=TwoWay}" Margin="100 0"/>
-                    <Button IsEnabled="{Binding MasterDetails.FieldsEnabled}" Background="Bisque" Content="Tilføj" Command="{Binding MasterDetails.TilføjLokale}"/>
-                    
+                    <Button IsEnabled="{Binding MasterDetails.FieldsEnabled}" Background="Bisque" Content="Tilføj" Command="{Binding MasterDetails.TilføjLokaleCommand}"/>
+                    <Button Content="slet" Command="{Binding MasterDetails.DeleteLokaleCommand}"/>
                 </StackPanel>
                 
                 <!--Lokale ListView-->
                 <StackPanel>
                     <ListView
                         ItemsSource="{Binding MasterDetails.LokaleCollection}"
+                        SelectedItem="{Binding MasterDetails.LokaleSelected, Mode=TwoWay}"
                         >
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -165,6 +166,8 @@
                 <StackPanel >
                     <Button Command="{Binding MasterDetails.CreateCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Opret" Margin="300 0 0 0" />
                 </StackPanel>
+
+                <Button Content="Slet" Command="{Binding MasterDetails.DeleteCommand}" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Margin="300 0 0 0"/>
 
                 
             </StackPanel>

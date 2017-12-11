@@ -40,6 +40,7 @@ namespace TouchPoint.ViewModel
             _createCommand = new RelayCommand(Create,()=>true);
             _saveCommand = new RelayCommand(Save, () => true);
             _updateCommand = new RelayCommand(update,()=>true);
+            _deleteCommand = new RelayCommand(Delete,()=>true);
             _Catalog = new List<T>();
             _vMFactory = FactoryVM;
             _masterVM = _vMFactory.CreateMasterViewModel();
@@ -154,6 +155,11 @@ namespace TouchPoint.ViewModel
             }
         }
 
+        public virtual void Delete()
+        {
+            _Catalog.Remove(ItemVMSelected.DomainObject);
+            OnPropertyChanged(nameof(ItemVMCollection));
+        }
         public bool TrueIfSelected
         {
             get

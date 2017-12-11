@@ -12,11 +12,14 @@ namespace TouchPoint.ViewModel.Undervisningssted
         private RelayCommand _tilføjLokaleCommand;
         private LokaleMasterVm _lokaleMaster;
         private LokaleFactory _lokaleFactory;
+        private LokaleItemVm _selectedLokale;
+        private RelayCommand _deleteLokale;
 
 
         public USMasterDetailsVm() : base(new USFactoryVm())
         {
             _tilføjLokaleCommand = new RelayCommand(Opretlokale, () => true);
+            _deleteLokale = new RelayCommand(DeleteLokale,()=>true);
             
             _lokaleFactory = new LokaleFactory();
             _lokaleMaster = new LokaleMasterVm();
@@ -29,9 +32,32 @@ namespace TouchPoint.ViewModel.Undervisningssted
             OnPropertyChanged();
             _lokale = null;
         }
-        public ICommand TilføjLokale
+
+        public virtual LokaleItemVm LokaleSelected
+        {
+            get { return _selectedLokale; }
+            set
+            {
+                _selectedLokale = value;
+                
+
+            }
+
+        }
+
+        private void DeleteLokale()
+        {
+            DetailsVM.DomainObject.SletLokale(LokaleSelected.DomainObject);
+            OnPropertyChanged(nameof(LokaleCollection));
+        }
+        public ICommand TilføjLokaleCommand
         {
             get => _tilføjLokaleCommand;
+        }
+
+        public ICommand DeleteLokaleCommand
+        {
+            get => _deleteLokale;
         }
 
         public ObservableCollection<ItemVMBase<TouchPoint.Lokale>> LokaleCollection
