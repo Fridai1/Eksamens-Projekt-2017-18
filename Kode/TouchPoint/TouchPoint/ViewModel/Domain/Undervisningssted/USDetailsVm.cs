@@ -1,4 +1,6 @@
-﻿namespace TouchPoint.ViewModel.Undervisningssted
+﻿using System.Collections.Generic;
+
+namespace TouchPoint.ViewModel.Undervisningssted
 {
     public class USDetailsVm : DetailsVMBase<TouchPoint.Undervisningssted>
     {
@@ -26,5 +28,17 @@
             get => DomainObject.Email;
             set => DomainObject.Email = value;
         }
+
+        public List<TouchPoint.Lokale> Lokaler
+        {
+            get => DomainObject.Lokaler;
+            
+        }
+
+        public void Addlokale(TouchPoint.Lokale l)
+        {
+            DomainObject.Lokaler.Add(l);
+        }
+
     }
 }

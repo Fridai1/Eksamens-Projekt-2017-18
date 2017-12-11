@@ -40,7 +40,6 @@ namespace TouchPoint.ViewModel
             return new Bruger();
         }
 
-        
 
         public static Bruger LoggedInUser
         {
@@ -88,17 +87,21 @@ namespace TouchPoint.ViewModel
             FindUser();
         }
 
+        public static bool IsSomeOneLoggedIn()
+        {
+            return _loggedinUser != null;
+        }
+
        
-        public void Logoff()
+
+
+        public static void Logoff()
         {
             if (_loggedinUser != null)
             {
                 _loggedinUser = null;
             }
-            else
-            {
-                
-            }
+            
         }
 
         public string Brugernavn

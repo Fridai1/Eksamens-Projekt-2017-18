@@ -36,5 +36,10 @@ namespace TouchPoint
         {
             Frame.Navigate(typeof(BrugerOverView));
         }
+
+        private void KnapKurser(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(KursusView));
+        }
     }
 }

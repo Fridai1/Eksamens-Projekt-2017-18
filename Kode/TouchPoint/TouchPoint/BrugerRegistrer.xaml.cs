@@ -28,7 +28,7 @@ namespace TouchPoint
             
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void MainPageKnap(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
         }

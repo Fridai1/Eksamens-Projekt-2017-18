@@ -25,7 +25,8 @@ namespace TouchPoint
 
 
 
-        public Kursus()
+        public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd, int spots, string targetAudience, string seminarDescription, string extramateriale
+            , Undervisningssted location, List<Bruger> Tutors, string courseDescription, string prereg, Image coursepircture, string extHost, double price)
         {
             _navn = Navn;
             _courseDate = CourseDate;
@@ -46,8 +47,7 @@ namespace TouchPoint
             _price = Price;
         }
 
-        public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd, int spots, string targetAudience, string seminarDescription, string extramateriale
-            , Undervisningssted location, List<Bruger> Tutors, string courseDescription, string prereg, Image coursepircture, string extHost, double price)
+        public Kursus()
         {
             
         }

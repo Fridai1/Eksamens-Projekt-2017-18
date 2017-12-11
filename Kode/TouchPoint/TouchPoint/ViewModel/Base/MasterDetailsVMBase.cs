@@ -6,11 +6,13 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using TouchPoint.Annotations;
 using TouchPoint.Controller;
+using TouchPoint.ViewModel.Undervisningssted;
 using ViewModel.Implementation;
 using RelayCommand = Command.Implementation.RelayCommand;
 
 namespace TouchPoint.ViewModel
 {
+    
     public class MasterDetailsVMBase<T> : INotifyPropertyChanged
         where T : class, new()
     {
@@ -20,6 +22,10 @@ namespace TouchPoint.ViewModel
         protected List<T> _Catalog;
         private DetailsVMBase<T> _detailsVM;
         private bool _viewEnabled = false;
+
+        
+
+        
         
         
         
@@ -44,12 +50,13 @@ namespace TouchPoint.ViewModel
 
         
 
+
         public ObservableCollection<ItemVMBase<T>> ItemVMCollection
         {
             get => _masterVM.CreateItemVMCollection(_vMFactory, _Catalog);
         }
 
-        public ItemVMBase<T> ItemVMSelected
+        public virtual ItemVMBase<T> ItemVMSelected
         {
             get
             {
@@ -63,7 +70,9 @@ namespace TouchPoint.ViewModel
                 DetailsVM = CreateDetailsVM();
                 OnPropertyChanged(nameof(DetailsVM));
                 OnPropertyChanged(nameof(TrueIfSelected));
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(USMasterDetailsVm.LokaleCollection));
+                OnPropertyChanged(nameof(USMasterDetailsVm.SelectionChanged));
+                
             } 
 
             
