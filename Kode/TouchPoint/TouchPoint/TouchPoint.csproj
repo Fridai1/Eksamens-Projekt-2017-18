@@ -215,34 +215,57 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CatalogInterfaces">
-      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\CatalogInterfaces.dll</HintPath>
+    <Reference Include="CatalogInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\CatalogInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="CommandImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
+    <Reference Include="CommandImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="CommandInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
+    <Reference Include="CommandInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\CommandImplementation\bin\Debug\CommandInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="DataTransformationImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\DataTransformationImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
+    <Reference Include="DataTransformationImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\DataTransformationImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="DataTransformationInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\DataTransformationInterfaces.dll</HintPath>
+    <Reference Include="DataTransformationInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\DataTransformationInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryStorageImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\InMemoryStorageImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
+    <Reference Include="InMemoryStorageImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\InMemoryStorageImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="InMemoryStorageInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
+    <Reference Include="InMemoryStorageInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\InMemoryStorageInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="ViewModelImplementation">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+    <Reference Include="PersistencyImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\PersistencyImplementation\bin\Debug\PersistencyImplementation.dll</HintPath>
     </Reference>
-    <Reference Include="ViewModelInterfaces">
-      <HintPath>..\..\..\..\MVVMStarterLibrary-master\ViewModelInterfaces\bin\Debug\ViewModelInterfaces.dll</HintPath>
+    <Reference Include="PersistencyInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\PersistencyImplementation\bin\Debug\PersistencyInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModelImplementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelImplementation.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModelInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MVVMStarterLibrary-master\ViewModelImplementation\bin\Debug\ViewModelInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="WebAPI">
+      <HintPath>..\..\..\MVVMStarterLibrary-master\WebAPI\bin\Debug\WebAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

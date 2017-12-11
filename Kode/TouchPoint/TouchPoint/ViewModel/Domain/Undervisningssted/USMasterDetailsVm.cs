@@ -16,7 +16,7 @@ namespace TouchPoint.ViewModel.Undervisningssted
         private RelayCommand _deleteLokale;
 
 
-        public USMasterDetailsVm() : base(new USFactoryVm())
+        public USMasterDetailsVm() : base("EducationSite",new USFactoryVm())
         {
             _tilføjLokaleCommand = new RelayCommand(Opretlokale, () => true);
             _deleteLokale = new RelayCommand(DeleteLokale,()=>true);

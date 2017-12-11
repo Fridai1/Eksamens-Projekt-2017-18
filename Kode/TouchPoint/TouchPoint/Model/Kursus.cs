@@ -3,7 +3,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace TouchPoint
 {
-    public class Kursus
+    public class Kursus : ISaveable
     {
         private string _navn;
         private string _courseDate;
@@ -158,6 +158,6 @@ namespace TouchPoint
 
         
 
-
+        public int Id { get; set; }
     }
 }

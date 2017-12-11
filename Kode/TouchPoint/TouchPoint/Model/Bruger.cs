@@ -2,7 +2,7 @@
 
 namespace TouchPoint
 {
-    public class Bruger
+    public class Bruger : ISaveable
     {
         public Bruger()
         {
@@ -93,11 +93,7 @@ namespace TouchPoint
             set => _admin = value;
         }
 
-        
 
-
-
-
-
+        public int Id { get; set; }
     }
 }

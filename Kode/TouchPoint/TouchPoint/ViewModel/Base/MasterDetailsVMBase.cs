@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using TouchPoint.Annotations;
 using TouchPoint.Controller;
+using TouchPoint.Database;
 using TouchPoint.ViewModel.Undervisningssted;
 using ViewModel.Implementation;
 using RelayCommand = Command.Implementation.RelayCommand;
@@ -14,7 +15,7 @@ namespace TouchPoint.ViewModel
 {
     
     public class MasterDetailsVMBase<T> : INotifyPropertyChanged
-        where T : class, new()
+        where T : class, ISaveable, new()
     {
         private FactoryVMBase<T> _vMFactory;
         private ItemVMBase<T> _itemVMSelected;
@@ -22,32 +23,44 @@ namespace TouchPoint.ViewModel
         protected List<T> _Catalog;
         private DetailsVMBase<T> _detailsVM;
         private bool _viewEnabled = false;
+        private DatabaseFacade<T> _dbFacade;
+        private string _tabel;
 
-        
 
-        
-        
-        
-        
+
+
+
+
+
 
         private RelayCommand _createCommand;
         private RelayCommand _updateCommand;
         private RelayCommand _deleteCommand;
         private RelayCommand _saveCommand;
+        private RelayCommand _refreshList;
 
-        public MasterDetailsVMBase(FactoryVMBase<T> FactoryVM)
+        public MasterDetailsVMBase(string tabel, FactoryVMBase<T> FactoryVM)
         {
+            _dbFacade = new DatabaseFacade<T>();
             _createCommand = new RelayCommand(Create,()=>true);
             _saveCommand = new RelayCommand(Save, () => true);
             _updateCommand = new RelayCommand(update,()=>true);
+
             _deleteCommand = new RelayCommand(Delete,()=>true);
-            _Catalog = new List<T>();
+            
+
+            _refreshList = new RelayCommand(RefreshList,()=>true);
+            _Catalog= new List<T>();
+
             _vMFactory = FactoryVM;
             _masterVM = _vMFactory.CreateMasterViewModel();
+            _tabel = tabel;
 
 
-           
+
         }
+
+        
 
         
 
@@ -118,6 +131,17 @@ namespace TouchPoint.ViewModel
         public ICommand SaveCommand
         {
             get => _saveCommand;
+        }
+
+        public ICommand RefreshCommand
+        {
+            get => _refreshList;
+        }
+
+        public void RefreshList()
+        {
+            _Catalog = _dbFacade.LoadMultiple(_tabel).Result;
+            OnPropertyChanged(nameof(ItemVMCollection));
         }
 
         public virtual void Create()

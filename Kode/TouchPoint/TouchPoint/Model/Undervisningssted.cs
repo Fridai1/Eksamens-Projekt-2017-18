@@ -2,7 +2,7 @@
 
 namespace TouchPoint
 {
-    public class Undervisningssted
+    public class Undervisningssted : ISaveable
     {
         public Undervisningssted()
         {
@@ -58,5 +58,7 @@ namespace TouchPoint
         {
             _lokaler.Remove(l);
         }
+
+        public int Id { get; set; }
     }
 }

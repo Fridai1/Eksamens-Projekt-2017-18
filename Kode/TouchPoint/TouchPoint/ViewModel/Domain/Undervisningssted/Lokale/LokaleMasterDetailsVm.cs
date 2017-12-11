@@ -2,7 +2,7 @@
 {
     public class LokaleMasterDetailsVm : MasterDetailsVMBase<TouchPoint.Lokale>
     {
-        public LokaleMasterDetailsVm() : base(new LokaleFactory())
+        public LokaleMasterDetailsVm() : base("Room",new LokaleFactory())
         {
         }
     }
