@@ -4,9 +4,9 @@ namespace RESTfulServiceProject {
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class TouchpointDBContext : DbContext {
-        public TouchpointDBContext()
-            : base("name=TouchpointDBContext") {
+    public partial class TouchPointDBContext : DbContext {
+        public TouchPointDBContext()
+            : base("name=TouchPointDBContext") {
             base.Configuration.LazyLoadingEnabled = false;
             base.Configuration.ProxyCreationEnabled = false;
         }

@@ -8,7 +8,6 @@ namespace RESTfulServiceProject
 
     public partial class Users
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
@@ -33,7 +32,6 @@ namespace RESTfulServiceProject
 
         public bool IsTutor { get; set; }
 
-        [Required]
         [StringLength(64)]
         public string Field { get; set; }
 
