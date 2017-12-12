@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TouchPoint.ViewModel.Domain.EkstraMateriale
 {
-    class EMDetailsVm
+     public class EMDetailsVm : DetailsVMBase<Model.EkstraMateriale>
     {
+        public EMDetailsVm(Model.EkstraMateriale obj) : base(obj)
+        {
         }
 
         public string Navn
