@@ -111,9 +111,9 @@ namespace TouchPoint.ViewModel
             get => _refreshList;
         }
 
-        public void RefreshList()
+        public async void RefreshList()
         {
-            _Catalog = _dbFacade.LoadMultiple(_tabel).Result;
+            _Catalog = await _dbFacade.LoadMultiple(_tabel);
             OnPropertyChanged(nameof(ItemVMCollection));
         }
         public virtual void Create()
