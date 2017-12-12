@@ -145,7 +145,7 @@
     <Compile Include="ViewModel\Domain\Kursus\KursusOverview.cs" />
     <Compile Include="ViewModel\Domain\Bruger\LoginVm.cs" />
     <Compile Include="ViewModel\Domain\Bruger\RegistrerMasterDetailsVm.cs" />
-    <Compile Include="ViewModel\Domain\TilmeldKursus\TildMeldKursusOverView.cs" />
+    <Compile Include="ViewModel\Domain\Kursus\TildMeldKursusOverView.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleDetailsVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleFactory.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleItemVm.cs" />
@@ -276,7 +276,9 @@
       <HintPath>..\..\..\MVVMStarterLibrary-master\WebAPI\bin\Debug\WebAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModel\Domain\TilmeldKursus\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

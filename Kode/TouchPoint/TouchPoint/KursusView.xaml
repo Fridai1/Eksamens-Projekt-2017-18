@@ -119,6 +119,9 @@
                 <StackPanel >
                     <Button Click="KnapOpretKursus" Command="{Binding MasterDetails.CreateCommand}" Width="150" Height="50" Background="BlanchedAlmond" Content="Opret Nyt Kursus" Margin="300 0 0 0" />
                 </StackPanel>
+                <StackPanel>
+                    <Button Click="TilNytDesign" Content="Til nyt design please fjern mig efter brug" FontSize="40"/>
+                </StackPanel>
 
 
             </StackPanel>

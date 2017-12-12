@@ -46,5 +46,10 @@ namespace TouchPoint
         {
             Frame.Navigate(typeof(UndervisningsstedView));
         }
+
+        private void TilNytDesign(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TilmeldKursusView));
+        }
     }
 }

@@ -104,8 +104,8 @@
                           SelectedItem="{Binding MasterDetails.ItemVMSelected, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Description}"/>
+                            <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
+                                <TextBlock FontSize="30" Text="{Binding Description}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

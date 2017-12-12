@@ -24,11 +24,12 @@ namespace TouchPoint
         private Image _coursePicture;
         private string _extHose;
         private double _price;
+        private List<Bruger> _tilmeldteBrugere;
 
 
 
         public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd, int spots, string targetAudience, string seminarDescription, string extramateriale
-            , Undervisningssted location, List<Bruger> Tutors, string courseDescription, string prereg, Image coursepircture, string extHost, double price)
+            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, Image coursepircture, string extHost, double price)
         {
             _navn = Navn;
             _courseDate = CourseDate;
@@ -41,18 +42,21 @@ namespace TouchPoint
             _seminarDescription = SeminarDescription;
             _extraMaterial = ExtraMaterial;
             _location = Location;
-            _tutor = Tutor;
+            _tutor = new List<Bruger>();
+            _tutor.Add(tutor);
             _courseDescription = CourseDescription;
             _prereg = Prereg;
             _coursePicture = CoursePicture;
             _extHose = ExtHost;
             _price = Price;
-            _tutor = new List<Bruger>();
+            
+            _tilmeldteBrugere = new List<Bruger>();
         }
 
         public Kursus()
         {
             _tutor = new List<Bruger>();
+            _tilmeldteBrugere = new List<Bruger>();
         }
 
         public string Navn
@@ -158,6 +162,11 @@ namespace TouchPoint
             set => _price = value;
         }
 
+        public List<Bruger> TilmeldteBrugere
+        {
+            get => _tilmeldteBrugere;
+        }
+
         public void AddTutor(Bruger b)
         {
             _tutor.Add(b);
@@ -174,6 +183,11 @@ namespace TouchPoint
             {
                 _spots = _spots - 1;
             }
+        }
+
+        public void TilmeldBruger(Bruger b)
+        {
+            _tilmeldteBrugere.Add(b);
         }
 
         public bool IsDepositPaid()
