@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace TouchPoint.ViewModel.Domain.EkstraMateriale
 {
-    class EMItemVm
+    class EMItemVm : ItemVMBase<Model.EkstraMateriale>
     {
+        public EMItemVm(Model.EkstraMateriale Obj) : base(Obj)
+        {
+        }
+
+        public string Name
+        {
+            get => DomainObject.Navn;
+        }
     }
 }

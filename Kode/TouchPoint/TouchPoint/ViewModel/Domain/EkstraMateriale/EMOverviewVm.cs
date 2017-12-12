@@ -8,5 +8,16 @@ namespace TouchPoint.ViewModel.Domain.EkstraMateriale
 {
     class EMOverviewVm
     {
+        private EMMasterDetailsVm _masterDetails;
+
+        public EMOverviewVm()
+        {
+            _masterDetails = new EMMasterDetailsVm();
+        }
+
+        public EMMasterDetailsVm MasterDetails
+        {
+            get => _masterDetails;
+        }
     }
 }

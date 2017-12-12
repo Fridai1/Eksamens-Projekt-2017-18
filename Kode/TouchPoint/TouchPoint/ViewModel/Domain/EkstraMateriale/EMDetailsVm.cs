@@ -8,5 +8,12 @@ namespace TouchPoint.ViewModel.Domain.EkstraMateriale
 {
     class EMDetailsVm
     {
+        }
+
+        public string Navn
+        {
+            get => DomainObject.Navn;
+            set => DomainObject.Navn = value;
+        }
     }
 }
