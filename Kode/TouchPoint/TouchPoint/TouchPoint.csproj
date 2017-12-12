@@ -122,6 +122,8 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testclass.cs" />
+    <Compile Include="Validation\ValidationHandler.cs" />
+    <Compile Include="Validation\ValidationOutput.cs" />
     <Compile Include="ViewModel\Base\FactoryVMBase.cs" />
     <Compile Include="ViewModel\Base\GodBase.cs" />
     <Compile Include="ViewModel\Base\ItemVMBase.cs" />
@@ -253,6 +255,7 @@
       <HintPath>..\..\..\MVVMStarterLibrary-master\WebAPI\bin\Debug\WebAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
