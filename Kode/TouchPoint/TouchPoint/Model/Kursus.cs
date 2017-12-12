@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
 
 namespace TouchPoint
@@ -83,7 +84,17 @@ namespace TouchPoint
         public double Deposit
         {
             get => _deposit;
-            set => _deposit = value;
+            set
+            {
+                if (value > Deposit)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    _deposit = value;
+                }
+            }
         }
         public int Spots
         {
@@ -155,6 +166,19 @@ namespace TouchPoint
         public void DeleteTutor(Bruger b)
         {
             _tutor.Remove(b);
+        }
+
+        public void OneSpotTaken()
+        {
+            if (Spots >= 0)
+            {
+                _spots = _spots - 1;
+            }
+        }
+
+        public bool IsDepositPaid()
+        {
+            return _deposit == 0;
         }
 
         

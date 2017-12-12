@@ -142,6 +142,7 @@
     <Compile Include="ViewModel\Domain\Kursus\KursusOverview.cs" />
     <Compile Include="ViewModel\Domain\Bruger\LoginVm.cs" />
     <Compile Include="ViewModel\Domain\Bruger\RegistrerMasterDetailsVm.cs" />
+    <Compile Include="ViewModel\Domain\TilmeldKursus\TildMeldKursusOverView.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleDetailsVm.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleFactory.cs" />
     <Compile Include="ViewModel\Domain\Undervisningssted\Lokale\LokaleItemVm.cs" />
