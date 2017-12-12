@@ -28,27 +28,27 @@ namespace TouchPoint
 
 
 
-        public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd, int spots, string targetAudience, string seminarDescription, string extramateriale
-            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, Image coursepircture, string extHost, double price)
+        public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string targetAudience, string seminarDescription, string extramateriale
+            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, Image coursepicture, string extHost, double price, int deposit)
         {
-            _navn = Navn;
-            _courseDate = CourseDate;
-            _timeStart = TimeStart;
-            _timeEnd = TimeEnd;
-            _length = Length;
-            _deposit = Deposit;
-            _spots = Spots;
-            _targetAudience = Targetaudience;
-            _seminarDescription = SeminarDescription;
-            _extraMaterial = ExtraMaterial;
-            _location = Location;
+            _navn = navn;
+            _courseDate = courseDate;
+            _timeStart = timeStart;
+            _timeEnd = timeEnd;
+            _length = length;
+            _deposit = deposit;
+            _spots = spots;
+            _targetAudience = targetAudience;
+            _seminarDescription = seminarDescription;
+            _extraMaterial = extramateriale;
+            _location = location;
             _tutor = new List<Bruger>();
             _tutor.Add(tutor);
-            _courseDescription = CourseDescription;
-            _prereg = Prereg;
-            _coursePicture = CoursePicture;
-            _extHose = ExtHost;
-            _price = Price;
+            _courseDescription = courseDescription;
+            _prereg = prereg;
+            _coursePicture = coursepicture;
+            _extHose = extHost;
+            _price = price;
             
             _tilmeldteBrugere = new List<Bruger>();
         }
@@ -188,6 +188,7 @@ namespace TouchPoint
         public void TilmeldBruger(Bruger b)
         {
             _tilmeldteBrugere.Add(b);
+            OneSpotTaken();
         }
 
         public bool IsDepositPaid()

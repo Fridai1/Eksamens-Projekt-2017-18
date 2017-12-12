@@ -46,5 +46,10 @@ namespace TouchPoint
         {
             Frame.Navigate(typeof(BrugerRegistrer));
         }
+
+        private void TilMeldKursus(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TilmeldKursusView));
+        }
     }
 }

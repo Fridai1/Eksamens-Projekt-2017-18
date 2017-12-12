@@ -7,6 +7,7 @@ using System.Windows.Input;
 using TouchPoint.Annotations;
 using TouchPoint.Controller;
 using TouchPoint.Database;
+using TouchPoint.ViewModel.Domain.TilmeldKursus;
 using TouchPoint.ViewModel.Undervisningssted;
 using ViewModel.Implementation;
 using RelayCommand = Command.Implementation.RelayCommand;
@@ -66,6 +67,7 @@ namespace TouchPoint.ViewModel
                 OnPropertyChanged(nameof(TrueIfSelected));
                 OnPropertyChanged(nameof(USMasterDetailsVm.LokaleCollection));
                 OnPropertyChanged(nameof(USMasterDetailsVm.SelectionChanged));
+                
             } 
     }
         public DetailsVMBase<T> DetailsVM

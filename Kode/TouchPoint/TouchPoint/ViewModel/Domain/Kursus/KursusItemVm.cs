@@ -16,9 +16,9 @@
             get => DomainObject.Spots;
         }
 
-        public string Nr1Tutor
+        public override string Description
         {
-            get => DomainObject.Tutor[0].Navn;
+            get => $"Navn: {Navn}  Pladser tilbage: {Spots}";
         }
     }
 }

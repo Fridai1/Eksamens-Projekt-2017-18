@@ -43,12 +43,11 @@
                 
             <ListView 
                       ItemsSource="{Binding MasterDetails.ItemVMCollection}"
-                      SelectedItem="{Binding MasterDetails.ItemVMSelected}">
+                      SelectedItem="{Binding MasterDetails.ItemVMSelected, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
                             <TextBlock Text="{Binding Description}"/>
-                            <Button />
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -65,7 +64,7 @@
                     <Image Source="{Binding MasterDetails.DetailsVM.DomainObject.CoursePicture}" Width="300" Height="300"/>
                 </StackPanel>
                 <!--Navn-->
-                <StackPanel>
+                <StackPanel BorderBrush="Black" BorderThickness="1">
                     <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.Navn}" Margin="400 0" Padding="5" FontSize="30"/>
                 </StackPanel>
                 <!--Price-->
