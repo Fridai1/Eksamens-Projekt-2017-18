@@ -8,17 +8,17 @@
 
         public string Name
         {
-            get => DomainObject.Navn;
+            get => DomainObject.Name;
         }
 
         public string Fagområde
         {       
-            get => DomainObject.Fagområde;
+            get => DomainObject.Field;
         }
 
         public string Brugernavn
         {
-            get => DomainObject.Brugernavn;
+            get => DomainObject.Username;
         }
 
 

@@ -41,7 +41,7 @@
                     <ComboBoxItem Content="Menu" IsSelected="True"/>
                     
                     <ComboBoxItem>
-                        <TextBlock Text="{Binding GetLoggedInUSer.Navn}"/>
+                        <TextBlock Text="{Binding GetLoggedInUSer.Name}"/>
                     </ComboBoxItem>
 
                     <ComboBoxItem>
@@ -118,19 +118,19 @@
                 <!--Navn-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Navn" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Navn, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Name, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
                 </StackPanel>
                
                 <!--Adresse-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Adresse" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Addresse, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Address, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
                 </StackPanel>
                
                 <!--Telefon-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Telefon" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Telefon, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.PhoneNr, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
                 </StackPanel>
                
                 <!--Email-->
@@ -142,7 +142,7 @@
                 <!--BrugerNavn-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Brugernavn" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Brugernavn, Mode=TwoWay}" Width="200" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Padding="5" FontSize="40" Margin="292 0 0 0"/>
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Username, Mode=TwoWay}" Width="200" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Padding="5" FontSize="40" Margin="292 0 0 0"/>
                 </StackPanel>
                
                 <!--Password-->
@@ -155,12 +155,12 @@
                 <!--FagOmråde-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Fagområde" FontSize="40"/>
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Fagområde, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="400" Padding="5" FontSize="40" Margin="298 0 0 0"/>
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Field, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="400" Padding="5" FontSize="40" Margin="298 0 0 0"/>
                 </StackPanel>
                  
                 <!--Underviser-->
                 <StackPanel Visibility="Visible" Margin="0 10">
-                    <ToggleSwitch IsOn="{Binding MasterDetails.DetailsVM.DomainObject.Underviser, Mode=TwoWay}" Header="Er Underviser" OffContent="Nej" OnContent="Ja" />
+                    <ToggleSwitch IsOn="{Binding MasterDetails.DetailsVM.DomainObject.IsTutor, Mode=TwoWay}" Header="Er Underviser" OffContent="Nej" OnContent="Ja" />
                 </StackPanel>
                 
                 <!--Gem knap-->

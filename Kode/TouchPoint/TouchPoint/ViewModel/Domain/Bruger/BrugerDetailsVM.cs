@@ -11,26 +11,26 @@ namespace TouchPoint.ViewModel
 
         public string Name
         {
-            get => DomainObject.Navn;
-            set => DomainObject.Navn = value;
+            get => DomainObject.Name;
+            set => DomainObject.Name = value;
         }
 
         public string Fagområde
         {
-            get => DomainObject.Fagområde;
-            set => DomainObject.Fagområde = value;
+            get => DomainObject.Field;
+            set => DomainObject.Field = value;
         }
 
         public string Brugernavn
         {
-            get => DomainObject.Brugernavn;
-            set => DomainObject.Brugernavn = value;
+            get => DomainObject.Username;
+            set => DomainObject.Username = value;
         }
 
         public string Addresse
         {
-            get => DomainObject.Addresse;
-            set => DomainObject.Addresse = value;
+            get => DomainObject.Address;
+            set => DomainObject.Address = value;
         }
 
         public string Email
@@ -39,10 +39,10 @@ namespace TouchPoint.ViewModel
             set => DomainObject.Email = value;
         }
 
-        public int Telefon
+        public string Telefon
         {
-            get => DomainObject.Telefon;
-            set => DomainObject.Telefon = value;
+            get => DomainObject.PhoneNr;
+            set => DomainObject.PhoneNr = value;
         }
 
         public string Password
@@ -53,14 +53,14 @@ namespace TouchPoint.ViewModel
 
         public bool Underviser
         {
-            get => DomainObject.Underviser;
-            set => DomainObject.Underviser = value;
+            get => DomainObject.IsTutor;
+            set => DomainObject.IsTutor = value;
         }
 
         public bool Admin
         {
-            get => DomainObject.Admin;
-            set => DomainObject.Admin = value;
+            get => DomainObject.IsAdmin;
+            set => DomainObject.IsAdmin = value;
         }
 
         

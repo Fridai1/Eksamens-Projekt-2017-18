@@ -35,7 +35,7 @@ namespace TouchPoint.ViewModel.Undervisningssted
 
         public string GetLoggedInUSer
         {
-            get => _loggedInUser.Navn;
+            get => _loggedInUser.Name;
         }
 
         

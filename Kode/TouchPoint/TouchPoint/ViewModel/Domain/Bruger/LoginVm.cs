@@ -20,7 +20,7 @@ namespace TouchPoint.ViewModel
             _loginCommand = new RelayCommand(Login,()=>true);
             _users = new Dictionary<string, Bruger>();
             // test bruger
-            _users.Add("hans", new Bruger("hans", "skolevej","mail@mail.dk", 121212, "hans", "1234", true, "reflex", false));
+            _users.Add("hans", new Bruger("hans", "1234", "hans", "12345678", "skolevej", true, "mail@mail.dk", "reflex", false));
             
         }
 
