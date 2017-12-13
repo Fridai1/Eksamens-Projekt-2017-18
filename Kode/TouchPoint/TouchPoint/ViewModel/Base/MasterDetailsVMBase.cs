@@ -44,6 +44,7 @@ namespace TouchPoint.ViewModel
             _vMFactory = FactoryVM;
             _masterVM = _vMFactory.CreateMasterViewModel();
             _tabel = tabel;
+            RefreshList();
         }
 
         public ObservableCollection<ItemVMBase<T>> ItemVMCollection

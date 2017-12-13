@@ -135,9 +135,9 @@
                 <!--Lokaler-->
                 <StackPanel Orientation="Horizontal" Margin="0 10">
                     <TextBlock Text="Lokaler" FontSize="40"/>
-                    <TextBox IsEnabled="{Binding MasterDetails.FieldsEnabled}" Text="{Binding MasterDetails.Lokale, Mode=TwoWay}" Margin="100 0"/>
+                    <TextBox IsEnabled="{Binding MasterDetails.FieldsEnabled}" Text="{Binding MasterDetails.Lokale, Mode=TwoWay}" Margin="100 0" FontSize="20" Padding="5"/>
                     <Button IsEnabled="{Binding MasterDetails.FieldsEnabled}" Background="Bisque" Content="Tilføj" Command="{Binding MasterDetails.TilføjLokaleCommand}"/>
-                    <Button Content="slet" Command="{Binding MasterDetails.DeleteLokaleCommand}"/>
+                    <Button Content="slet" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Command="{Binding MasterDetails.DeleteLokaleCommand}"/>
                 </StackPanel>
                 
                 <!--Lokale ListView-->
@@ -156,20 +156,22 @@
 
                     </ListView>
                 </StackPanel>
-
+                
+                <StackPanel Orientation="Horizontal">
                 <!--Gem knap-->
                 <StackPanel >
-                    <Button Command="{Binding MasterDetails.SaveCommand}" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
+                    <Button Command="{Binding MasterDetails.SaveCommand}" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" />
                 </StackPanel>
 
                 <!--opret knap-->
                 <StackPanel >
-                    <Button Command="{Binding MasterDetails.CreateCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Opret" Margin="300 0 0 0" />
+                    <Button Command="{Binding MasterDetails.CreateCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Opret"  />
                 </StackPanel>
 
-                <Button Content="Slet" Command="{Binding MasterDetails.DeleteCommand}" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Margin="300 0 0 0"/>
+                <Button Content="Slet" Command="{Binding MasterDetails.DeleteCommand}" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" />
 
-                
+            </StackPanel>   
+           
             </StackPanel>
 
 
