@@ -28,7 +28,6 @@ namespace TouchPoint.Database {
 
         //LoadSingle
         public async Task<T> LoadSingle(string table, int id) {
-
             return await fetch.FetchSingle(table, id);
         }
 
@@ -41,10 +40,6 @@ namespace TouchPoint.Database {
         //not implemented
 
 
-        //pluralise
-        public string PluraliseTableName(string table) {
-            table += "s";
-            return table;
-        }
+
     }
 }

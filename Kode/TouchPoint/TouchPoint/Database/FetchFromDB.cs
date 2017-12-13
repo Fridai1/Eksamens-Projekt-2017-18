@@ -17,6 +17,8 @@ namespace TouchPoint.Database {
 
 
         public async Task<T> FetchSingle(string table, int id) {
+            table = PluraliseTableName(table);
+
             using (var client = new HttpClient(_handler)) {
                 client.BaseAddress = new Uri(_GLOBALS.ServerUrl);
                 client.DefaultRequestHeaders.Clear();
@@ -35,6 +37,8 @@ namespace TouchPoint.Database {
         }
 
         public async Task<List<T>> FetchMultiple(string table) {
+            table = PluraliseTableName(table);
+
             using (var client = new HttpClient(_handler)) {
                 client.BaseAddress = new Uri(_GLOBALS.ServerUrl);
                 client.DefaultRequestHeaders.Clear();
@@ -50,6 +54,12 @@ namespace TouchPoint.Database {
                 }
                 return null;
             }
+        }
+
+        //pluralise
+        public string PluraliseTableName(string table) {
+            table += "s";
+            return table;
         }
     }
 }
