@@ -9,29 +9,31 @@ namespace TouchPoint
             
         }
         // #2 constructer til vi kan oprette brugere uden om UI.
-        public Bruger(string navn, string adresse, string email, int telefon, string brugernavn, string password, bool underviser, string fagområde, bool admin)
+        public Bruger(string username, string password, string name, string phoneNr, string address, bool isTutor, string email, string field, bool isAdmin, int id = -1)
         {
-            _navn = navn;
-            _addresse = adresse;
+            _id = id;
+            _name = name;
+            _address = address;
             _email = email;
-            _telefon = telefon;
-            _brugernavn = brugernavn;
+            _phoneNr = phoneNr;
+            _username = username;
             _password = password;
-            _Underviser = underviser;
-            _fagområde = fagområde;
-            _admin = admin;
+            _isTutor = isTutor;
+            _field = field;
+            _isAdmin = isAdmin;
 
         }
 
-        private string _navn;
-        private string _addresse;
+        private int _id;
+        private string _name;
+        private string _address;
         private string _email;
-        private int    _telefon;
-        private string _brugernavn;
+        private string _phoneNr;
+        private string _username;
         private string _password;
-        private bool   _Underviser;
-        private string _fagområde;
-        private bool   _admin;
+        private bool   _isTutor;
+        private string _field;
+        private bool   _isAdmin;
 
 
         public void Save()
@@ -39,16 +41,16 @@ namespace TouchPoint
             
         }
 
-        public string Navn
+        public string Name
         {
-            get => _navn;
-            set => _navn = value;
+            get => _name;
+            set => _name = value;
         }
 
-        public string Addresse
+        public string Address
         {
-            get => _addresse;
-            set => _addresse = value;
+            get => _address;
+            set => _address = value;
         }
 
         public string Email
@@ -57,16 +59,16 @@ namespace TouchPoint
             set => _email = value;
         }
 
-        public int Telefon
+        public string PhoneNr
         {
-            get => _telefon;
-            set => _telefon = value;
+            get => _phoneNr;
+            set => _phoneNr = value;
         }
 
-        public string Brugernavn
+        public string Username
         {
-            get => _brugernavn;
-            set => _brugernavn = value;
+            get => _username;
+            set => _username = value;
         }
 
         public string Password
@@ -75,22 +77,22 @@ namespace TouchPoint
             set => _password = value;
         }
 
-        public bool Underviser
+        public bool IsTutor
         {
-            get => _Underviser;
-            set => _Underviser = value;
+            get => _isTutor;
+            set => _isTutor = value;
         }
 
-        public string Fagområde
+        public string Field
         {
-            get => _fagområde;
-            set => _fagområde = value;
+            get => _field;
+            set => _field = value;
         }
 
-        public bool Admin
+        public bool IsAdmin
         {
-            get => _admin;
-            set => _admin = value;
+            get => _isAdmin;
+            set => _isAdmin = value;
         }
 
 

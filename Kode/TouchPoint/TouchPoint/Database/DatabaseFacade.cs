@@ -39,5 +39,12 @@ namespace TouchPoint.Database {
 
         //Delete
         //not implemented
+
+
+        //pluralise
+        public string PluraliseTableName(string table) {
+            table += "s";
+            return table;
+        }
     }
 }
