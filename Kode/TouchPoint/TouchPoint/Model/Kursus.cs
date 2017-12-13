@@ -6,7 +6,7 @@ namespace TouchPoint
 {
     public class Kursus : ISaveable
     {
-        private string _navn;
+        private string _name;
         private string _courseDate;
         private ulong _timeStart;
         private ulong _timeEnd;
@@ -28,10 +28,10 @@ namespace TouchPoint
 
 
 
-        public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string targetAudience, string seminarDescription, string extramateriale
+        public Kursus(string name, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string targetAudience, string seminarDescription, string extramateriale
             , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, Image coursepicture, string extHost, double price, int deposit)
         {
-            _navn = navn;
+            _name = name;
             _courseDate = courseDate;
             _timeStart = timeStart;
             _timeEnd = timeEnd;
@@ -59,10 +59,10 @@ namespace TouchPoint
             _tilmeldteBrugere = new List<Bruger>();
         }
 
-        public string Navn
+        public string Name
         {
-            get => _navn;
-            set => _navn = value;
+            get => _name;
+            set => _name = value;
         }
 
         public string CourseDate

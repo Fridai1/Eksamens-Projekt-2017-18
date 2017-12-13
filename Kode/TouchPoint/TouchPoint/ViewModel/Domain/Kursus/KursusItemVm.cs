@@ -6,9 +6,9 @@
         {
         }
 
-        public string Navn
+        public string Name
         {
-            get => DomainObject.Navn;
+            get => DomainObject.Name;
         }
 
         public int Spots
@@ -18,7 +18,7 @@
 
         public override string Description
         {
-            get => $"Navn: {Navn}  Pladser tilbage: {Spots}";
+            get => $"Navn: {Name}  Pladser tilbage: {Spots}";
         }
     }
 }

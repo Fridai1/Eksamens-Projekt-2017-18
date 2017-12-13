@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Windows.UI.Xaml.Controls;
 using Command.Implementation;
+using TouchPoint.Annotations;
+using TouchPoint.Database;
 
 namespace TouchPoint.ViewModel
 {
-    public class LoginVm
+    public class LoginVm : INotifyPropertyChanged
     {
         private RelayCommand _loginCommand;
         private string _brugernavn;
         private string _password;
         private Dictionary<string, Bruger> _users;
-        
+        private DatabaseFacade<Bruger> _dbFacade;
         private static Bruger _loggedinUser;
 
         public LoginVm()
@@ -21,6 +25,8 @@ namespace TouchPoint.ViewModel
             _users = new Dictionary<string, Bruger>();
             // test bruger
             _users.Add("hans", new Bruger("hans", "1234", "hans", "12345678", "skolevej", true, "mail@mail.dk", "reflex", false));
+            _dbFacade = new DatabaseFacade<Bruger>();
+            FetchFromDB();
             
         }
 
@@ -78,6 +84,9 @@ namespace TouchPoint.ViewModel
             {
                 // throw exception
                 _brugernavn = null;
+                _password = null;
+                OnPropertyChanged(nameof(Brugernavn));
+                OnPropertyChanged(nameof(Password));
                 return false;
             }
         }
@@ -92,7 +101,17 @@ namespace TouchPoint.ViewModel
             return _loggedinUser != null;
         }
 
-       
+        public async void FetchFromDB()
+        {
+            List<Bruger> L = new List<Bruger>();
+                L = await _dbFacade.LoadMultiple("User");
+
+            foreach (Bruger b in L)
+            {
+                _users.Add(b.Username,b);
+            }
+            
+        }
 
 
         public static void Logoff()
@@ -114,6 +133,14 @@ namespace TouchPoint.ViewModel
         {
             get => _password;
             set => _password = value;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

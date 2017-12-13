@@ -6,30 +6,30 @@ namespace TouchPoint
     {
         public Undervisningssted()
         {
-            _lokaler = new List<Lokale>();
+            _rooms = new List<Lokale>();
         }
 
-        private string _navn;
-        private string _adresse;
+        private string _name;
+        private string _adress;
         private string _email;
-        private int _telefon;
-        private List<Lokale> _lokaler;
+        private int _phone;
+        private List<Lokale> _rooms;
 
 
         
 
        
 
-        public string Navn
+        public string Name
         {
-            get => _navn;
-            set => _navn = value;
+            get => _name;
+            set => _name = value;
         }
 
-        public string Addresse
+        public string Address
         {
-            get => _adresse;
-            set => _adresse = value;
+            get => _adress;
+            set => _adress = value;
         }
 
         public string Email
@@ -38,25 +38,25 @@ namespace TouchPoint
             set => _email = value;
         }
 
-        public int Telefon
+        public int Phone
         {
-            get => _telefon;
-            set => _telefon = value;
+            get => _phone;
+            set => _phone= value;
         }
 
-        public List<Lokale> Lokaler
+        public List<Lokale> Rooms
         {
-            get => _lokaler;
+            get => _rooms;
         }
 
-        public void OpretLokale(string LokaleNavn)
+        public void CreateRoom(string RoomName)
         {
-            _lokaler.Add(new Lokale(LokaleNavn));
+            _rooms.Add(new Lokale(RoomName));
         }
 
-        public void SletLokale(Lokale l)
+        public void DeleteRoom(Lokale l)
         {
-            _lokaler.Remove(l);
+            _rooms.Remove(l);
         }
 
         public int Id { get; set; }

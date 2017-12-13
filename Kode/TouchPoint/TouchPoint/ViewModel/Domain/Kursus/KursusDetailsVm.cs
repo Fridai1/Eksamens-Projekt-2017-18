@@ -11,8 +11,8 @@ namespace TouchPoint.ViewModel.Kursus
 
         public string Navn
         {
-            get => DomainObject.Navn;
-            set => DomainObject.Navn = value;
+            get => DomainObject.Name;
+            set => DomainObject.Name = value;
         }
 
         public string CourseDate

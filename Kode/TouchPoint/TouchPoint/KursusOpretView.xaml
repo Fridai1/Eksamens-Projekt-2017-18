@@ -40,7 +40,7 @@
                 <ComboBox Width="100" Height="50">
                     <ComboBoxItem Content="Menu" IsSelected="True"/>
                     <ComboBoxItem>
-                        <TextBlock Text="{Binding GetLoggedInUSer.Navn}"/>
+                        <TextBlock Text="{Binding GetLoggedInUSer.Name}"/>
                     </ComboBoxItem>
                     <ComboBoxItem>
                         <Button Visibility="{Binding IsSomeOneLoggedIn}" Command="{Binding LogOff}" Click="MainpageKnap" Content="Log af"/>

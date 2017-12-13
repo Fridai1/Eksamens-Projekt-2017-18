@@ -10,14 +10,14 @@ namespace TouchPoint.ViewModel.Undervisningssted
     public class USOverviewVm : INotifyPropertyChanged
     {
         private USMasterDetailsVm _masterDetails;
-        private LokaleMasterDetailsVm _lokalerMasterDetails;
+        //private LokaleMasterDetailsVm _lokalerMasterDetails;
         private Bruger _loggedInUser;
         
         
         public USOverviewVm()
         {
             _masterDetails = new USMasterDetailsVm();
-            _lokalerMasterDetails = new LokaleMasterDetailsVm();
+           // _lokalerMasterDetails = new LokaleMasterDetailsVm();
             _loggedInUser = LoginVm.LoggedInUser;
         }
 
@@ -28,10 +28,10 @@ namespace TouchPoint.ViewModel.Undervisningssted
             get => _masterDetails;
         }
 
-        public LokaleMasterDetailsVm LokaleMasterDetails
-        {
-            get => _lokalerMasterDetails;
-        }
+        //public LokaleMasterDetailsVm LokaleMasterDetails
+        //{
+        //    get => _lokalerMasterDetails;
+        //}
 
         public string GetLoggedInUSer
         {

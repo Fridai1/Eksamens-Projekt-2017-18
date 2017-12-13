@@ -10,18 +10,18 @@ namespace TouchPoint.ViewModel.Undervisningssted
 
         public string Name
         {
-            get => DomainObject.Navn;
-            set => DomainObject.Navn = value;
+            get => DomainObject.Name;
+            set => DomainObject.Name = value;
         }
-        public string Adresse
+        public string Adress
         {
-            get => DomainObject.Addresse;
-            set => DomainObject.Addresse = value;
+            get => DomainObject.Address;
+            set => DomainObject.Address = value;
         }
-        public int Telefon
+        public int Phone
         {
-            get => DomainObject.Telefon;
-            set => DomainObject.Telefon = value;
+            get => DomainObject.Phone;
+            set => DomainObject.Phone = value;
         }
         public string Email
         {
@@ -29,15 +29,15 @@ namespace TouchPoint.ViewModel.Undervisningssted
             set => DomainObject.Email = value;
         }
 
-        public List<TouchPoint.Lokale> Lokaler
+        public List<TouchPoint.Lokale> Rooms
         {
-            get => DomainObject.Lokaler;
+            get => DomainObject.Rooms;
             
         }
 
-        public void Addlokale(TouchPoint.Lokale l)
+        public void AddRoom(TouchPoint.Lokale l)
         {
-            DomainObject.Lokaler.Add(l);
+            DomainObject.Rooms.Add(l);
         }
 
     }

@@ -111,10 +111,6 @@
             <!--Detailview-->
             <StackPanel Grid.Column="1">
 
-                
-
-               
-
                 <!--opret knap-->
                 <StackPanel >
                     <Button Click="KnapOpretKursus" Command="{Binding MasterDetails.CreateCommand}" Width="150" Height="50" Background="BlanchedAlmond" Content="Opret Nyt Kursus" Margin="300 0 0 0" />
@@ -122,6 +118,14 @@
                 <StackPanel>
                     <Button Click="TilNytDesign" Content="Til nyt design please fjern mig efter brug" FontSize="40"/>
                 </StackPanel>
+                
+                <ListView ItemsSource="{Binding MasterDetails.DetailsVM.DomainObject.TilmeldteBrugere}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
 
             </StackPanel>
