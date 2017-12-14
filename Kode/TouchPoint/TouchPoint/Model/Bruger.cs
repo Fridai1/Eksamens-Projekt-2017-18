@@ -21,7 +21,6 @@ namespace TouchPoint
             _isTutor = isTutor;
             _field = field;
             _isAdmin = isAdmin;
-
         }
 
         private int _id;
