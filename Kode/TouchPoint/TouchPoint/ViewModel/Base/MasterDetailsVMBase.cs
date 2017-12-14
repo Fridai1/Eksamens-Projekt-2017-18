@@ -25,14 +25,14 @@ namespace TouchPoint.ViewModel
         private DetailsVMBase<T> _detailsVM;
         private bool _viewEnabled = false;
         private DatabaseFacade<T> _dbFacade;
-        private string _tabel;
+        private string _table;
         private RelayCommand _createCommand;
         private RelayCommand _updateCommand;
         private RelayCommand _deleteCommand;
         private RelayCommand _saveCommand;
         private RelayCommand _refreshList;
 
-        public MasterDetailsVMBase(string tabel, FactoryVMBase<T> FactoryVM)
+        public MasterDetailsVMBase(string table, FactoryVMBase<T> FactoryVM)
         {
             _dbFacade = new DatabaseFacade<T>();
             _createCommand = new RelayCommand(Create,()=>true);
@@ -43,7 +43,7 @@ namespace TouchPoint.ViewModel
             _Catalog= new List<T>();
             _vMFactory = FactoryVM;
             _masterVM = _vMFactory.CreateMasterViewModel();
-            _tabel = tabel;
+            _table = table;
             RefreshList();
         }
 
@@ -116,7 +116,7 @@ namespace TouchPoint.ViewModel
 
         public async void RefreshList()
         {
-            _Catalog = await _dbFacade.LoadMultiple(_tabel);
+            _Catalog = await _dbFacade.LoadMultiple(_table);
             OnPropertyChanged(nameof(ItemVMCollection));
         }
         public virtual void Create()
@@ -142,7 +142,7 @@ namespace TouchPoint.ViewModel
             if (DetailsVM.DomainObject != null)
             {
                 _Catalog.Add(DetailsVM.DomainObject);
-                await _dbFacade.SaveSingle(DetailsVM.DomainObject.Id, DetailsVM.DomainObject);
+                await _dbFacade.SaveSingle(DetailsVM.DomainObject.Id, DetailsVM.DomainObject, _table);
                 ItemVMSelected = null;
                 FieldsEnabled = false;
                 OnPropertyChanged();

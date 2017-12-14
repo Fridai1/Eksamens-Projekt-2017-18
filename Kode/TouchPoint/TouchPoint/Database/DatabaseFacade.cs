@@ -22,8 +22,8 @@ namespace TouchPoint.Database {
         }
 
         //SaveSingle
-        public async Task SaveSingle(int id, T item) {
-            await save.Save(item);
+        public async Task SaveSingle(int id, T item, string table) {
+            await save.Save(id, item, table);
         }
 
         //LoadSingle
