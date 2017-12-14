@@ -137,11 +137,12 @@ namespace TouchPoint.ViewModel
         }
 
         // metode til at gemme et object
-        public virtual void Save()
+        public virtual async void Save()
         {
             if (DetailsVM.DomainObject != null)
             {
                 _Catalog.Add(DetailsVM.DomainObject);
+                await _dbFacade.SaveSingle(DetailsVM.DomainObject.Id, DetailsVM.DomainObject);
                 ItemVMSelected = null;
                 FieldsEnabled = false;
                 OnPropertyChanged();
