@@ -9,7 +9,7 @@ namespace TouchPoint
             
         }
         // #2 constructer til vi kan oprette brugere uden om UI.
-        public Bruger(string username, string password, string name, string phoneNr, string address, bool isTutor, string email, string field, bool isAdmin, int id = -1)
+        public Bruger(string username, string password, string name, string phoneNr, string address, bool isTutor, string email, string field, bool isAdmin, int id = 0)
         {
             _id = id;
             _name = name;
@@ -21,7 +21,6 @@ namespace TouchPoint
             _isTutor = isTutor;
             _field = field;
             _isAdmin = isAdmin;
-
         }
 
         private int _id;
@@ -96,6 +95,9 @@ namespace TouchPoint
         }
 
 
-        public int Id { get; set; }
+        public int Id {
+            get => _id;
+            set => _id = value;
+        }
     }
 }

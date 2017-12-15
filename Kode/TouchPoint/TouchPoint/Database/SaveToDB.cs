@@ -17,17 +17,17 @@ namespace TouchPoint.Database {
         }
         
         
-        public async Task Save(T item) {
-            using(var client = new HttpClient(_handler)) {
+        public async Task Save(int id, T item, string table) {
+            using(var client = new HttpClient(_handler, false)) {
                 client.BaseAddress = new Uri(_GLOBALS.ServerUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 string serialised = JsonConvert.SerializeObject(item);
-                StringContent content = new StringContent(serialised, Encoding.UTF8, " ");
-                string pluralised = typeof(T).Name + "s";
+                StringContent content = new StringContent(serialised, Encoding.UTF8, "application/json");
+                string pluralised = table + "s";
 
-                if (item.Id == -1) {
+                if (item.Id == 0) {
                     await client.PostAsync($"api/{pluralised}", content);
                 } else {
                     await client.PutAsync($"api/{pluralised}/{item.Id}", content);
