@@ -18,7 +18,7 @@ namespace TouchPoint.Database {
         
         
         public async Task Save(int id, T item, string table) {
-            using(var client = new HttpClient(_handler)) {
+            using(var client = new HttpClient(_handler, false)) {
                 client.BaseAddress = new Uri(_GLOBALS.ServerUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

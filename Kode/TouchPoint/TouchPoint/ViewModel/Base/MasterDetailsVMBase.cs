@@ -141,7 +141,14 @@ namespace TouchPoint.ViewModel
         {
             if (DetailsVM.DomainObject != null)
             {
-                _Catalog.Add(DetailsVM.DomainObject);
+                if (DetailsVM.DomainObject.Id == 0) {
+                    _Catalog.Add(DetailsVM.DomainObject);
+                } else {
+                    int itemIndex = _Catalog.FindIndex(it => it.Id == DetailsVM.DomainObject.Id);
+                    _Catalog.Insert(itemIndex, DetailsVM.DomainObject);
+                    _Catalog.RemoveAt(itemIndex + 1);
+                }
+
                 await _dbFacade.SaveSingle(DetailsVM.DomainObject.Id, DetailsVM.DomainObject, _table);
                 ItemVMSelected = null;
                 FieldsEnabled = false;
