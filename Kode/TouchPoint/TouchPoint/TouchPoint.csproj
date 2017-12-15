@@ -104,7 +104,6 @@
     <Compile Include="IRediger.cs" />
     <Compile Include="ISaveable.cs" />
     <Compile Include="KopieretObjektCollection.cs" />
-    <Compile Include="Controller\CreateController.cs" />
     <Compile Include="Controller\RelayCommand.cs" />
     <Compile Include="KursusOpretView.xaml.cs">
       <DependentUpon>KursusOpretView.xaml</DependentUpon>

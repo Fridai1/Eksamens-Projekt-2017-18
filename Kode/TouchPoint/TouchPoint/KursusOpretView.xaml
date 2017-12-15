@@ -191,7 +191,7 @@
                     <ComboBox ItemsSource="{Binding BrugerMasterDetails.TutorList}" SelectedItem="{Binding SelectedTutor, Mode=TwoWay}"  Width="200" Padding="5" FontSize="40" Margin="300 0 0 0">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Navn}"/>
+                                <TextBlock Text="{Binding Name}"/>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>    
                     </ComboBox>

@@ -67,7 +67,7 @@ namespace TouchPoint.ViewModel
                 OnPropertyChanged(nameof(DetailsVM));
                 OnPropertyChanged(nameof(TrueIfSelected));
                 OnPropertyChanged(nameof(USMasterDetailsVm.LokaleCollection));
-                OnPropertyChanged(nameof(USMasterDetailsVm.SelectionChanged));
+                
                 
             } 
     }

@@ -20,7 +20,6 @@ namespace TouchPoint.ViewModel.Undervisningssted
         {
             _addLokaleCommand = new RelayCommand(CreateRoom, () => true);
             _deleteLokale = new RelayCommand(DeleteLokale,()=>true);
-            
             _lokaleFactory = new LokaleFactory();
             _lokaleMaster = new LokaleMasterVm();
         }
@@ -66,27 +65,12 @@ namespace TouchPoint.ViewModel.Undervisningssted
                 {
                     return null;
                 }
-                
             }
-
-            
         }
-
-        public void SelectionChanged()
-        {
-            
-            
-        }
-
-
         public string Lokale
         {
             get => _lokale;
             set => _lokale = value;
         }
-
-
-
-
     }
 }
