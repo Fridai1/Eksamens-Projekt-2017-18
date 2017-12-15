@@ -15,10 +15,6 @@ namespace TouchPoint
         {
             DomainObject = Obj;
         }
-
         public virtual string Description { get => "we er i base klassen"; }
-
-        
-            
     }
 }
