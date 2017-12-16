@@ -27,7 +27,7 @@ namespace TouchPoint
             this.InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void MainpageKnap(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
         }
@@ -40,6 +40,16 @@ namespace TouchPoint
         private void KurserKnap(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(KursusView));
+        }
+
+        private void TilgængeligeKurser(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TilmeldKursusView));
+        }
+
+        private void RedigerBruger(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BrugerRegistrer));
         }
     }
 }

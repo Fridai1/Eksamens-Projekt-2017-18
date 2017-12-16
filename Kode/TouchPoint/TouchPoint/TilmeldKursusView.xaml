@@ -23,10 +23,10 @@
             </StackPanel>
             <!--Menu bar-->
             <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
-                <Button Content="Hjem" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="100 0 100 0"/>
+                <Button Content="Hjem" Click="MainpageKnap" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="100 0 100 0"/>
                 <Button Content="tilgængelige kurser" Width="150" BorderThickness="1" FontWeight="bold" BorderBrush="Black" Background="White" Margin="0 0 100 0"/>
-                <Button Content="Min Profil" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
-                <Button Content="Log Af" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White"/>
+                <Button Content="Min Profil" Click="RedigerBruger" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
+                <Button Content="Log Af" Click="MainpageKnap" Command="{Binding LogOff}" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White"/>
             </StackPanel>
 
             
@@ -67,7 +67,7 @@
                 </StackPanel>
 
                 <StackPanel  >
-                    <Image Source="{Binding MasterDetails.DetailsVM.DomainObject.CoursePicture}" Width="300" Height="300"/>
+                    <Image Source="Assets/TouchpointBruger.png"  Height="300"/>
                 </StackPanel>
                 <!--Navn-->
                 <StackPanel Orientation="Horizontal" Background="LightBlue">
@@ -102,7 +102,7 @@
 
                 <!--Tilmeld knap-->
                 <StackPanel>
-                    <Button Content="Tilmeld" Background="LightCoral" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Command="{Binding TilmeldBrugerCommand}"/>
+                    <Button Content="Tilmeld" Background="DarkRed" Foreground="White" FontWeight="Medium" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Command="{Binding TilmeldBrugerCommand}"/>
                 </StackPanel>
             </StackPanel>
 

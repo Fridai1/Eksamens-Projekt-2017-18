@@ -37,5 +37,22 @@ namespace TouchPoint
         {
             Frame.Navigate(typeof(UndervisningsstedView));
         }
+
+        private void Kursusknap(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(KursusView));
+        }
+
+        private void TilmeldKursus(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TilmeldKursusView));
+        }
+
+
+        private void Bruger(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BrugerOverView));
+        }
+
     }
 }

@@ -66,6 +66,7 @@ namespace TouchPoint.ViewModel
                 DetailsVM = CreateDetailsVM();
                 OnPropertyChanged(nameof(DetailsVM));
                 OnPropertyChanged(nameof(TrueIfSelected));
+                OnPropertyChanged(nameof(FalseIfSelected));
                 OnPropertyChanged(nameof(USMasterDetailsVm.LokaleCollection));
                 
                 
@@ -172,13 +173,28 @@ namespace TouchPoint.ViewModel
             }
         }
 
+        public bool FalseIfSelected
+        {
+            get
+            {
+                if (ItemVMSelected != null)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+        }
+
         public bool FieldsEnabled
         {
             get => _viewEnabled;
             set => _viewEnabled = value;
         }
 
-        
+     
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

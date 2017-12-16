@@ -19,74 +19,23 @@
 
 
 
-        <!--orientation bar-->
-        <StackPanel Orientation="Horizontal" Margin="120 0 0 960">
-            <!--sted 1-->
-            <StackPanel>
-                <HyperlinkButton Width="120" Height="120" Content="Sted 1" FontSize="40"/>
+        <StackPanel>
+            <!--titel-->
+            <StackPanel >
+                <!--<TextBlock FontWeight="bold" FontSize="100" Text="Touchpoint" FontStyle="Italic" FontFamily="constantia" Margin="680,0" Height="120"/>-->
+                <Image Source="Assets/Touchpoint.png" Width="1920" Height="120"/>
             </StackPanel>
-
-            <!--sted 2-->
-            <StackPanel>
-                <HyperlinkButton Width="120" Height="120">
-                    <TextBlock Text="sted 2" FontSize="40"/>
-                </HyperlinkButton>
+            <!--Menu bar-->
+            <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
+                <Button Content="Hjem" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="100 0 100 0"/>
             </StackPanel>
-
-            <!--sted 3-->
-            <StackPanel>
-                <HyperlinkButton Width="120" Height="120">
-                    <TextBlock Text="sted 3" FontSize="40"/>
-                </HyperlinkButton>
-            </StackPanel>
-
-            <!--Bruger-->
-            <StackPanel Margin="1200 0 0 0">
-                <ComboBox IsEnabled="False" Width="100" Height="50">
-                    <ComboBoxItem Content="Menu" IsSelected="True"/>
-                    
-                </ComboBox>
-
-            </StackPanel>
-            
         </StackPanel>
 
-        <!--menu bar-->
-        <StackPanel Orientation="Vertical" Margin="0 0 1800 0">
-
-            <!--Icon-->
-            <StackPanel>
-                <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
-            </StackPanel>
-            <!--kurser-->
-            <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="Kurser" FontSize="30"/>
-            </StackPanel>
-
-            <!--kursister-->
-            <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="Kursister" FontSize="30"/>
-            </StackPanel>
-
-            <!--underevisere-->
-            <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="underviser" FontSize="30"/>
-            </StackPanel>
-
-            <!--Betalinger-->
-            <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="betalinger" FontSize="30"/>
-            </StackPanel>
-           
-
-
-        </StackPanel>
-
-        <!--Main body-->
+            <!--Main body-->
         <StackPanel Margin="120,120,0,0">
             
             <!--Login Panel-->
-            <StackPanel Background="Crimson" Height="300" Width="500" Margin="650,300" Orientation="Vertical">
+            <StackPanel Background="#F07800" Height="300" Width="500" Margin="650,300" Orientation="Vertical">
                 <!--titel-->
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Login" FontSize="40" Margin="200,0,0,0"/>
@@ -103,8 +52,8 @@
                 </StackPanel>
                 <!--Login knap-->
                 <StackPanel Orientation="Horizontal" Margin="20 20">
-                    <Button Background="AliceBlue" Click="Login" Content="Login" FontSize="40"  Width="200"/>
-                    <Button Background="AliceBlue" Click="Registrer" Content="Registrer" FontSize="40"  Width="200" Margin="50 0"/>
+                    <Button Background="DarkRed" FontWeight="Medium" Foreground="White" Click="Login" Content="Login" FontSize="40"  Width="200"/>
+                    <Button Background="DarkRed" Click="Registrer" FontWeight="Medium" Foreground="White" Content="Registrer" FontSize="40"  Width="200" Margin="50 0"/>
                 </StackPanel>
                 
                
