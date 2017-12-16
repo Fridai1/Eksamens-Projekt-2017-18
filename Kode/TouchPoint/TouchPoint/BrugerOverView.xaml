@@ -178,8 +178,14 @@
                     <Button Command="{Binding MasterDetails.UpdateCommand}" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Rediger" Margin="300 0 0 0" />
                 </StackPanel>
 
+                <!--refresh-->
                 <StackPanel >
                     <Button Command="{Binding MasterDetails.RefreshCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Rediger" Margin="300 0 0 0" />
+                </StackPanel>
+                
+                <!--delete-->
+                <StackPanel>
+                    <Button Command="{Binding MasterDetails.DeleteCommand}" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Slet" Margin="300 0 0 0"/>
                 </StackPanel>
 
 
