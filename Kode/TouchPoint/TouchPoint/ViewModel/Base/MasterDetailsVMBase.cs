@@ -162,8 +162,9 @@ namespace TouchPoint.ViewModel
             }
         }
 
-        public virtual void Delete()
+        public virtual async void Delete()
         {
+            await _dbFacade.DeleteSingle(DetailsVM.DomainObject.Id, _table);
             _Catalog.Remove(ItemVMSelected.DomainObject);
             OnPropertyChanged(nameof(ItemVMCollection));
         }
