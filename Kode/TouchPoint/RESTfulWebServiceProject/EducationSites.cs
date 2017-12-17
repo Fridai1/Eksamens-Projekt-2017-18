@@ -17,7 +17,7 @@ namespace RESTfulWebServiceProject
 
         [Key]
         [StringLength(64)]
-        public string EduSiteName { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [StringLength(16)]

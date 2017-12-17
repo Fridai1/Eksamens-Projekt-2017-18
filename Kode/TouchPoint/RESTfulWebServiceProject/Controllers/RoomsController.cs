@@ -80,22 +80,7 @@ namespace RESTfulWebServiceProject.Controllers
             }
 
             db.Rooms.Add(rooms);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (RoomsExists(rooms.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = rooms.Id }, rooms);
         }

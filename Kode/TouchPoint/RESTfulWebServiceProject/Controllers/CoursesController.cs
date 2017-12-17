@@ -80,22 +80,7 @@ namespace RESTfulWebServiceProject.Controllers
             }
 
             db.Courses.Add(courses);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (CoursesExists(courses.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = courses.Id }, courses);
         }

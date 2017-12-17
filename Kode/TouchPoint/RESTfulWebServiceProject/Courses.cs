@@ -8,7 +8,6 @@ namespace RESTfulWebServiceProject
 
     public partial class Courses
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Column(TypeName = "date")]
