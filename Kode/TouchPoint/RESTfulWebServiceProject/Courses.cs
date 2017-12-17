@@ -21,9 +21,6 @@ namespace RESTfulWebServiceProject
         public int AvailSpots { get; set; }
 
         [StringLength(512)]
-        public string SeminarDesc { get; set; }
-
-        [StringLength(512)]
         public string ExtraMat { get; set; }
 
         [Required]
