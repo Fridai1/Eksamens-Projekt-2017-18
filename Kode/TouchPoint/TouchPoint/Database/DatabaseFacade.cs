@@ -15,6 +15,7 @@ namespace TouchPoint.Database {
         public static HttpClient _httpClient;
         SaveToDB<T> save = new SaveToDB<T>();
         FetchFromDB<T> fetch = new FetchFromDB<T>();
+        DeleteFromDB<T> delete = new DeleteFromDB<T>();
 
         //constructor
         public DatabaseFacade() {
@@ -22,8 +23,8 @@ namespace TouchPoint.Database {
         }
 
         //SaveSingle
-        public async Task SaveSingle(int id, T item) {
-            await save.Save(item);
+        public async Task SaveSingle(int id, T item, string table) {
+            await save.Save(id, item, table);
         }
 
         //LoadSingle
@@ -37,7 +38,9 @@ namespace TouchPoint.Database {
         }
 
         //Delete
-        //not implemented
+        public async Task DeleteSingle(int id, string table) {
+           await delete.DeleteSingle(id, table);
+        }
 
 
 

@@ -118,6 +118,7 @@
                     <Button Content="Slet" Foreground="White" FontWeight="Medium" Background="DarkRed" Width="140" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Command="{Binding MasterDetails.DeleteCommand}" Margin="0 0 50 0"/>
                     <Button Content="Rediger" Foreground="White" FontWeight="Medium" Background="DarkRed" Width="140" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Command="{Binding MasterDetails.UpdateCommand}"/>
                 </StackPanel>
+
             </StackPanel>
 
         </Grid>

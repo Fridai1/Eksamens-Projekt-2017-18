@@ -101,6 +101,7 @@
     <Compile Include="BrugerRegistrer.xaml.cs">
       <DependentUpon>BrugerRegistrer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Database\DeleteFromDB.cs" />
     <Compile Include="IRediger.cs" />
     <Compile Include="ISaveable.cs" />
     <Compile Include="KopieretObjektCollection.cs" />
