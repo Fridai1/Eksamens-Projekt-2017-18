@@ -103,10 +103,15 @@ namespace TouchPoint.ViewModel
 
         public async void FetchFromDB()
         {
-            List<Bruger> L = new List<Bruger>();
-                L = await _dbFacade.LoadMultiple("User");
+            List<Bruger> L = await _dbFacade.LoadMultiple("User");
+            List<Bruger> q = new List<Bruger>();
+            if (L != null)
+            {
+                q = L;
+            }
+           
 
-            foreach (Bruger b in L)
+            foreach (Bruger b in q)
             {
                 _users.Add(b.Username,b);
             }

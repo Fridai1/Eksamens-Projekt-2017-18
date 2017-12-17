@@ -11,14 +11,17 @@ namespace TouchPoint.ViewModel
 {
     public class BrugerMasterDetails : MasterDetailsVMBase<Bruger>
     {
+        
         private BrugerFactory _factory;
        
         public BrugerMasterDetails() : base("User",new BrugerFactory())
 
         {
             _factory = new BrugerFactory();
-            
+           
         }
+
+       
 
         
 

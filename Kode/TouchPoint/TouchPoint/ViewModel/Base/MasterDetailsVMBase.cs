@@ -118,7 +118,7 @@ namespace TouchPoint.ViewModel
         public async void RefreshList()
         {
 
-            List<T> waitinglist = await _dbFacade.LoadMultiple(_tabel);
+            List<T> waitinglist = await _dbFacade.LoadMultiple(_table);
 
             if (waitinglist != null)
             {
