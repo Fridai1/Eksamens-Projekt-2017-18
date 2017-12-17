@@ -23,6 +23,8 @@
             <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
                 <Button Content="Hjem" Click="MainpageKnap" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="100 0 100 0"/>
                 <Button Content="Undervisningssted" Click="KnapTilUndervisningssted" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
+                <Button Content="Brugere" Width="150" Click="Brugerknap" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
+
                 <Button Content="Kurser" Width="150" Click="KurserKnap" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
                 <Button Content="tilgængelige kurser" Click="TilgængeligeKurser" Width="150" BorderThickness="1" FontWeight="bold" BorderBrush="Black" Background="White" Margin="0 0 100 0"/>
                 <Button Content="Min Profil" Click="RedigerBruger" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
@@ -35,8 +37,9 @@
         </StackPanel >
         <Grid Padding="5" Margin="0 155 0 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
+                
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" BorderBrush="Black" BorderThickness="1" >
@@ -66,50 +69,104 @@
                     <TextBlock Foreground="White" Text="Udvalgte kursus Detaljer" FontWeight="Medium" FontSize="30" Margin="450 0" Padding="6" FontFamily="cornerstone"/>
                 </StackPanel>
                 <!--Image-->
-                <StackPanel>
+                <!--<StackPanel>
                     <Image Source="Assets/TouchpointBruger.png" Height="200"/>
-                </StackPanel>
+                </StackPanel>-->
 
-                <!--Navn-->
+                <!--Navn / ekstra materiale-->
                 <StackPanel Orientation="Horizontal" Background="LightBlue"  Padding="5">
-                    <TextBlock Text="Navn:" Margin="400 0 0 0" FontSize="30" />
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Name, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="235 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="Navn:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Name, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="135 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                   
+                    <TextBlock Text="Ekstra materiale:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.ExtraMaterial, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="135 0 0 0" Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
-                <!--Adresse-->
+                <!--Dato / lokation-->
                 <StackPanel Orientation="Horizontal"   Padding="5">
-                    <TextBlock Text="Adresse:  " Margin="400 0 0 0" FontSize="30" />
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Address, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="200 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="Kursus dato:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.CourseDate, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="50 0 0 0" Padding="5" Width="300" FontSize="30"/>
+
+
+                    <TextBlock Text="Undervisningssted:" FontSize="30" Margin="10 0 0 0"/>
+                    <ComboBox ItemsSource="{Binding LokationList}" SelectedItem="{Binding SelectedLokation, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="100 0 0 0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Description}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                 </StackPanel>
-                <!--Telefon-->
+                <!--Start tid / Lokale-->
                 <StackPanel Orientation="Horizontal" Background="LightBlue"  Padding="5">
-                    <TextBlock Text="Telefon:" Margin="400 0 0 0" FontSize="30" />
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.PhoneNr, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="210 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="Start tid:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.TimeStart, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="103 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                    
+                    <TextBlock Text="Lokale:" Margin="10 0 0 0" FontSize="30" />
+                    <ComboBox ItemsSource="{Binding LokationList}" SelectedItem="{Binding SelectedLokale, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="260 0 0 0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Description}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                 </StackPanel>
-                <!--Email-->
+                <!--Slut tid / underviser-->
                 <StackPanel Orientation="Horizontal"  Padding="5">
-                    <TextBlock Text="Email:" Margin="400 0 0 0" FontSize="30" />
-                    <TextBox Margin="235 0 0 0" Text="{Binding MasterDetails.DetailsVM.DomainObject.Email, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}"  Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="Slut tid:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Margin="115 0 0 0" Text="{Binding MasterDetails.DetailsVM.DomainObject.TimeEnd, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}"  Padding="5" Width="300" FontSize="30"/>
+                    
+                        <TextBlock Text="Underviser" FontSize="30" Margin="10 0 0 0"/>
+                    <ComboBox ItemsSource="{Binding BrugerMasterDetails.TutorList}"  SelectedItem="{Binding SelectedTutor, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="210 0 0 0">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+                <StackPanel Margin="570 0 0 0" Orientation="Horizontal">
+                    <!--listview til valgte undervisere-->
+                    <ListView ItemsSource="{Binding TutorList}"
+                    >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Description}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+
+                    <Button Content="Slet" Foreground="White" Background="DarkRed" FontWeight="Medium" Command="{Binding DeleteTutorCommand}"/>
+
                 </StackPanel>
-                <!--Brugernavn-->
+                <!--Antal dage / beskrivelse-->
                 <StackPanel Orientation="Horizontal" Background="LightBlue" Padding="5">
-                    <TextBlock Text="Brugernavn:" Margin="400 0 0 0" FontSize="30" />
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Username, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="155 0 0 0"  Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="Antal dage:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Length, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="55 0 0 0"  Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="beskrivelse:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.CourseDescription, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="205 0 0 0" Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
-                <!--Password-->
+                <!--Deposit /pris-->
                 <StackPanel Orientation="Horizontal"  Padding="5">
-                    <TextBlock Text="Password:" Margin="400 0 0 0" FontSize="30" />
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Password, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="180 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="Deposit:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Deposit, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="100 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="pris:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Price, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="300 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                </StackPanel>
+                <!--Pladser/ fagområde-->
+                <StackPanel Orientation="Horizontal" Background="LightBlue"  Padding="5">
+                    <TextBlock Text="Pladser:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Spots, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="105 0 0 0" Padding="5" Width="300" FontSize="30"/>
+                    <TextBlock Text="Fagområde:" Margin="10 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Prereg, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="200 0 0 0" Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
                 <!--Fagområde-->
-                <StackPanel Orientation="Horizontal" Background="LightBlue"  Padding="5">
-                    <TextBlock Text="Fagområde:" Margin="400 0 0 0" FontSize="30" />
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Field, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="155 0 0 0" Padding="5" Width="300" FontSize="30"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <ToggleSwitch FontSize="30" Header="Underviser" OffContent="Nej" IsOn="{Binding MasterDetails.DetailsVM.DomainObject.IsTutor, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" OnContent="Ja" Margin="400 0 0 0"/>
-                </StackPanel>
-
-
+               
+                
+               
                 <!--Tilmeld knap-->
                 <StackPanel Orientation="Horizontal"  Padding="5">
                     <Button Content="Opret Ny Bruger" Foreground="White" FontWeight="Medium" Width="140" Background="DarkRed" Command="{Binding MasterDetails.CreateCommand}" Margin="50 0 50 0"/>

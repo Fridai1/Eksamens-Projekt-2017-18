@@ -51,4 +51,10 @@ namespace TouchPoint
         {
             Frame.Navigate(typeof(BrugerRegistrer));
         }
+
+        private void Brugerknap(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BrugerOverView));
+        }
     }
+}

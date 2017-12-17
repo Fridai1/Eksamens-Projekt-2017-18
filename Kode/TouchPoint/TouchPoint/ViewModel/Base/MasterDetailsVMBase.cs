@@ -117,7 +117,15 @@ namespace TouchPoint.ViewModel
 
         public async void RefreshList()
         {
-            _Catalog = await _dbFacade.LoadMultiple(_tabel);
+            List<T> waitinglist = await _dbFacade.LoadMultiple(_tabel);
+
+            if (waitinglist != null)
+            {
+                _Catalog = waitinglist;
+            }
+            
+           
+
             OnPropertyChanged(nameof(ItemVMCollection));
         }
         public virtual void Create()
@@ -142,6 +150,7 @@ namespace TouchPoint.ViewModel
         {
             if (DetailsVM.DomainObject != null)
             {
+                
                 _Catalog.Add(DetailsVM.DomainObject);
                 ItemVMSelected = null;
                 FieldsEnabled = false;

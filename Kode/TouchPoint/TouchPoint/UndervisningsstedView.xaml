@@ -24,6 +24,7 @@
             <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
                 <Button Content="Hjem" Click="MainPageKnap" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="100 0 100 0"/>
                 <Button Content="Undervisningssted" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
+                <Button Content="Brugere" Width="150" Click="KnapTilKursister" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
                 <Button Content="Kurser" Width="150" Click="KurserKnap" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
                 <Button Content="tilgængelige kurser" Click="AvailableCourse" Width="150" BorderThickness="1" FontWeight="bold" BorderBrush="Black" Background="White" Margin="0 0 100 0"/>
                 <Button Content="Min Profil" Click="RedigerBruger" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
@@ -94,13 +95,13 @@
                 <!--Lokaler-->
                 <StackPanel Orientation="Horizontal" Background="LightBlue" Padding="5">
                     <TextBlock Text="Lokale:" Margin="400 0 0 0" FontSize="30" />
-                    <TextBox Text="{Binding MasterDetails.DetailsVM.DomainObject.Rooms, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="222 0 0 0"  Padding="5" Width="300" FontSize="30"/>
+                    <TextBox Text="{Binding MasterDetails.Lokale, Mode=TwoWay}" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Margin="222 0 0 0"  Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
                 <!--Lokale listview-->
                 <StackPanel Orientation="Horizontal">
-                    <StackPanel>
-                        <Button Width="100" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Command="{Binding MasterDetails.addLokaleCommand}" Foreground="White" Background="DarkRed" FontWeight="Medium" Margin="400 0 0 0" Content="Slet Lokale"/>
-                        <Button Width="100" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Command="{Binding MasterDetails.DeleteLokaleCommand}" Foreground="White" Background="DarkRed" FontWeight="Medium" Margin="400 0 0 0" Content="Tilføj Lokale"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Width="100" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Command="{Binding MasterDetails.DeleteLokaleCommand}" Foreground="White" Background="DarkRed" FontWeight="Medium" Margin="400 0 0 0" Content="Slet Lokale"/>
+                        <Button Width="100" IsEnabled="{Binding MasterDetails.FieldsEnabled}" Command="{Binding MasterDetails.addLokaleCommand}" Foreground="White" Background="DarkRed" FontWeight="Medium" Margin="10 0 0 0" Content="Tilføj Lokale"/>
 
                     </StackPanel>
                <ListView Margin="220 0 0 0" ItemsSource="{Binding MasterDetails.LokaleCollection}"

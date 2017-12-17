@@ -23,6 +23,7 @@
             <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
                 <Button Content="Hjem" Click="MainpageKnap" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="100 0 100 0"/>
                 <Button Content="Undervisningssted" Click="KnapTilUndervisningssted" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
+                <Button Content="Brugere" Width="150"  BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
                 <Button Content="Kurser" Width="150" Click="KurserKnap" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
                 <Button Content="tilgængelige kurser" Click="TilgængeligeKurser" Width="150" BorderThickness="1" FontWeight="bold" BorderBrush="Black" Background="White" Margin="0 0 100 0"/>
                 <Button Content="Min Profil" Click="RedigerBruger" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>

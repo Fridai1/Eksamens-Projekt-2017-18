@@ -35,8 +35,8 @@ namespace TouchPoint.ViewModel
                     }
 
                 }
-                underviserList.Add(new Bruger("berta", "asd", "asd", "12345678", "asd st. 3", false, "asd@asd.com", "asdery", true));
-                underviserList.Add(new Bruger("prop", "asd", "asd", "12345678", "asd st. 5", false, "asd@asd.dk", "asdery", true));
+                //underviserList.Add(new Bruger("berta", "asd", "asd", "12345678", "asd st. 3", false, "asd@asd.com", "asdery", true));
+                //underviserList.Add(new Bruger("prop", "asd", "asd", "12345678", "asd st. 5", false, "asd@asd.dk", "asdery", true));
                 return underviserList;
             }
         }

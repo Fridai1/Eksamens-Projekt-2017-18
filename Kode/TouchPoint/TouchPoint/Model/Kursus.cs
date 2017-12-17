@@ -13,23 +13,17 @@ namespace TouchPoint
         private int   _length;
         private double _deposit;
         private int    _spots;
-        private string _targetAudience;
-        private string _seminarDescription;
         private string _extraMaterial;
         private Undervisningssted _location;
         private Lokale _lokale;
         private List<Bruger> _tutor;
         private string _courseDescription;
         private string _prereg;
-        private Image _coursePicture;
-        private string _extHose;
         private double _price;
         private List<Bruger> _tilmeldteBrugere;
 
-
-
-        public Kursus(string name, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string targetAudience, string seminarDescription, string extramateriale
-            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, Image coursepicture, string extHost, double price, int deposit)
+        public Kursus(string name, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string extramateriale
+            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, double price, int deposit)
         {
             _name = name;
             _courseDate = courseDate;
@@ -38,16 +32,14 @@ namespace TouchPoint
             _length = length;
             _deposit = deposit;
             _spots = spots;
-            _targetAudience = targetAudience;
-            _seminarDescription = seminarDescription;
+           
             _extraMaterial = extramateriale;
             _location = location;
             _tutor = new List<Bruger>();
             _tutor.Add(tutor);
             _courseDescription = courseDescription;
             _prereg = prereg;
-            _coursePicture = coursepicture;
-            _extHose = extHost;
+           
             _price = price;
             
             _tilmeldteBrugere = new List<Bruger>();
@@ -88,33 +80,16 @@ namespace TouchPoint
         public double Deposit
         {
             get => _deposit;
-            set
-            {
-                if (value > Deposit)
-                {
-                    throw new ArgumentException();
-                }
-                else
-                {
-                    _deposit = value;
-                }
-            }
+            set => _deposit = value;
+
         }
         public int Spots
         {
             get => _spots;
             set => _spots = value;
         }
-        public string Targetaudience
-        {
-            get => _targetAudience;
-            set => _targetAudience = value;
-        }
-        public string SeminarDescription
-        {
-            get => _seminarDescription;
-            set => _seminarDescription = value;
-        }
+       
+       
         public string CourseDescription
         {
             get => _courseDescription;
@@ -140,17 +115,7 @@ namespace TouchPoint
             get => _prereg;
             set => _prereg = value;
         }
-        public Image CoursePicture
-        {
-            get => _coursePicture;
-            set => _coursePicture = value;
-        }
-        public string ExtHost
-        {
-            get => _extHose;
-            set => _extHose = value;
-        }
-
+       
         public Lokale Lokale
         {
             get => _lokale;
@@ -195,6 +160,9 @@ namespace TouchPoint
         {
             return _deposit == 0;
         }
+
+        
+
 
         
 
