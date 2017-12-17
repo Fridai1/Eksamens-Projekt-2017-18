@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
 
 namespace TouchPoint.ViewModel.Kursus
@@ -11,8 +11,8 @@ namespace TouchPoint.ViewModel.Kursus
 
         public string Navn
         {
-            get => DomainObject.Navn;
-            set => DomainObject.Navn = value;
+            get => DomainObject.Name;
+            set => DomainObject.Name = value;
         }
 
         public string CourseDate
@@ -45,16 +45,7 @@ namespace TouchPoint.ViewModel.Kursus
             get => DomainObject.Spots;
             set => DomainObject.Spots = value;
         }
-        public string Targetaudience
-        {
-            get => DomainObject.Targetaudience;
-            set => DomainObject.Targetaudience = value;
-        }
-        public string SeminarDescription
-        {
-            get => DomainObject.SeminarDescription;
-            set => DomainObject.SeminarDescription = value;
-        }
+       
         public string CourseDescription
         {
             get => DomainObject.CourseDescription;

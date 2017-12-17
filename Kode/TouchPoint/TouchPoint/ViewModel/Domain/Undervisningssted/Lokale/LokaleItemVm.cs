@@ -8,8 +8,8 @@
 
         public string Name
         {
-            get => DomainObject.Navn;
-            set => DomainObject.Navn = value;
+            get => DomainObject.Name;
+            set => DomainObject.Name = value;
         }
 
         public override string Description

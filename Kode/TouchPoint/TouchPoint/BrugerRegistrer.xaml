@@ -9,156 +9,90 @@
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <viewModel:BrugerMasterDetails/>
+        <viewModel:RegistrerMasterDetailsVm/>
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-        <!--orientation bar-->
-        <StackPanel Orientation="Horizontal" Margin="120 0 0 960">
-            <!--sted 1-->
-            <StackPanel>
-                <HyperlinkButton Width="120" Height="120" Content="Sted 1" FontSize="40"/>
+        <StackPanel>
+            <!--titel-->
+            <StackPanel >
+                <!--<TextBlock FontWeight="bold" FontSize="100" Text="Touchpoint" FontStyle="Italic" FontFamily="constantia" Margin="680,0" Height="120"/>-->
+                <Image Source="Assets/Touchpoint.png" Width="1920" Height="120"/>
             </StackPanel>
-
-            <!--sted 2-->
-            <StackPanel>
-                <HyperlinkButton Width="120" Height="120">
-                    <TextBlock Text="sted 2" FontSize="40"/>
-                </HyperlinkButton>
-            </StackPanel>
-
-            <!--sted 3-->
-            <StackPanel>
-                <HyperlinkButton Width="120" Height="120">
-                    <TextBlock Text="sted 3" FontSize="40"/>
-                </HyperlinkButton>
-            </StackPanel>
-
-            <!--Bruger-->
-            <StackPanel Margin="1200 0 0 0">
-                <ComboBox Width="100" Height="50">
-                    <ComboBoxItem Content="Menu" IsSelected="True"/>
-                    <ComboBoxItem>
-                        <Button Content="Log af"/>
-                    </ComboBoxItem>
-                    <ComboBoxItem>
-                        <Button Content="{Binding }"/>
-                    </ComboBoxItem>
-                </ComboBox>
-
-            </StackPanel>
-        </StackPanel>
-
-        <!--menu bar-->
-        <StackPanel Orientation="Vertical" Margin="0 0 1800 0">
-
-            <!--Icon-->
-            <StackPanel>
-                <Button Background="White" Click="MainPageKnap">
-                    <Image Source="/Assets/Touchpoint icon.png" Height="120" Width="120"/>
-                </Button>
-
-            </StackPanel>
-            <!--kurser-->
-            <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="Kurser" FontSize="20"/>
-            </StackPanel>
-
-            <!--kursister-->
-            <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="Kursister" FontSize="20"/>
-            </StackPanel>
-
-            <!--Undervisningssted-->
-            <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Click="KnapTilUndervisningssted">
-                    <StackPanel>
-                        <TextBlock Text="Undervisnings"/>
-                        <TextBlock Text="sted"/>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-
-            <!--Betalinger-->
-            <StackPanel>
-                <Button Background="AliceBlue" Width="120" Height="120" Content="betalinger" FontSize="20"/>
+            <!--Menu bar-->
+            <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
+                <Button Content="Hjem" Click="MainPageKnap" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="100 0 100 0"/>
             </StackPanel>
 
 
-        </StackPanel>
 
-        <!--Main body-->
-        <Grid Margin="120,120,0,0">
+            <!--Body-->
+        </StackPanel >
+        <Grid Padding="5" Margin="0 155 0 0">
+           
+            <StackPanel Grid.Column="0" BorderBrush="Black" BorderThickness="1" >
+                <!--listview overskrift-->
+                <StackPanel BorderThickness="1" BorderBrush="Black" Background="DarkRed">
+                    <TextBlock Text="Liste af brugere" FontWeight="Medium" Foreground="White" FontSize="30" FontFamily="cornerstone"  Padding="5"/>
+                </StackPanel>
 
-            
+                
 
-            
-
-            <!--Detailview-->
-            <StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1"  >
+                <!--kursus detaljer overskrift-->
+                <StackPanel BorderBrush="Black" BorderThickness="1" Background="DarkRed">
+                    <TextBlock Foreground="White" Text="Bruger Detaljer" FontWeight="Medium" FontSize="30" Margin="500 0" Padding="6" FontFamily="cornerstone"/>
+                </StackPanel>
+                <!--Image-->
+                <StackPanel>
+                    <Image Source="Assets/TouchpointBruger.png" Height="200"/>
+                </StackPanel>
 
                 <!--Navn-->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Navn" FontSize="40"/>
-                    <TextBox Text="{Binding DetailsVM.DomainObject.Name, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="200" Padding="5" Margin="400 0 0 0" FontSize="40"/>
+                <StackPanel Orientation="Horizontal" Background="LightBlue"  Padding="5">
+                    <TextBlock Text="Navn:" Margin="400 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Name, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Margin="235 0 0 0" Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
-
                 <!--Adresse-->
-                <StackPanel Orientation="Horizontal" Margin="0 10">
-                    <TextBlock Text="Adresse" FontSize="40"/>
-                    <TextBox Text="{Binding DetailsVM.DomainObject.Address, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="400" Padding="5" Margin="329 0 0 0" FontSize="40"/>
+                <StackPanel Orientation="Horizontal"   Padding="5">
+                    <TextBlock Text="Adresse:  " Margin="400 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Address, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Margin="200 0 0 0" Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
-
                 <!--Telefon-->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Telefon" FontSize="40"/>
-                    <TextBox Text="{Binding DetailsVM.DomainObject.PhoneNr, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="365 0 0 0"/>
+                <StackPanel Orientation="Horizontal" Background="LightBlue"  Padding="5">
+                    <TextBlock Text="Telefon:" Margin="400 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding DetailsVM.DomainObject.PhoneNr, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Margin="210 0 0 0" Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
-
                 <!--Email-->
-                <StackPanel Orientation="Horizontal" Margin="0 10">
-                    <TextBlock Text="Email" FontSize="40"/>
-                    <TextBox Text="{Binding DetailsVM.DomainObject.Email, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="200" Padding="5" FontSize="40" Margin="400 0 0 0"/>
+                <StackPanel Orientation="Horizontal"  Padding="5">
+                    <TextBlock Text="Email:" Margin="400 0 0 0" FontSize="30" />
+                    <TextBox Margin="235 0 0 0" Text="{Binding DetailsVM.DomainObject.Email, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}"  Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
-
-                <!--BrugerNavn-->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Brugernavn" FontSize="40"/>
-                    <TextBox Text="{Binding DetailsVM.DomainObject.Username, Mode=TwoWay}" Width="200" IsEnabled="{Binding FieldsEnabled}" Padding="5" FontSize="40" Margin="292 0 0 0"/>
+                <!--Brugernavn-->
+                <StackPanel Orientation="Horizontal" Background="LightBlue" Padding="5">
+                    <TextBlock Text="Brugernavn:" Margin="400 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Username, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Margin="155 0 0 0"  Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
-
                 <!--Password-->
-                <StackPanel Orientation="Horizontal" Margin="0 10">
-                    <TextBlock Text="Password" FontSize="40"/>
-                    <!--<TextBox Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>-->
-                    <PasswordBox IsEnabled="{Binding FieldsEnabled}" IsPasswordRevealButtonEnabled="true" Password="{Binding DetailsVM.DomainObject.Password, Mode=TwoWay}" Width="200" Padding="5" FontSize="40" Margin="330 0 0 0"/>
+                <StackPanel Orientation="Horizontal"  Padding="5">
+                    <TextBlock Text="Password:" Margin="400 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Password, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Margin="180 0 0 0" Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
-
-                <!--FagOmråde-->
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Fagområde" FontSize="40"/>
-                    <TextBox Text="{Binding DetailsVM.DomainObject.Field, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Width="400" Padding="5" FontSize="40" Margin="298 0 0 0"/>
+                <!--Fagområde-->
+                <StackPanel Orientation="Horizontal" Background="LightBlue"  Padding="5">
+                    <TextBlock Text="Fagområde:" Margin="400 0 0 0" FontSize="30" />
+                    <TextBox Text="{Binding DetailsVM.DomainObject.Field, Mode=TwoWay}" IsEnabled="{Binding FieldsEnabled}" Margin="155 0 0 0" Padding="5" Width="300" FontSize="30"/>
                 </StackPanel>
+              
 
-               <!--Knapper-->
-                <StackPanel Orientation="Horizontal" Margin="0 50">
-                    <!--Gem knap-->
-                    <StackPanel >
-                        <Button Click="MainPageKnap" Command="{Binding SaveCommand}" IsEnabled="{Binding TrueIfSelected}" Width="100" Height="50" Background="BlanchedAlmond" Content="Gem" Margin="300 0 0 0" />
-                    </StackPanel>
 
-                    <!--opret knap-->
-                    <StackPanel >
-                        <Button Command="{Binding CreateCommand}" Width="100" Height="50" Background="BlanchedAlmond" Content="Opret" Margin="300 0 0 0" />
-                    </StackPanel>
+                <!--Tilmeld knap-->
+                <StackPanel Orientation="Horizontal"  Padding="5">
+                    <Button Content="Opret Ny Bruger" Foreground="White" FontWeight="Medium" Width="140" Background="DarkRed" IsEnabled="{Binding FalseIfSelected}" Command="{Binding CreateCommand}" Margin="50 0 50 0"/>
+                    <Button Content="Gem" Foreground="White" FontWeight="Medium" Background="DarkRed" Width="140" IsEnabled="{Binding TrueIfSelected}" Command="{Binding SaveCommand}" Margin="0 0 50 0"/>
                 </StackPanel>
-               
-
             </StackPanel>
-
-
-
 
         </Grid>
 

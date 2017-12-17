@@ -9,7 +9,7 @@ namespace TouchPoint.ViewModel.Undervisningssted
     public class USMasterDetailsVm : MasterDetailsVMBase<TouchPoint.Undervisningssted>
     {
         private string _lokale;
-        private RelayCommand _tilføjLokaleCommand;
+        private RelayCommand _addLokaleCommand;
         private LokaleMasterVm _lokaleMaster;
         private LokaleFactory _lokaleFactory;
         private LokaleItemVm _selectedLokale;
@@ -18,16 +18,15 @@ namespace TouchPoint.ViewModel.Undervisningssted
 
         public USMasterDetailsVm() : base("EducationSite",new USFactoryVm())
         {
-            _tilføjLokaleCommand = new RelayCommand(Opretlokale, () => true);
+            _addLokaleCommand = new RelayCommand(CreateRoom, () => true);
             _deleteLokale = new RelayCommand(DeleteLokale,()=>true);
-            
             _lokaleFactory = new LokaleFactory();
             _lokaleMaster = new LokaleMasterVm();
         }
 
-        private void Opretlokale()
+        private void CreateRoom()
         {
-            DetailsVM.DomainObject.OpretLokale(_lokale);
+            DetailsVM.DomainObject.CreateRoom(_lokale);
             OnPropertyChanged(nameof(LokaleCollection));
             OnPropertyChanged();
             _lokale = null;
@@ -41,12 +40,12 @@ namespace TouchPoint.ViewModel.Undervisningssted
 
         private void DeleteLokale()
         {
-            DetailsVM.DomainObject.SletLokale(LokaleSelected.DomainObject);
+            DetailsVM.DomainObject.DeleteRoom(LokaleSelected.DomainObject);
             OnPropertyChanged(nameof(LokaleCollection));
         }
-        public ICommand TilføjLokaleCommand
+        public ICommand addLokaleCommand
         {
-            get => _tilføjLokaleCommand;
+            get => _addLokaleCommand;
         }
 
         public ICommand DeleteLokaleCommand
@@ -60,33 +59,18 @@ namespace TouchPoint.ViewModel.Undervisningssted
             {
                 if (DetailsVM != null)
                 {
-                   return _lokaleMaster.CreateItemVMCollection(_lokaleFactory, DetailsVM.DomainObject.Lokaler);
+                   return _lokaleMaster.CreateItemVMCollection(_lokaleFactory, DetailsVM.DomainObject.Rooms);
                 }
                 else
                 {
                     return null;
                 }
-                
             }
-
-            
         }
-
-        public void SelectionChanged()
-        {
-            
-            
-        }
-
-
         public string Lokale
         {
             get => _lokale;
             set => _lokale = value;
         }
-
-
-
-
     }
 }

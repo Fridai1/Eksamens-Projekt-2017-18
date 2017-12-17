@@ -6,15 +6,14 @@ namespace TouchPoint
 {
     public class Kursus : ISaveable
     {
-        private string _navn;
+        private int _id;
+        private string _name;
         private string _courseDate;
         private ulong _timeStart;
         private ulong _timeEnd;
         private int   _length;
         private double _deposit;
         private int    _spots;
-        private string _targetAudience;
-        private string _seminarDescription;
         private string _extraMaterial;
         private Undervisningssted _location;
         private Lokale _lokale;
@@ -24,20 +23,17 @@ namespace TouchPoint
         private double _price;
         private List<Bruger> _tilmeldteBrugere;
 
-
-
-        public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string targetAudience, string seminarDescription, string extramateriale
-            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, double price, int deposit)
+        public Kursus(string name, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string extramateriale
+            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, double price, int deposit, int id = 0)
         {
-            _navn = navn;
+            _id = id
+            _name = name;
             _courseDate = courseDate;
             _timeStart = timeStart;
             _timeEnd = timeEnd;
             _length = length;
             _deposit = deposit;
             _spots = spots;
-            _targetAudience = targetAudience;
-            _seminarDescription = seminarDescription;
             _extraMaterial = extramateriale;
             _location = location;
             _tutor = new List<Bruger>();
@@ -54,11 +50,16 @@ namespace TouchPoint
             _tutor = new List<Bruger>();
             _tilmeldteBrugere = new List<Bruger>();
         }
+        
+        public int Id {
+        get { return _id; }
+        set { _id = value; }
+        }
 
-        public string Navn
+        public string Name
         {
-            get => _navn;
-            set => _navn = value;
+            get => _name;
+            set => _name = value;
         }
 
         public string CourseDate
@@ -84,33 +85,15 @@ namespace TouchPoint
         public double Deposit
         {
             get => _deposit;
-            set
-            {
-                if (value > Deposit)
-                {
-                    throw new ArgumentException();
-                }
-                else
-                {
-                    _deposit = value;
-                }
-            }
+            set => _deposit = value;
+
         }
         public int Spots
         {
             get => _spots;
             set => _spots = value;
         }
-        public string Targetaudience
-        {
-            get => _targetAudience;
-            set => _targetAudience = value;
-        }
-        public string SeminarDescription
-        {
-            get => _seminarDescription;
-            set => _seminarDescription = value;
-        }
+        
         public string CourseDescription
         {
             get => _courseDescription;
@@ -136,7 +119,6 @@ namespace TouchPoint
             get => _prereg;
             set => _prereg = value;
         }
-
         public Lokale Lokale
         {
             get => _lokale;
@@ -181,9 +163,5 @@ namespace TouchPoint
         {
             return _deposit == 0;
         }
-
-        
-
-        public int Id { get; set; }
     }
 }

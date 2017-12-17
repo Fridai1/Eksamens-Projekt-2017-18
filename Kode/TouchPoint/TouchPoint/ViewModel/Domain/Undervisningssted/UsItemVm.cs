@@ -11,12 +11,12 @@ namespace TouchPoint.ViewModel.Undervisningssted
 
         public string Name
         {
-            get => DomainObject.Navn;
+            get => DomainObject.Name;
         }
 
         public string Adresse
         {
-            get => DomainObject.Addresse;
+            get => DomainObject.Address;
         }
 
         public override string Description

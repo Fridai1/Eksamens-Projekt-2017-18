@@ -66,8 +66,9 @@ namespace TouchPoint.ViewModel
                 DetailsVM = CreateDetailsVM();
                 OnPropertyChanged(nameof(DetailsVM));
                 OnPropertyChanged(nameof(TrueIfSelected));
+                OnPropertyChanged(nameof(FalseIfSelected));
                 OnPropertyChanged(nameof(USMasterDetailsVm.LokaleCollection));
-                OnPropertyChanged(nameof(USMasterDetailsVm.SelectionChanged));
+                
                 
             } 
     }
@@ -116,7 +117,17 @@ namespace TouchPoint.ViewModel
 
         public async void RefreshList()
         {
-            _Catalog = await _dbFacade.LoadMultiple(_table);
+
+            List<T> waitinglist = await _dbFacade.LoadMultiple(_table);
+
+            if (waitinglist != null)
+            {
+                _Catalog = waitinglist;
+            }
+            
+           
+
+
             OnPropertyChanged(nameof(ItemVMCollection));
         }
         public virtual void Create()
@@ -141,6 +152,7 @@ namespace TouchPoint.ViewModel
         {
             if (DetailsVM.DomainObject != null)
             {
+
                 if (DetailsVM.DomainObject.Id == 0) {
                     _Catalog.Add(DetailsVM.DomainObject);
                 } else {
@@ -150,6 +162,7 @@ namespace TouchPoint.ViewModel
                 }
 
                 await _dbFacade.SaveSingle(DetailsVM.DomainObject.Id, DetailsVM.DomainObject, _table);
+
                 ItemVMSelected = null;
                 FieldsEnabled = false;
                 OnPropertyChanged();
@@ -181,13 +194,28 @@ namespace TouchPoint.ViewModel
             }
         }
 
+        public bool FalseIfSelected
+        {
+            get
+            {
+                if (ItemVMSelected != null)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+        }
+
         public bool FieldsEnabled
         {
             get => _viewEnabled;
             set => _viewEnabled = value;
         }
 
-        
+     
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
