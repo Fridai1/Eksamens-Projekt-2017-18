@@ -80,16 +80,6 @@ namespace TouchPoint.ViewModel.Kursus
             get => DomainObject.Prereg;
             set => DomainObject.Prereg = value;
         }
-        public Image CoursePicture
-        {
-            get => DomainObject.CoursePicture;
-            set => DomainObject.CoursePicture = value;
-        }
-        public string ExtHost
-        {
-            get => DomainObject.ExtHost;
-            set => DomainObject.ExtHost = value;
-        }
         public double Price
         {
             get => DomainObject.Price;

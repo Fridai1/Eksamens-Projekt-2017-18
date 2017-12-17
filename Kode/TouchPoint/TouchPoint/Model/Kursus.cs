@@ -21,15 +21,13 @@ namespace TouchPoint
         private List<Bruger> _tutor;
         private string _courseDescription;
         private string _prereg;
-        private Image _coursePicture;
-        private string _extHose;
         private double _price;
         private List<Bruger> _tilmeldteBrugere;
 
 
 
         public Kursus(string navn, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string targetAudience, string seminarDescription, string extramateriale
-            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, Image coursepicture, string extHost, double price, int deposit)
+            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, double price, int deposit)
         {
             _navn = navn;
             _courseDate = courseDate;
@@ -46,8 +44,6 @@ namespace TouchPoint
             _tutor.Add(tutor);
             _courseDescription = courseDescription;
             _prereg = prereg;
-            _coursePicture = coursepicture;
-            _extHose = extHost;
             _price = price;
             
             _tilmeldteBrugere = new List<Bruger>();
@@ -139,16 +135,6 @@ namespace TouchPoint
         {
             get => _prereg;
             set => _prereg = value;
-        }
-        public Image CoursePicture
-        {
-            get => _coursePicture;
-            set => _coursePicture = value;
-        }
-        public string ExtHost
-        {
-            get => _extHose;
-            set => _extHose = value;
         }
 
         public Lokale Lokale
