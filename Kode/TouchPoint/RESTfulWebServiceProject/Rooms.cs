@@ -14,7 +14,6 @@ namespace RESTfulWebServiceProject
             Courses = new HashSet<Courses>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]

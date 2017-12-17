@@ -6,6 +6,7 @@ namespace TouchPoint
 {
     public class Kursus : ISaveable
     {
+        private int _id;
         private string _name;
         private string _courseDate;
         private ulong _timeStart;
@@ -23,8 +24,9 @@ namespace TouchPoint
         private List<Bruger> _tilmeldteBrugere;
 
         public Kursus(string name, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string extramateriale
-            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, double price, int deposit)
+            , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, double price, int deposit, int id = 0)
         {
+            _id = id
             _name = name;
             _courseDate = courseDate;
             _timeStart = timeStart;
@@ -32,14 +34,12 @@ namespace TouchPoint
             _length = length;
             _deposit = deposit;
             _spots = spots;
-           
             _extraMaterial = extramateriale;
             _location = location;
             _tutor = new List<Bruger>();
             _tutor.Add(tutor);
             _courseDescription = courseDescription;
             _prereg = prereg;
-           
             _price = price;
             
             _tilmeldteBrugere = new List<Bruger>();
@@ -49,6 +49,11 @@ namespace TouchPoint
         {
             _tutor = new List<Bruger>();
             _tilmeldteBrugere = new List<Bruger>();
+        }
+        
+        public int Id {
+        get { return _id; }
+        set { _id = value; }
         }
 
         public string Name
@@ -88,8 +93,7 @@ namespace TouchPoint
             get => _spots;
             set => _spots = value;
         }
-       
-       
+        
         public string CourseDescription
         {
             get => _courseDescription;
@@ -115,7 +119,6 @@ namespace TouchPoint
             get => _prereg;
             set => _prereg = value;
         }
-       
         public Lokale Lokale
         {
             get => _lokale;
@@ -160,12 +163,5 @@ namespace TouchPoint
         {
             return _deposit == 0;
         }
-
-        
-
-
-        
-
-        public int Id { get; set; }
     }
 }

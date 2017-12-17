@@ -8,7 +8,6 @@ namespace RESTfulWebServiceProject
 
     public partial class Courses
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Column(TypeName = "date")]
@@ -27,8 +26,6 @@ namespace RESTfulWebServiceProject
         [StringLength(512)]
         public string ExtraMat { get; set; }
 
-        public int? RabPoints { get; set; }
-
         [Required]
         [StringLength(64)]
         public string EduSiteName { get; set; }
@@ -45,25 +42,8 @@ namespace RESTfulWebServiceProject
         [StringLength(512)]
         public string Prereqs { get; set; }
 
-        public byte[] Picture { get; set; }
-
         [StringLength(512)]
         public string Compendium { get; set; }
-
-        [StringLength(64)]
-        public string ExtHost { get; set; }
-
-        public bool ShowPrice { get; set; }
-
-        public bool ShowPriceDetails { get; set; }
-
-        public bool ShowDeposit { get; set; }
-
-        public float? EvalExpectations { get; set; }
-
-        public float? EvalContent { get; set; }
-
-        public float? EvalMat { get; set; }
 
         public virtual EducationSites EducationSites { get; set; }
 

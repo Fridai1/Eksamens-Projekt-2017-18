@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
 
 namespace TouchPoint.ViewModel.Kursus
@@ -71,7 +71,6 @@ namespace TouchPoint.ViewModel.Kursus
             get => DomainObject.Prereg;
             set => DomainObject.Prereg = value;
         }
-       
         public double Price
         {
             get => DomainObject.Price;
