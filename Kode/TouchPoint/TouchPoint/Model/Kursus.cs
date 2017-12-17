@@ -26,7 +26,7 @@ namespace TouchPoint
         public Kursus(string name, string courseDate, ulong timeStart, ulong timeEnd,int length, int spots, string extramateriale
             , Undervisningssted location,Bruger tutor, string courseDescription, string prereg, double price, int deposit, int id = 0)
         {
-            _id = id
+            _id = id;
             _name = name;
             _courseDate = courseDate;
             _timeStart = timeStart;

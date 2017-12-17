@@ -8,6 +8,11 @@ namespace TouchPoint.ViewModel.Undervisningssted
         {
         }
 
+        public int Id {
+            get { return DomainObject.Id; }
+            set { DomainObject.Id = value; }
+        }
+
         public string Name
         {
             get => DomainObject.Name;
