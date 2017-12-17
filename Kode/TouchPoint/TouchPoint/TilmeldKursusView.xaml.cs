@@ -26,5 +26,30 @@ namespace TouchPoint
         {
             this.InitializeComponent();
         }
+
+        private void MainpageKnap(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void KnapTilUndervisningssted(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(UndervisningsstedView));
+        }
+
+        private void KurserKnap(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(KursusView));
+        }
+
+        private void TilgængeligeKurser(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TilmeldKursusView));
+        }
+
+        private void RedigerBruger(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BrugerRegistrer));
+        }
     }
 }

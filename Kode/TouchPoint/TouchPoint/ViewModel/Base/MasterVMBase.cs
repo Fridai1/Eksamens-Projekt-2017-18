@@ -17,6 +17,12 @@ namespace TouchPoint
 
         public ObservableCollection<ItemVMBase<T>> CreateItemVMCollection(FactoryVMBase<T> factory,List<T> collection)
         {
+            // hotfix for når facade har en fejl retunere null.. Burde fixes i facaden.
+            if (collection == null)
+            {
+                collection = new List<T>();
+            }
+
             _ItemVMCollection.Clear();
 
             foreach (T Obj in collection)

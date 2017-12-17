@@ -11,19 +11,25 @@
     <Page.DataContext>
         <tilmeldKursus:TildMeldKursusOverView/>
     </Page.DataContext>
+    
+    
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
             <!--titel-->
             <StackPanel >
-                <TextBlock FontSize="100" Text="Touchpoint" FontStyle="Italic" FontFamily="constantia" Margin="700,0" Height="120"/>
+                <!--<TextBlock FontWeight="bold" FontSize="100" Text="Touchpoint" FontStyle="Italic" FontFamily="constantia" Margin="680,0" Height="120"/>-->
+                <Image Source="Assets/Touchpoint.png" Width="1920" Height="120"/>
             </StackPanel>
+            <!--Menu bar-->
             <StackPanel BorderBrush="Black" BorderThickness="1" Orientation="Horizontal">
-                <Button Content="Hjem" BorderBrush="Black" BorderThickness="1" Background="DeepPink"/>
-                <Button Content="tilgængelige kurser" BorderThickness="1" BorderBrush="Black" Background="DeepPink"/>
+                <Button Content="Hjem" Click="MainpageKnap" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="100 0 100 0"/>
+                <Button Content="tilgængelige kurser" Width="150" BorderThickness="1" FontWeight="bold" BorderBrush="Black" Background="White" Margin="0 0 100 0"/>
+                <Button Content="Min Profil" Click="RedigerBruger" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White" Margin="0 0 100 0"/>
+                <Button Content="Log Af" Click="MainpageKnap" Command="{Binding LogOff}" Width="150" BorderBrush="Black" FontWeight="bold" BorderThickness="1" Background="White"/>
             </StackPanel>
 
-            <!--menubar-->
+            
 
             <!--Body-->
         </StackPanel >
@@ -35,8 +41,8 @@
 
             <StackPanel Grid.Column="0" BorderBrush="Black" BorderThickness="1" >
             <!--listview overskrift-->
-            <StackPanel BorderThickness="1" BorderBrush="Black">
-                <TextBlock  Text="tilgængelige Kurser" FontSize="30" FontFamily="cornerstone"  Padding="5"/>
+                <StackPanel BorderThickness="1" BorderBrush="Black" Background="DarkRed">
+                <TextBlock Text="tilgængelige Kurser" FontWeight="Medium" Foreground="White" FontSize="30" FontFamily="cornerstone"  Padding="5"/>
             </StackPanel>
 
             <!--listview af kurser-->
@@ -54,43 +60,49 @@
             </ListView>
                 
             </StackPanel>
-            <StackPanel Grid.Column="1" >
+            <StackPanel Grid.Column="1"  >
                 <!--kursus detaljer overskrift-->
-                <StackPanel BorderBrush="Black" BorderThickness="1">
-                    <TextBlock Text="Kursus detaljer" FontSize="30" Margin="500 0" Padding="6" FontFamily="cornerstone"/>
+                <StackPanel BorderBrush="Black" BorderThickness="1" Background="DarkRed">
+                    <TextBlock Foreground="White" Text="Kursus detaljer" FontWeight="Medium" FontSize="30" Margin="500 0" Padding="6" FontFamily="cornerstone"/>
                 </StackPanel>
 
-                <StackPanel >
-                    <Image Source="{Binding MasterDetails.DetailsVM.DomainObject.CoursePicture}" Width="300" Height="300"/>
+                <StackPanel  >
+                    <Image Source="Assets/TouchpointBruger.png"  Height="300"/>
                 </StackPanel>
                 <!--Navn-->
-                <StackPanel BorderBrush="Black" BorderThickness="1">
-                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.Navn}" Margin="400 0" Padding="5" FontSize="30"/>
+                <StackPanel Orientation="Horizontal" Background="LightBlue">
+                    <TextBlock Text="Navn:  " Margin="400 0 0 0" FontSize="30" />
+                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.Name}" Padding="5" FontSize="30"/>
                 </StackPanel>
                 <!--Price-->
-                <StackPanel>
-                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.Price}" Margin="400 0" Padding="5" FontSize="30"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Pris:  " Margin="400 0 0 0" FontSize="30" />
+                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.Price}" Padding="5" FontSize="30"/>
                 </StackPanel>
                 <!--Start Dato-->
-                <StackPanel>
-                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.TimeStart}" Margin="400 0" Padding="5" FontSize="30"/>
+                <StackPanel Orientation="Horizontal" Background="LightBlue">
+                    <TextBlock Text="Start Dato:  " Margin="400 0 0 0" FontSize="30" />
+                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.TimeStart}" Padding="5" FontSize="30"/>
                 </StackPanel>
                 <!--Slut Dato-->
-                <StackPanel>
-                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.TimeEnd}" Margin="400 0" Padding="5" FontSize="30"/>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Slut dato:  " Margin="400 0 0 0" FontSize="30" />
+                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.TimeEnd}"  Padding="5" FontSize="30"/>
                 </StackPanel>
                 <!--Pladser tilbage-->
-                <StackPanel>
-                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.Spots}" Margin="400 0" Padding="5" FontSize="30"/>
+                <StackPanel Orientation="Horizontal" Background="LightBlue">
+                    <TextBlock Text="Pladser tilbage:  " Margin="400 0 0 0" FontSize="30" />
+                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.Spots}"  Padding="5" FontSize="30"/>
                 </StackPanel>
                 <!--beskrivelse-->
-                <StackPanel>
-                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.CourseDescription}" Margin="400 0" Padding="5" FontSize="30"/>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Beskrivelse:  " Margin="400 0 0 0" FontSize="30" />
+                    <TextBlock Text="{Binding MasterDetails.DetailsVM.DomainObject.CourseDescription}" Padding="5" FontSize="30"/>
                 </StackPanel>
 
                 <!--Tilmeld knap-->
                 <StackPanel>
-                    <Button Content="Tilmeld" Background="Blue" Command="{Binding TilmeldBrugerCommand}"/>
+                    <Button Content="Tilmeld" Background="DarkRed" Foreground="White" FontWeight="Medium" IsEnabled="{Binding MasterDetails.TrueIfSelected}" Command="{Binding TilmeldBrugerCommand}"/>
                 </StackPanel>
             </StackPanel>
 

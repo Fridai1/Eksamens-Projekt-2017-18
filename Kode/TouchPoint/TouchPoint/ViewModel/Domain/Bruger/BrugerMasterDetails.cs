@@ -20,25 +20,7 @@ namespace TouchPoint.ViewModel
             
         }
 
-        public ObservableCollection<ItemVMBase<Bruger>> UnderviserListe
-        {
-            get
-            {
-                ObservableCollection<ItemVMBase<Bruger>> underviserList = new ObservableCollection<ItemVMBase<Bruger>>();
-                foreach (Bruger b in _Catalog)
-                {
-                    if (b.IsTutor)
-                    {
-                        
-                        underviserList.Add(_factory.ItemViewModel(b));
-                    }
-                   
-                }
-                underviserList.Add(new ItemVMBase<Bruger>(new Bruger("berta", "asd", "asd", "12345678", "asd st. 3", false, "asd@asd.com", "asdery", true)));
-                underviserList.Add(new ItemVMBase<Bruger>(new Bruger("prop", "asd", "asd", "12345678", "asd st. 5", false, "asd@asd.dk", "asdery", true)));
-                return underviserList;
-            }
-        }
+        
 
         public List<Bruger> TutorList
         {
@@ -53,8 +35,8 @@ namespace TouchPoint.ViewModel
                     }
 
                 }
-                underviserList.Add(new Bruger("berta", "asd", "asd", "12345678", "asd st. 3", false, "asd@asd.com", "asdery", true));
-                underviserList.Add(new Bruger("prop", "asd", "asd", "12345678", "asd st. 5", false, "asd@asd.dk", "asdery", true));
+                //underviserList.Add(new Bruger("berta", "asd", "asd", "12345678", "asd st. 3", false, "asd@asd.com", "asdery", true));
+                //underviserList.Add(new Bruger("prop", "asd", "asd", "12345678", "asd st. 5", false, "asd@asd.dk", "asdery", true));
                 return underviserList;
             }
         }

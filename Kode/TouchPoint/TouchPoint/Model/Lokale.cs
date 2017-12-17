@@ -2,9 +2,10 @@
 {
     public class Lokale : ISaveable
     {
-        public Lokale(string navn)
+        private string _name;
+        public Lokale(string name)
         {
-            _navn = navn;
+            _name = name;
         }
 
         public Lokale()
@@ -12,12 +13,12 @@
             
         }
 
-        private string _navn;
+        
 
-        public string Navn
+        public string Name
         {
-            get => _navn;
-            set => _navn = value;
+            get => _name;
+            set => _name = value;
         }
 
         public int Id { get; set; }
