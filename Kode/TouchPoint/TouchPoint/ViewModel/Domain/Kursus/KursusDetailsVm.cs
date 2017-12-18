@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
 
 namespace TouchPoint.ViewModel.Kursus
@@ -7,6 +7,11 @@ namespace TouchPoint.ViewModel.Kursus
     {
         public KursusDetailsVm(TouchPoint.Kursus obj) : base(obj)
         {
+        }
+
+        public int Id {
+            get { return DomainObject.Id; }
+            set { DomainObject.Id = value; }
         }
 
         public string Navn
@@ -71,7 +76,6 @@ namespace TouchPoint.ViewModel.Kursus
             get => DomainObject.Prereg;
             set => DomainObject.Prereg = value;
         }
-       
         public double Price
         {
             get => DomainObject.Price;

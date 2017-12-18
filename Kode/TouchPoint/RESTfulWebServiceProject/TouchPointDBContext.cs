@@ -17,90 +17,17 @@ namespace RESTfulWebServiceProject {
         public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.PriceText)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.SeminarDesc)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.ExtraMat)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.EduSiteName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.Tutors)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.CourseDesc)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.Prereqs)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.Compendium)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Courses>()
-                .Property(e => e.ExtHost)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EducationSites>()
-                .Property(e => e.EduSiteName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EducationSites>()
-                .Property(e => e.PhoneNr)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EducationSites>()
-                .Property(e => e.Address)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<EducationSites>()
-                .Property(e => e.Email)
-                .IsFixedLength()
-                .IsUnicode(false);
-
             modelBuilder.Entity<EducationSites>()
                 .HasMany(e => e.Courses)
                 .WithRequired(e => e.EducationSites)
+                .HasForeignKey(e => e.EduSiteName)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<EducationSites>()
                 .HasMany(e => e.Rooms)
                 .WithRequired(e => e.EducationSites)
+                .HasForeignKey(e => e.EduSiteName)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Rooms>()
-                .Property(e => e.EduSiteName)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Rooms>()
-                .Property(e => e.RoomName)
-                .IsFixedLength()
-                .IsUnicode(false);
 
             modelBuilder.Entity<Rooms>()
                 .HasMany(e => e.Courses)

@@ -44,7 +44,7 @@ namespace RESTfulWebServiceProject.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != educationSites.EduSiteName)
+            if (id != educationSites.Name)
             {
                 return BadRequest();
             }
@@ -87,7 +87,7 @@ namespace RESTfulWebServiceProject.Controllers
             }
             catch (DbUpdateException)
             {
-                if (EducationSitesExists(educationSites.EduSiteName))
+                if (EducationSitesExists(educationSites.Name))
                 {
                     return Conflict();
                 }
@@ -97,7 +97,7 @@ namespace RESTfulWebServiceProject.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = educationSites.EduSiteName }, educationSites);
+            return CreatedAtRoute("DefaultApi", new { id = educationSites.Name }, educationSites);
         }
 
         // DELETE: api/EducationSites/5
@@ -127,7 +127,7 @@ namespace RESTfulWebServiceProject.Controllers
 
         private bool EducationSitesExists(string id)
         {
-            return db.EducationSites.Count(e => e.EduSiteName == id) > 0;
+            return db.EducationSites.Count(e => e.Name == id) > 0;
         }
     }
 }
