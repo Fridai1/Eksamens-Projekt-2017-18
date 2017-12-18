@@ -9,6 +9,11 @@ namespace TouchPoint.ViewModel.Kursus
         {
         }
 
+        public int Id {
+            get { return DomainObject.Id; }
+            set { DomainObject.Id = value; }
+        }
+
         public string Navn
         {
             get => DomainObject.Name;
