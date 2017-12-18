@@ -10,8 +10,16 @@ namespace TouchPoint.Controller
 
         public event EventHandler CanExecuteChanged;
 
+        public RelayCommand(Action execute)
+        : this(execute, null) {
+
+        }
+
         public RelayCommand(Action execute, Func<bool> canExecute)
         {
+            if(execute == null) {
+                throw new ArgumentNullException(nameof(execute));
+            }
             _execute = execute;
             _canExecute = canExecute;
         }

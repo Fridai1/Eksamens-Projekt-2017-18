@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TouchPoint.Validation {
-    public class ValidationHandler {
+    public class ValidationHandler<T> where T : ISaveable {
         public static ValidationOutput Validate<TValue>(TValue value, Func<TValue, bool> isValid, string message) {
             return (isValid(value) ? null : new ValidationOutput(message)); //returns null if Func bool checks out, otherwise returns `message`
         }
@@ -21,9 +21,15 @@ namespace TouchPoint.Validation {
 
         public static ValidationOutput ValidateExampleHelloWorldLength(string value, int length,//string to validate, length that string must be.
         [CallerMemberName] string propertyName = null) {                                        //CallerMemberName takes name of member which called this method.
-        string message = propertyName + " must contain " + " characters";                       //the error message sent to Validate.
-        return Validate<string>(value, (v => v.Length == length), message);                     //returns message one line above if (v.Length != length),
+            string message = propertyName + " must contain " + " characters";                       //the error message sent to Validate.
+            return Validate<string>(value, (v => v.Length == length), message);                     //returns message one line above if (v.Length != length),
                                                                                                 //otherwise null (see Validate)
+        }
+
+        public static ValidationOutput ValidateObjectNull(T value,
+        [CallerMemberName] string propertyName = null) {
+            string message = propertyName + "does not exist.";
+            return Validate<T>(value, (v => v != null), message);
         }
     }
 }
