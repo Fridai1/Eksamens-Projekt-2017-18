@@ -105,7 +105,7 @@
 
                     </StackPanel>
                <ListView Margin="220 0 0 0" ItemsSource="{Binding MasterDetails.LokaleCollection}"
-                         SelectedItem="{Binding MasterDetails.LokaleSelected}">
+                         SelectedItem="{Binding MasterDetails.LokaleSelected, Mode=TwoWay}">
                    <ListView.ItemTemplate>
                        <DataTemplate>
                            <TextBlock Text="{Binding Description}"/>
